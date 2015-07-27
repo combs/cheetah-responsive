@@ -1,0 +1,24 @@
+$break-small: 40.00em;
+$break-large: 1024px;
+
+
+/* ht: http://thesassway.com/intermediate/responsive-web-design-in-sass-using-media-queries-in-sass-32 */
+@mixin respond-to-width($media) { 
+
+  @if $media == small {
+    @media only screen and (max-width: $break-small) { @content; }
+  }
+  @else if $media == medium {
+    @media only screen and (min-width: $break-small + 0.01) and (max-width: $break-large - 1) { @content; }
+  }
+  @else if $media == large {
+    @media only screen and (min-width: $break-large) { @content; }
+  } 
+  @else if $media == notlarge {
+    @media only screen and (max-width: $break-large - 1) { @content; }
+  } 
+  @else if $media == notsmall {
+    @media only screen and (min-width: $break-small + 0.01) { @content; }
+  } 
+  
+}

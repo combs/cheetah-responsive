@@ -1,4 +1,23 @@
+@import "_baseline";
+@import "_respond_to_width";
+@import "_size_utilities";
 
+$max-text-width: 60rem;
+
+
+@viewport {
+	 width: device-width;
+	 zoom: 1;
+}
+
+body {
+ 	@include respond-to-width(small) { 
+/* TODO: is this really required? */
+			-webkit-text-size-adjust: 100%;
+ 	}
+	
+	
+}
 
 
 body.ngm {
@@ -12,6 +31,108 @@ body.ngm {
 		div#wrapper {
 			
 			width: 100%;
+			
+			.addthis_toolbox {
+				
+				float: none !important;
+				
+			}
+			
+			div.nav {
+				
+				@include respond-to-width(notlarge) {
+				
+					background: none;
+				
+				}
+				
+				div.subnav {
+
+					@include respond-to-width(small) {
+
+						font-weight: 700;
+					
+						ul {
+							
+							font-size: 0.0001rem;
+							
+							li {
+								
+								font-size: 1rem;
+								line-height: 1.2rem;
+								
+								a {
+									
+									font-size: 1rem;
+									font-weight: 700;
+									
+								}
+								
+							}	
+							
+							li:after {
+									
+									content: "\2022";
+									font-size: 1rem;
+									color: #191919;
+									
+							}
+								
+							li:last-child:after {
+									
+									content: "";
+									
+							}
+								
+						}
+						
+					}
+					
+				}
+				
+				div#tabs {
+					
+					@include respond-to-width(small) {
+						
+					    font-weight: 700;
+					    line-height: 3;
+					    display: none;
+    
+					}
+					
+				}
+					
+				div#subhead {
+					
+					@include respond-to-width(small) {
+						
+						display: none;
+						
+					}
+					
+					div#current_issue {
+						
+						@include respond-to-width(notlarge) {
+							
+							display: none;
+							
+						}
+						
+					}
+					
+					form#hdr_search {
+						
+						@include respond-to-width(notlarge) {
+
+							display: none;
+							
+						}
+						
+					}
+					
+				}
+				
+			}
 			
 			div.narrow_side, div.narrow_sidert {
 				
@@ -31,6 +152,12 @@ body.ngm {
 				float: none;
 				text-align: center;
 				width: inherit;
+				
+				@include respond-to-width(small) {
+					
+					display: none;
+					
+				}
 				
 				> div {
 				
@@ -94,7 +221,7 @@ body.ngm {
 				div.main_3narrow {
 
 					padding: 0;
-					max-width: 80rem;
+					max-width: $max-text-width;
 					margin: 0 auto;
 					
 					div.article_title {
@@ -107,6 +234,8 @@ body.ngm {
 							
 						}
 						
+    					margin: 1rem 0 0 0;
+    
 					}
 					
 					h2.title, h3.title {
@@ -146,12 +275,20 @@ body.ngm {
 						font-family: "Chronicle SSm 3r",Georgia,Times,"Times New Roman",serif;
 					    font-size: 1.1rem;
 					    line-height: 1.5em;
+						padding: 1rem;
+						
+						@include respond-to-width(notsmall) {
 
+							padding: 2rem;
+							
+						}
+						
 						div.share-buttons {
 							
 						    float: none;
 						    text-align: center;
 						    margin: 3rem;		
+						    display:block; 
 							
 						}
 
@@ -182,7 +319,7 @@ body.ngm {
 		
 			div#footer {
 				
-				width: 80rem;
+				width: $max-text-width;
 				max-width: 80%;
 				margin:0 auto;	
 				

@@ -1,0 +1,210 @@
+
+
+
+body.ngm {
+	
+	overflow-x: hidden;
+	
+	div#marginwrap {
+	
+		width: 100%;
+		
+		div#wrapper {
+			
+			width: 100%;
+			
+			div.narrow_side, div.narrow_sidert {
+				
+				/* padding: 1rem; */
+			
+			}
+			
+			div.narrow_sidert {
+				
+				display: none;	
+				
+			}
+			
+			div.narrow_side {
+			
+				/* width: 100%; */
+				float: none;
+				text-align: center;
+				width: inherit;
+				
+				> div {
+				
+					display: inline;
+					padding: 1rem;
+					
+				}	
+				
+				> div.clear {
+					
+					padding: 0;
+					
+				}
+				
+				> div.spacer, > div.line {
+					
+					display: none !important;
+				
+				}
+				
+				> div.navblocktxt, > div.navblock {
+					
+					float: none;
+					display: inline-block;
+					vertical-align: top;
+					text-align: left;
+					width: 40%;
+    				max-width: 160px;
+    				
+    				> img {
+    					
+    					width: 100%;
+    					height: auto;
+    				
+    				}
+    				
+				}
+				
+				> div.navblocktxt {
+					
+					display: none;
+					
+				}
+				 
+				> div.navblock {
+					
+					margin: 0.5rem;
+					padding: 0 0 2rem 0;
+									
+				}
+				
+			}
+						
+			div.main_3narrow_wrap {
+				
+				width: 100%;
+				font-size: 1.2rem;
+				padding: 0;
+				margin: 0 auto;
+				
+				div.main_3narrow {
+
+					padding: 0;
+					max-width: 80rem;
+					margin: 0 auto;
+					
+					div.article_title {
+					
+						text-align: center;	
+						
+						span.published {
+							
+							float: none;
+							
+						}
+						
+					}
+					
+					h2.title, h3.title {
+					
+						font-family: "Chronicle Display 3r",Georgia,Times,"Times New Roman",serif;
+					
+					}
+					
+					h2.title {
+						
+						padding: 2rem;
+						font-size: 3rem;
+						line-height: 1.09em;
+						
+					}
+					
+					h3.title {
+						
+						font-size: 1.5rem;
+						line-height: 1.09em;
+						padding-bottom: 2rem;
+						
+					}
+					
+					div.article_credits_author, div.article_credits_photographer {
+						
+						font-family: "Chronicle Display 3i",Georgia,Times,"Times New Roman",serif;
+						font-style: italic;
+						text-align: center;
+						font-size: 1.1rem;
+						
+						
+					}
+					
+					div.content {
+						
+						font-family: "Chronicle SSm 3r",Georgia,Times,"Times New Roman",serif;
+					    font-size: 1.1rem;
+					    line-height: 1.5em;
+
+						div.share-buttons {
+							
+						    float: none;
+						    text-align: center;
+						    margin: 3rem;		
+							
+						}
+
+					}
+					
+					div.featurepic {
+					
+						clear: both;
+						
+						img {
+							width: 100vh;
+							max-width: 100%;
+							height: auto;
+						}
+						
+					}
+					
+					div.subscribe {
+						
+						display: none;
+						
+					}
+					
+				}
+				
+		
+			}
+		
+			div#footer {
+				
+				width: 80rem;
+				max-width: 80%;
+				margin:0 auto;	
+				
+				div.featured_packages img {
+					
+					width:100%;
+					
+				}
+				
+				
+			}
+		
+		}
+			
+		div#global_footer {
+			
+			max-width: 80vw;
+			
+		}
+			
+	}
+
+}
+
+	

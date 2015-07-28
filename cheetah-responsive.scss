@@ -334,48 +334,58 @@ body.ngm {
 
 						div.video, div.photo {
 							
-							margin: 2rem auto;
+							margin: 3rem auto;
 							text-align: left;
 							
-							iframe {
+							iframe, video {
 								
 								width: 100%;
 								height: 100%;
-						
+								padding-bottom: 0.5rem;
+								
+							}
+							
+							> div {
+								
+								padding-bottom: 0.5rem;
+								
 							}
 							
 							img {
 							
 								width: 100%;
 								height: auto;
+								padding-bottom: 0.5rem;
 								
 							}
 							
 							.caption, .credit {
 								
-								font-size: 1.0rem;
-								padding: 0.5rem 1.0rem 0.5rem 0;
-								text-align: left;
 								display: inline-block;
+								font-family: pragmatica-web,"Helvetica Neue",Helvetica,Arial,"Nimbus Sans L",sans-serif;
+								font-size: 0.9rem;
+								padding: 0 0.5rem 0.5rem 0;
+								text-align: left;
 								
 							}
 							
 							.caption {
-								
-								font-family: "Chronicle SSm 3r",Georgia,Times,"Times New Roman",serif;
+								 
+								color: #000; 
 								
 							}
 							
 							.credit {
-								
-								font-family: "Chronicle Display 3i",Georgia,Times,"Times New Roman",serif;
-								font-style: italic;
+								 
+								 text-transform: uppercase;
+								 color: gray;
+								 font-size: 0.7rem; 
 								
 							}
 							
 							.caption > span.credit {
 								
-								margin-left: 1.0rem;
+								margin-left: 0.5rem;
 							
 							}
 						

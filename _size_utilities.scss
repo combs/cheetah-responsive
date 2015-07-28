@@ -1,55 +1,92 @@
 @import "_variables";
 
 .align-center { 
+	
 	margin-left: auto;
 	margin-right: auto;
+
 }	
 
 .align-left {
+
 	margin-left: 0; 
+
 }	
 
 .display-small {
+
  	 @include respond-to-width(medium) {
+
  		display: none;	 	
+
  	 } 	 
+
  	 @include respond-to-width(large) {
+
  		display: none;	 	
+
  	 }
+ 	 
 }
 
 .display-medium {
+
  	 @include respond-to-width(small) {
+
  		display: none;	 	
+
  	 }
+
  	 @include respond-to-width(large) {
+
  		display: none;	 	
+
  	 }
+
 }
 
 .display-large {
+
  	 @include respond-to-width(small) {
+
  		display: none;	 	
+
  	 }
+
  	 @include respond-to-width(medium) {
+
  		display: none;	 	
+
  	 } 	
+
 }
 
 .display-no-small {
+
  	 @include respond-to-width(small) {
+
  		display: none;	 	
+
  	 }
+
 }
 .display-no-medium {
+
  	 @include respond-to-width(medium) {
+
  		display: none;	 	
+
  	 } 	 
+
 }
 .display-no-large {
+
  	 @include respond-to-width(large) {
+
  		display: none;	 	
+
  	 }
+
 }
 
 

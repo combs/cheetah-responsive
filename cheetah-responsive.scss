@@ -247,7 +247,7 @@ body.ngm {
 					
 					}
 					
-					h2.title {
+					h1, h2.title {
 						
 						padding: 2rem 1rem;
 						font-size: 4rem;
@@ -255,6 +255,8 @@ body.ngm {
 						margin: 0 auto;
 						width: $max-text-width * 0.7;
 						max-width: 70%;
+						text-transform: normal;
+						font-weight: 400;
 						
 						@include respond-to-width(small) {
 							
@@ -266,7 +268,7 @@ body.ngm {
 						
 					}
 					
-					h3.title {
+					h2, h3.title {
 						
 						font-size: 1.4rem;
 						line-height: 1.4;
@@ -274,6 +276,8 @@ body.ngm {
 						margin: 0 auto;
 						width: $max-text-width * 0.6;
 						max-width: 60%;
+						text-transform: none;
+						font-weight: 400;
 						
 						@include respond-to-width(small) {
 							
@@ -283,6 +287,15 @@ body.ngm {
 						}
 						
 					}
+					
+					h3 {
+						
+						font-family: pragmatica-web,"Helvetica Neue",Helvetica,Arial,"Nimbus Sans L",sans-serif;
+						text-transform: uppercase;
+						font-weight: 700;
+						
+					}
+					
 					
 					div.article_credits_author, div.article_credits_photographer {
 						
@@ -308,6 +321,12 @@ body.ngm {
 							
 						}
 						
+						em, i {
+								
+							font-family: "Chronicle SSm 3i",Georgia,Times,"Times New Roman",serif;
+						
+						}
+						
 						.intro {
 						
 							text-transform: uppercase;
@@ -316,6 +335,12 @@ body.ngm {
 						    font-size: 0.9em;
 
 						}
+ 						
+ 						.bio {
+ 							
+ 							font-family: "Chronicle SSm 3i",Georgia,Times,"Times New Roman",serif;
+ 							
+ 						}
  						
 						> p, > div, > embed, > iframe {
 						

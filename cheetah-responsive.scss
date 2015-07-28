@@ -321,7 +321,7 @@ body.ngm {
 							
 						}
 
-						div.video {
+						div.video, div.photo {
 							
 							margin: 2rem auto;
 							
@@ -331,6 +331,36 @@ body.ngm {
 								height: 100%;
 						
 							}
+							
+							img {
+							
+								width: 100%;
+								height: auto;
+								
+							}
+							
+							.caption, .credit {
+								
+								font-size: 1.0rem;
+								padding: 0.5rem 1.0rem 0.5rem 0;
+								
+							}
+							
+							.caption {
+								
+								font-family: "Chronicle SSm 3r",Georgia,Times,"Times New Roman",serif;
+								display: inline;
+								
+							}
+							
+							.credit {
+								
+								font-family: "Chronicle Display 3i",Georgia,Times,"Times New Roman",serif;
+								font-style: italic;
+								display: inline;
+								
+							}
+							
 						
 						}
 						

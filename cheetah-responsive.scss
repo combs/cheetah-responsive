@@ -1,8 +1,9 @@
 @import "_baseline";
 @import "_respond_to_width";
+@import "_variables";
 @import "_size_utilities";
 
-$max-text-width: 60rem;
+$max-text-width: 50rem;
 
 
 @viewport {
@@ -222,7 +223,6 @@ body.ngm {
 				div.main_3narrow {
 
 					padding: 0;
-					max-width: $max-text-width;
 					margin: 0 auto;
 					
 					div.article_title {
@@ -248,18 +248,33 @@ body.ngm {
 					h2.title {
 						
 						padding: 2rem 1rem;
-						font-size: 3rem;
+						font-size: 4rem;
 						line-height: 1.09em;
+						margin: 0 auto;
+						width: $max-text-width * 0.7;
+						
+						@include respond-to-width(small) {
+							
+							font-size: 2.5rem;
+							width: $max-text-width * 0.8;
+							
+						}
 						
 					}
 					
 					h3.title {
 						
-						font-size: 1.5rem;
-						line-height: 1.09em;
+						font-size: 1.4rem;
+						line-height: 1.4;
 						padding: 1rem 1.5rem 2rem 1.5rem;
+						margin: 0 auto;
+						width: $max-text-width * 0.6;
 						
-						
+						@include respond-to-width(small) {
+							
+							width: $max-text-width * 0.8;
+							
+						}
 						
 					}
 					
@@ -277,13 +292,20 @@ body.ngm {
 						
 						font-family: "Chronicle SSm 3r",Georgia,Times,"Times New Roman",serif;
 					    font-size: 1.1rem;
-					    line-height: 1.5em;
-						padding: 1rem;
+					    line-height: 1.6;
+						/* padding: 1rem; */
+						padding: 0;
 						
 						@include respond-to-width(notsmall) {
 
-							padding: 2rem;
+						/*	padding: 2rem; */
 							
+						}
+						
+						> p, > div, > embed, > iframe {
+						
+							@extend .text-column-width;
+						
 						}
 						
 						div.share-buttons {
@@ -291,9 +313,23 @@ body.ngm {
 						    float: none;
 						    text-align: center;
 						    margin: 3rem;		
-						    display:block; 
+						    display: block; 
 							
 						}
+
+						div.video {
+							
+							margin: 2rem auto;
+							
+							iframe {
+								
+								width: 100%;
+								height: 100%;
+						
+							}
+						
+						}
+						
 
 					}
 					
@@ -302,11 +338,15 @@ body.ngm {
 						clear: both;
 						
 						img {
-							width: 100vh;
-							max-width: 100%;
+						/*	width: 100vh;
+							max-width: 100%; */
+							width: 100%;
+							
 							height: auto;
 						}
 						
+						@extend .text-column-width;
+					 
 					}
 					
 					div.subscribe {
@@ -329,7 +369,7 @@ body.ngm {
 				div.featured_packages img {
 					
 					width:100%;
-					
+					max-width: $max-text-width * 0.5;
 				}
 				
 				

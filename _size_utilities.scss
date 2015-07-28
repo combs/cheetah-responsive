@@ -1,3 +1,5 @@
+@import "_variables";
+
 .align-center { 
 	margin-left: auto;
 	margin-right: auto;
@@ -75,5 +77,48 @@
 			
 	}
 }
+
+.text-column-width {
+	
+    max-width: 90%;
+    width: $max-text-width;
+    
+    margin-left: auto;
+    margin-right: auto;
+	
+}
+
+
+
+.width-cinematic {
+
+	width: 100% !important; /* TODO fix this by using specific selectors. */
+	max-width: 100% !important; /* TODO fix this by using specific selectors. */
+	
+}
+
+.width-full {
+	
+	width: 90% !important ; /* TODO fix this by using specific selectors. */
+	max-width: 90% !important; /* TODO fix this by using specific selectors. */
+	
+}
+
+.width-text {
+	
+}
+
+.width-inset {
+	
+	max-width: 60% ;
+	
+}
+
+.width-locator {
+	
+	max-width: 15rem ;
+	
+}
+
 
 

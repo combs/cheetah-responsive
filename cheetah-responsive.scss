@@ -343,6 +343,7 @@ body.ngm {
 								
 								font-size: 1.0rem;
 								padding: 0.5rem 1.0rem 0.5rem 0;
+								text-align: left;
 								
 							}
 							
@@ -361,9 +362,13 @@ body.ngm {
 								
 							}
 							
+							.caption > span.credit {
+								
+								margin-left: 1.0rem;
+							
+							}
 						
 						}
-						
 
 					}
 					

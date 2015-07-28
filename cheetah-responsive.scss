@@ -148,7 +148,8 @@ body.ngm {
 			
 			div.narrow_side {
 			
-				/* width: 100%; */
+				display: none;
+			
 				float: none;
 				text-align: center;
 				width: inherit;
@@ -246,7 +247,7 @@ body.ngm {
 					
 					h2.title {
 						
-						padding: 2rem;
+						padding: 2rem 1rem;
 						font-size: 3rem;
 						line-height: 1.09em;
 						
@@ -256,7 +257,9 @@ body.ngm {
 						
 						font-size: 1.5rem;
 						line-height: 1.09em;
-						padding-bottom: 2rem;
+						padding: 1rem 1.5rem 2rem 1.5rem;
+						
+						
 						
 					}
 					

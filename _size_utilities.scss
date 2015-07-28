@@ -92,6 +92,8 @@
 
 .width-cinematic {
 
+	/* These are browser width values. */
+
 	width: 100% !important; /* TODO fix this by using specific selectors. */
 	max-width: 100% !important; /* TODO fix this by using specific selectors. */
 	
@@ -110,13 +112,14 @@
 
 .width-inset {
 	
-	max-width: 60% ;
+	max-width: 0.60*$max-text-width !important;
+	width: 0.60*$max-text-width !important;
 	
 }
 
 .width-locator {
 	
-	max-width: 15rem ;
+	max-width: 15rem !important;
 	
 }
 

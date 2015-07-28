@@ -252,11 +252,13 @@ body.ngm {
 						line-height: 1.09em;
 						margin: 0 auto;
 						width: $max-text-width * 0.7;
+						max-width: 70%;
 						
 						@include respond-to-width(small) {
 							
 							font-size: 2.5rem;
 							width: $max-text-width * 0.8;
+							max-width: 80%;
 							
 						}
 						
@@ -269,10 +271,12 @@ body.ngm {
 						padding: 1rem 1.5rem 2rem 1.5rem;
 						margin: 0 auto;
 						width: $max-text-width * 0.6;
+						max-width: 60%;
 						
 						@include respond-to-width(small) {
 							
 							width: $max-text-width * 0.8;
+							max-width: 80%;
 							
 						}
 						

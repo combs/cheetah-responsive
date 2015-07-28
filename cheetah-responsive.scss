@@ -3,20 +3,22 @@
 @import "_variables";
 @import "_size_utilities";
 
-$max-text-width: 50rem;
-
-
 @viewport {
+
 	 width: device-width;
 	 zoom: 1;
+
 }
 
 body {
- 	@include respond-to-width(small) { 
-/* TODO: is this really required? */
-			-webkit-text-size-adjust: 100%;
- 	}
 	
+ 	@include respond-to-width(small) { 
+
+		/* TODO: is this really required? */
+
+		-webkit-text-size-adjust: 100%;
+
+ 	}
 	
 }
 
@@ -288,7 +290,7 @@ body.ngm {
 						font-style: italic;
 						text-align: center;
 						font-size: 1.1rem;
-						
+						line-height: 1.4;
 						
 					}
 					
@@ -306,6 +308,15 @@ body.ngm {
 							
 						}
 						
+						.intro {
+						
+							text-transform: uppercase;
+						    font-weight: 700;
+						    font-family: pragmatica-web,"Helvetica Neue",Helvetica,Arial,"Nimbus Sans L",sans-serif;
+						    font-size: 0.9em;
+
+						}
+ 						
 						> p, > div, > embed, > iframe {
 						
 							@extend .internal-function-width-text;
@@ -324,6 +335,7 @@ body.ngm {
 						div.video, div.photo {
 							
 							margin: 2rem auto;
+							text-align: left;
 							
 							iframe {
 								

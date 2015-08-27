@@ -137,15 +137,16 @@ body.ngm {
 					padding: 0;
 					margin: 0 auto;
 					
-					a.bodylink {
+					a {
 
 						border-bottom:1px solid #ffcc00;
 
 					}
 
-					a.bodylink:hover {
+					a:hover {
 
-						color:#999; border-bottom:1px solid #999;
+						color:#999; 
+						border-bottom:1px solid #999;
 
 					}
 

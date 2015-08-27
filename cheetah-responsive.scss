@@ -38,7 +38,7 @@ body {
 		/* This corrects a strange amount of padding added to the top of the page. 
 		I believe this link was intended for WAP clients. -CC 20150827 */
 		
-		p.skip_navigation {
+		p#skip_navigation {
 		
 			display: none;
 			
@@ -383,6 +383,12 @@ body.ngm {
 						    text-align: left;
 						    display: block; 
 						    margin: 1rem auto;
+						    
+						    > div > a {
+						    
+						    	border: 0;
+						    
+						    }
 							
 						}
 

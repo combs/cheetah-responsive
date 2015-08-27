@@ -308,14 +308,13 @@ body.ngm {
  							
  						}
 
- 						.pullquote {
+ 						.quote {
 
- 							text-align:left;
- 							font-weight:600;
- 							font-family:$font-sans-serif;
- 							color:#808080;
- 							line-height:2.5em;
- 							width: $width-text-max * 1.2;
+ 							text-align: left;
+ 							font-weight: 600;
+ 							font-family: $font-sans-serif;
+ 							color: #808080;
+ 							line-height: 2.5em;
 							padding: 2rem 1rem;
 							font-size: 2rem;
 							line-height: 1.09em;
@@ -323,26 +322,25 @@ body.ngm {
 
  						}
 
- 						.editorsnote {
+ 						.editors-note {
 
- 							width:$width-text-max;
- 							border:1px solid #c9c9c9;
- 							color:#999;
- 							font-family:$font-sans-serif;
- 							font-size:.875rem;
- 							font-weight:400;
- 							line-height:1.4;
- 							margin:3rem;
- 							padding:1rem 1.25rem;
+ 							border: 1px solid #c9c9c9;
+ 							color: #999;
+ 							font-family: $font-sans-serif;
+ 							font-size: .875rem;
+ 							font-weight: 400;
+ 							line-height: 1.4;
+ 							margin: 3rem;
+ 							padding: 1rem 1.25rem;
 
  						}
 
  						hr {
 
- 							width:$width-text-max * 1.2;
- 							margin:3rem auto;
- 							padding:0;
- 							color:#c9c9c9;
+ 							width: $width-text-max * 1.2;
+ 							margin: 3rem auto;
+ 							padding: 0;
+ 							color: #c9c9c9;
 
  						}
  						
@@ -361,13 +359,14 @@ body.ngm {
 							
 						}
 
-						div.relatedcontent {
+						div.promo-content {
 							
 							margin: 3rem auto;
 							text-align: left;
 							font-family: $font-sans-serif;
 							color: #000;
-
+							max-width: 90%;
+							    
 							h5, h6 {
 							
 								margin: 3rem 0;
@@ -378,6 +377,7 @@ body.ngm {
 							h5 {
 								
 								width: $width-text-max;
+								max-width: 90%;
 								font-size: 1.75rem;
 								line-height: 1.15em;
 								font-weight: 600;
@@ -388,6 +388,7 @@ body.ngm {
 							h6 {
 								
 								width: $width-text-max;
+								max-width: 90%;
 								font-size: 0.875rem;
 								line-height: 1.15em;
 								color: #808080;

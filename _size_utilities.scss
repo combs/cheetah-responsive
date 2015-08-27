@@ -118,7 +118,7 @@
 .internal-function-width-text {
 	
     max-width: 90%;
-    width: $max-text-width;
+    width: $width-text-max;
     
     margin-left: auto;
     margin-right: auto;
@@ -149,7 +149,7 @@
 
 .width-inset {
 	
-	max-width: 0.60*$max-text-width !important;
+	max-width: 0.60*$width-text-max !important;
 	width: 80% !important;
 	
 }

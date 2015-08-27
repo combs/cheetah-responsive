@@ -154,12 +154,12 @@ body.ngm {
 					
 						color: black;
 						text-transform: uppercase;
-						font-family: $sans-serif;
+						font-family: $font-sans-serif;
 						font-size: .8em;
 						font-weight: 300;
 						margin: 3.5rem auto;
 						text-align: center;
-						width: $max-text-width;
+						width: $width-text-max;
 						max-width: 80%;
 						
 						span.published {
@@ -172,13 +172,13 @@ body.ngm {
 					
 					h2.title {
 					
-						font-family: $serif-display;
+						font-family: $font-serif-display;
 					
 					}
 
 					h3.title {
 					
-						font-family: $sans-serif;
+						font-family: $font-sans-serif;
 					
 					}
 					
@@ -188,7 +188,7 @@ body.ngm {
 						font-size: 4rem;
 						line-height: 1.09em;
 						margin: 0 auto;
-						width: $max-text-width;
+						width: $width-text-max;
 						max-width: 80%;
 						text-transform: normal;
 						font-weight: 400;
@@ -197,7 +197,7 @@ body.ngm {
 						@include respond-to-width(small) {
 							
 							font-size: 2.5rem;
-							width: $max-text-width;
+							width: $width-text-max;
 							max-width: 80%;
 							
 						}
@@ -210,7 +210,7 @@ body.ngm {
 						line-height: 1.4;
 						padding: 0;
 						margin: 0 auto;
-						width: $max-text-width;
+						width: $width-text-max;
 						max-width: 60%;
 						text-transform: none;
 						font-weight: 400;
@@ -218,7 +218,7 @@ body.ngm {
 						
 						@include respond-to-width(small) {
 							
-							width: $max-text-width;
+							width: $width-text-max;
 							max-width: 80%;
 							
 						}
@@ -227,8 +227,8 @@ body.ngm {
 					
 					h4 {
 						
-						font-family: $serif-display;
-						width: $max-text-width;
+						font-family: $font-serif-display;
+						width: $width-text-max;
 						font-size:2.25rem;
 						padding:0;
 						margin:1.5rem auto;
@@ -241,7 +241,7 @@ body.ngm {
 					
 					div.article_credits_author, div.article_credits_photographer {
 						
-						font-family: $serif-display-italic;
+						font-family: $font-serif-display-italic;
 						font-style: italic;
 						text-align: center;
 						font-size: 1.1rem;
@@ -251,7 +251,7 @@ body.ngm {
 					
 					div.content {
 						
-						font-family: $serif;
+						font-family: $font-serif;
 					    font-size: 1.1rem;
 					    line-height: 1.6;
 						/* padding: 1rem; */
@@ -267,13 +267,13 @@ body.ngm {
 						
 						em, i {
 								
-							font-family: $serif-italic;
+							font-family: $font-serif-italic;
 						
 						}
 
 						.author {
 
-							font-family: $serif-display-italic;
+							font-family: $font-serif-display-italic;
 							text-align: left;
 							font-size: 1.1rem;
 							line-height: 1.4;
@@ -283,7 +283,7 @@ body.ngm {
 
 						.published {
 
-							font-family: $sans-serif;
+							font-family: $font-sans-serif;
 							font-size: 12px; 
 							text-transform: uppercase; 
 							font-weight: 300; 
@@ -297,14 +297,14 @@ body.ngm {
 						
 							text-transform: uppercase;
 						    font-weight: 700;
-						    font-family: $sans-serif;
+						    font-family: $font-sans-serif;
 						    font-size: 0.9em;
 
 						}
  						
  						.bio {
  							
- 							font-family: $serif-italic;
+ 							font-family: $font-serif-italic;
  							
  						}
 
@@ -312,10 +312,10 @@ body.ngm {
 
  							text-align:left;
  							font-weight:600;
- 							font-family:$sans-serif;
+ 							font-family:$font-sans-serif;
  							color:#808080;
  							line-height:2.5em;
- 							width: $max-text-width * 1.2;
+ 							width: $width-text-max * 1.2;
 							padding: 2rem 1rem;
 							font-size: 2rem;
 							line-height: 1.09em;
@@ -325,10 +325,10 @@ body.ngm {
 
  						.editorsnote {
 
- 							width:$max-text-width;
+ 							width:$width-text-max;
  							border:1px solid #c9c9c9;
  							color:#999;
- 							font-family:$sans-serif;
+ 							font-family:$font-sans-serif;
  							font-size:.875rem;
  							font-weight:400;
  							line-height:1.4;
@@ -339,7 +339,7 @@ body.ngm {
 
  						hr {
 
- 							width:$max-text-width * 1.2;
+ 							width:$width-text-max * 1.2;
  							margin:3rem auto;
  							padding:0;
  							color:#c9c9c9;
@@ -365,7 +365,7 @@ body.ngm {
 							
 							margin: 3rem auto;
 							text-align: left;
-							font-family: $sans-serif;
+							font-family: $font-sans-serif;
 							color: #000;
 
 							h5, h6 {
@@ -377,7 +377,7 @@ body.ngm {
 
 							h5 {
 								
-								width: $max-text-width;
+								width: $width-text-max;
 								font-size: 1.75rem;
 								line-height: 1.15em;
 								font-weight: 600;
@@ -387,7 +387,7 @@ body.ngm {
 
 							h6 {
 								
-								width: $max-text-width;
+								width: $width-text-max;
 								font-size: 0.875rem;
 								line-height: 1.15em;
 								color: #808080;
@@ -425,7 +425,7 @@ body.ngm {
 							.caption, .credit, p {
 								
 								display: block;
-								font-family: $sans-serif;
+								font-family: $font-sans-serif;
 								font-size: 0.9rem;
 								padding: 0 0.5rem 0.5rem 0;
 								
@@ -470,7 +470,7 @@ body.ngm {
 							.caption, .credit {
 								
 								display: inline-block;
-								font-family: $sans-serif;
+								font-family: $font-sans-serif;
 								font-size: 0.9rem;
 								padding: 0 0.5rem 0.5rem 0;
 								text-align: left;

@@ -23,6 +23,9 @@ body {
 	div#tophat {
 	
 		line-height: initial;
+
+		/* We will refine the ad behavior once we hear back from Advertising. 
+		-CC 20150827 */
 			
 		div#header_ads {
 			
@@ -32,10 +35,22 @@ body {
 			
 		}
 		
+		/* This corrects a strange amount of padding added to the top of the page. 
+		I believe this link was intended for WAP clients. -CC 20150827 */
+		
 		p.skip_navigation {
 		
 			display: none;
 			
+		}
+		
+		/* This corrects a strange logo positioning bug in global nav on tablet/phone. 
+		Will see if there's a better fix elsewhere, or file a GN bug. -CC 20150827 */
+		
+		.gn_logo-container--inline {
+			
+			transform: translateX(-50%) translateY(50%);
+		
 		}
 		
 	}

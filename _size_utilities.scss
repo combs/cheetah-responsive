@@ -147,6 +147,14 @@
 	
 }
 
+.width-wider {
+
+	width: 1.2*$width-text-max !important;
+	max-width: 90%;
+	
+}
+	
+
 .width-inset {
 	
 	max-width: 0.60*$width-text-max !important;

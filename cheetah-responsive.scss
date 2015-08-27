@@ -364,74 +364,76 @@ body.ngm {
 							
 							margin: 3rem auto;
 							text-align: left;
+							font-family: pragmatica-web,"Helvetica Neue",Helvetica,Arial,"Nimbus Sans L",sans-serif;
+							color: #000;
+
+							h5, h6 {
 							
-							h5.relatedheader {
+								margin: 3rem 0;
 								
-								font-family: pragmatica-web,"Helvetica Neue",Helvetica,Arial,"Nimbus Sans L",sans-serif;
+							}
+							
+
+							h5 {
+								
 								width: $max-text-width;
-								font-size:1.75rem;
-								line-height:1.15em;
-								font-weight:600;
+								font-size: 1.75rem;
+								line-height: 1.15em;
+								font-weight: 600;
 								padding-bottom: 0.5rem;
-								margin:3rem 0;
 								
 							}
 
-							h6.relatedsubhead {
+							h6 {
 								
-								font-family: pragmatica-web,"Helvetica Neue",Helvetica,Arial,"Nimbus Sans L",sans-serif;
 								width: $max-text-width;
-								font-size:0.875rem;
-								line-height:1.15em;
-								color:#808080;
-								text-transform:uppercase;
-								font-weight:400;
-								margin:3rem 0;
+								font-size: 0.875rem;
+								line-height: 1.15em;
+								color: #808080;
+								text-transform: uppercase;
+								font-weight: 400;
 								
 							}
 
-							a.relatedtitle {
+							> a {
 
-								font-family: pragmatica-web,"Helvetica Neue",Helvetica,Arial,"Nimbus Sans L",sans-serif;
-								font-size:.875em;
-								line-height:1.5em;
-								color:#000;
-								margin-bottom:.25em;
-								border-bottom:1px solid #ffcc00;
-								font-weight:600;
+								line-height: 1.5em;								
+								margin-bottom: .25em;
+								border-bottom: 1px solid #ffcc00;
+								font-weight: 600;
 
 							}
 
-							a.relatedtitle:hover {
+							> a:hover {
 
-								color:#808080;
-								border-bottom:1px solid #808080;
+								color: #808080;
+								border-bottom: 1px solid #808080;
 
 							}
 							
-							img.relatedthumb {
+							img {
 							
 								width: 7.5rem;
 								height: auto;
-								float:left;
-								margin:0 1.25rem 1.25rem 0;
+								float: left;
+								margin: 0 1.25rem 1.25rem 0;
+								clear: left;
 								
 							}
 							
-							.relatedcaption, .relatedcredit {
+							.caption, .credit, p {
 								
 								display: block;
 								font-family: pragmatica-web,"Helvetica Neue",Helvetica,Arial,"Nimbus Sans L",sans-serif;
 								font-size: 0.9rem;
 								padding: 0 0.5rem 0.5rem 0;
-								text-align: left;
 								
 							}
 
-							hr.related {
+							hr {
 
-								width:100%;
-								margin:1.25rem auto 2.5rem;
+								width: 100%;
+								margin: 1.25rem auto 2.5rem;
 
 							}
 													

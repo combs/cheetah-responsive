@@ -1,8 +1,12 @@
 
 /* Defines design styles for an article. Can be customized per feature. */
 
-$serif: 'Minion W08', 'Minion Pro', Georgia, serif;
-$sans-serif: 'Neue Helvetica W01',Helvetica Neue, Helvetica, Arial, sans-serif;
+$font-serif: "Chronicle SSm 3r",Georgia,Times,"Times New Roman",serif;
+$font-serif-display: "Chronicle Display 3r",Georgia,Times,"Times New Roman",serif;
+$font-serif-display-italic: "Chronicle Display 3i",Georgia,Times,"Times New Roman",serif;
+$font-serif-italic: "Chronicle SSm 3i",Georgia,Times,"Times New Roman",serif;
+$font-sans-serif: pragmatica-web,"Helvetica Neue",Helvetica,Arial,"Nimbus Sans L",sans-serif;;
+
 $margin-media: 3rem;
 $margin-media-fallback: 48pt;
 $margin-caption: .7rem;
@@ -13,4 +17,5 @@ $color-text: #000;
 $color-text-dim: rgba(0,0,0,.7);
 $color-accent: #282e5c;
 
-$max-text-width: 45rem;
+$width-text-max: 45rem;
+

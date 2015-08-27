@@ -42,99 +42,9 @@ body.ngm {
 			}
 			
 			div.nav {
-				
-				@include respond-to-width(notlarge) {
-				
-					background: none;
-				
-				}
-				
-				div.subnav {
 
-					@include respond-to-width(small) {
-
-						font-weight: 700;
-					
-						ul {
-							
-							font-size: 0.0001rem;
-							
-							li {
+				display: none;
 								
-								font-size: 1rem;
-								line-height: 1.2rem;
-								
-								a {
-									
-									font-size: 1rem;
-									font-weight: 700;
-									
-								}
-								
-							}	
-							
-							li:after {
-									
-									content: "\2022";
-									font-size: 1rem;
-									color: #191919;
-									
-							}
-								
-							li:last-child:after {
-									
-									content: "";
-									
-							}
-								
-						}
-						
-					}
-					
-				}
-				
-				div#tabs {
-					
-					@include respond-to-width(small) {
-						
-					    font-weight: 700;
-					    line-height: 3;
-					    display: none;
-    
-					}
-					
-				}
-					
-				div#subhead {
-					
-					@include respond-to-width(small) {
-						
-						display: none;
-						
-					}
-					
-					div#current_issue {
-						
-						@include respond-to-width(notlarge) {
-							
-							display: none;
-							
-						}
-						
-					}
-					
-					form#hdr_search {
-						
-						@include respond-to-width(notlarge) {
-
-							display: none;
-							
-						}
-						
-					}
-					
-				}
-				
 			}
 			
 			div.narrow_side, div.narrow_sidert {
@@ -227,41 +137,56 @@ body.ngm {
 					padding: 0;
 					margin: 0 auto;
 					
+					a {
+
+						border-bottom:1px solid #ffcc00;
+
+					}
+
+					a:hover {
+
+						color:#999; 
+						border-bottom:1px solid #999;
+
+					}
+
 					div.article_title {
 					
-						text-align: center;	
+						color: black;
+						text-transform: uppercase;
+						font-family: $font-sans-serif;
+						font-size: .8em;
+						font-weight: 300;
+						margin: 3.5rem auto;
+						text-align: center;
+						width: $width-text-max;
+						max-width: 80%;
 						
 						span.published {
 							
-							float: none;
+							display: none;
 							
 						}
-						
-    					margin: 1rem 0 0 0;
-    
+						    
 					}
-					
-					h2.title, h3.title {
-					
-						font-family: "Chronicle Display 3r",Georgia,Times,"Times New Roman",serif;
-					
-					}
-					
+
 					h2.title {
 						
-						padding: 2rem 1rem;
+						font-family: $font-serif-display;
 						font-size: 4rem;
+						font-weight: 400;
 						line-height: 1.09em;
 						margin: 0 auto;
-						width: $max-text-width * 0.8;
 						max-width: 80%;
+						padding: 1rem 1rem 3rem;
+						text-align: center;
 						text-transform: normal;
-						font-weight: 400;
+						width: $width-text-max;
 						
 						@include respond-to-width(small) {
 							
 							font-size: 2.5rem;
-							width: $max-text-width * 0.8;
+							width: $width-text-max;
 							max-width: 80%;
 							
 						}
@@ -270,18 +195,20 @@ body.ngm {
 					
 					h3.title {
 						
-						font-size: 1.4rem;
-						line-height: 1.4;
-						padding: 1rem 1.5rem 2rem 1.5rem;
-						margin: 0 auto;
-						width: $max-text-width * 0.6;
-						max-width: 60%;
-						text-transform: none;
+						font-family: $font-sans-serif;
+						font-size: 1.2rem;
 						font-weight: 400;
+						line-height: 1.4;
+						margin: 0 auto;
+						max-width: 60%;
+						padding: 0;
+						text-align: center;
+						text-transform: none;
+						width: $width-text-max;
 						
 						@include respond-to-width(small) {
 							
-							width: $max-text-width * 0.8;
+							width: $width-text-max;
 							max-width: 80%;
 							
 						}
@@ -290,16 +217,21 @@ body.ngm {
 					
 					h4 {
 						
-						font-family: pragmatica-web,"Helvetica Neue",Helvetica,Arial,"Nimbus Sans L",sans-serif;
-						text-transform: uppercase;
-						font-weight: 700;
+						font-family: $font-serif-display;
+						width: $width-text-max;
+						font-size:2.25rem;
+						padding:0;
+						margin:1.5rem auto;
+						text-align:left;
+						font-weight:700;
+						color:#000;
 						
 					}
 					
 					
 					div.article_credits_author, div.article_credits_photographer {
 						
-						font-family: "Chronicle Display 3i",Georgia,Times,"Times New Roman",serif;
+						font-family: $font-serif-display-italic;
 						font-style: italic;
 						text-align: center;
 						font-size: 1.1rem;
@@ -309,7 +241,7 @@ body.ngm {
 					
 					div.content {
 						
-						font-family: "Chronicle SSm 3r",Georgia,Times,"Times New Roman",serif;
+						font-family: $font-serif;
 					    font-size: 1.1rem;
 					    line-height: 1.6;
 						/* padding: 1rem; */
@@ -325,23 +257,81 @@ body.ngm {
 						
 						em, i {
 								
-							font-family: "Chronicle SSm 3i",Georgia,Times,"Times New Roman",serif;
+							font-family: $font-serif-italic;
 						
+						}
+
+						.author {
+
+							font-family: $font-serif-display-italic;
+							text-align: left;
+							font-size: 1.1rem;
+							line-height: 1.4;
+							font-weight: 200;
+
+						}
+
+						.published {
+
+							font-family: $font-sans-serif;
+							font-size: 12px; 
+							text-transform: uppercase; 
+							font-weight: 300; 
+							color: #999; 
+							text-align: left;
+							padding: 0.5rem;
+
 						}
 						
 						.intro {
 						
 							text-transform: uppercase;
 						    font-weight: 700;
-						    font-family: pragmatica-web,"Helvetica Neue",Helvetica,Arial,"Nimbus Sans L",sans-serif;
+						    font-family: $font-sans-serif;
 						    font-size: 0.9em;
 
 						}
  						
  						.bio {
  							
- 							font-family: "Chronicle SSm 3i",Georgia,Times,"Times New Roman",serif;
+ 							font-family: $font-serif-italic;
  							
+ 						}
+
+ 						.quote {
+
+ 							text-align: left;
+ 							font-weight: 600;
+ 							font-family: $font-sans-serif;
+ 							color: #808080;
+ 							line-height: 2.5em;
+							padding: 2rem 1rem;
+							font-size: 2rem;
+							line-height: 1.09em;
+							margin: 0 auto;
+
+ 						}
+
+ 						.editors-note {
+
+ 							border: 1px solid #c9c9c9;
+ 							color: #999;
+ 							font-family: $font-sans-serif;
+ 							font-size: .875rem;
+ 							font-weight: 400;
+ 							line-height: 1.4;
+ 							margin: 3rem;
+ 							padding: 1rem 1.25rem;
+
+ 						}
+
+ 						hr {
+
+ 							width: $width-text-max * 1.2;
+ 							margin: 3rem auto;
+ 							padding: 0;
+ 							color: #c9c9c9;
+
  						}
  						
 						> p, > div, > embed, > iframe {
@@ -353,10 +343,92 @@ body.ngm {
 						div.share-buttons {
 							
 						    float: none;
-						    text-align: center;
+						    text-align: left;
 						    display: block; 
 						    margin: 1rem auto;
 							
+						}
+
+						div.promo-content {
+							
+							margin: 3rem auto;
+							text-align: left;
+							font-family: $font-sans-serif;
+							color: #000;
+							max-width: 90%;
+							    
+							h5, h6 {
+							
+								margin: 3rem 0;
+								
+							}
+							
+
+							h5 {
+								
+								width: $width-text-max;
+								max-width: 90%;
+								font-size: 1.75rem;
+								line-height: 1.15em;
+								font-weight: 600;
+								padding-bottom: 0.5rem;
+								
+							}
+
+							h6 {
+								
+								width: $width-text-max;
+								max-width: 90%;
+								font-size: 0.875rem;
+								line-height: 1.15em;
+								color: #808080;
+								text-transform: uppercase;
+								font-weight: 400;
+								
+							}
+
+							> a {
+
+								line-height: 1.5em;								
+								margin-bottom: .25em;
+								border-bottom: 1px solid #ffcc00;
+								font-weight: 600;
+
+							}
+
+							> a:hover {
+
+								color: #808080;
+								border-bottom: 1px solid #808080;
+
+							}
+							
+							img {
+							
+								width: 7.5rem;
+								height: auto;
+								float: left;
+								margin: 0 1.25rem 1.25rem 0;
+								clear: left;
+								
+							}
+							
+							.caption, .credit, p {
+								
+								display: block;
+								font-family: $font-sans-serif;
+								font-size: 0.9rem;
+								padding: 0 0.5rem 0.5rem 0;
+								
+							}
+
+							hr {
+
+								width: 100%;
+								margin: 1.25rem auto 2.5rem;
+
+							}
+													
 						}
 
 						div.video, div.photo {
@@ -389,7 +461,7 @@ body.ngm {
 							.caption, .credit {
 								
 								display: inline-block;
-								font-family: pragmatica-web,"Helvetica Neue",Helvetica,Arial,"Nimbus Sans L",sans-serif;
+								font-family: $font-sans-serif;
 								font-size: 0.9rem;
 								padding: 0 0.5rem 0.5rem 0;
 								text-align: left;
@@ -423,17 +495,23 @@ body.ngm {
 					div.featurepic {
 					
 						clear: both;
+						border: 0 none;
 						
 						img {
 						/*	width: 100vh;
 							max-width: 100%; */
 							width: 100%;
-							
 							height: auto;
 						}
 						
 						@extend .internal-function-width-text;
 					 
+					}
+
+					div.nextpage_continue {
+
+						display:none;
+
 					}
 					
 					div.subscribe {
@@ -448,17 +526,8 @@ body.ngm {
 			}
 		
 			div#footer {
-				
-				width: $max-text-width;
-				max-width: 80%;
-				margin:0 auto;	
-				
-				div.featured_packages img {
-					
-					width:100%;
-					max-width: $max-text-width * 0.5;
-				}
-				
+
+				display: none;				
 				
 			}
 		

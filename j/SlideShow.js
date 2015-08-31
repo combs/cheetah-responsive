@@ -105,14 +105,14 @@ SlideShow.prototype.setKeyPress = function(){
     var self = this;
     //document.onkeydown = function(evt){
     var el = this.myParent;
-        console.log("setKeyPress");
+    //   console.log("setKeyPress");
     // Need this (focus on el) for the modal slideShows
     //el.onkeydown = function(evt){  
     window.onkeydown = function(evt){  
-        console.log("onkeydown");
+    //    console.log("onkeydown");
         //if(!navigator.userAgent.indexOf('MSIE') > -1){
                 $(el).focus();
-                console.log("EL - FOCUS");
+          //      console.log("EL - FOCUS");
             //}
 		switch(evt.keyCode){
             case 37:  // left
@@ -558,13 +558,13 @@ Slide.prototype.setSwipeSlide = function(_slideHolder){
         }
         switch(evt.type){
             case "swipeleft":
-                console.log("swipeleft");
+                // console.log("swipeleft");
                 slideShow.nextSlide(slideShow);
                 wasSwiped = true;
                 break;
             //case "dragright":
             case "swiperight":
-                console.log("swiperight");
+                // console.log("swiperight");
                 slideShow.prevSlide(slideShow);
                 wasSwiped = true;
                 break;

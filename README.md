@@ -50,19 +50,30 @@ We can include galleries using Joel Fiser's SlideShow.js (used in ISP projects).
 
 		<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
 
-* Also include these extra script tags (will be trimmed/concatenated soon):
+* Also include these extra tags (will be trimmed/concatenated soon):
 
-  
 		<script src="/dev/supercheetah/j/TweenLite.min.js"></script>
 		<script src="/dev/supercheetah/j/CSSPlugin.min.js"></script>
-		<script src="/dev/supercheetah/j/EasePack.min.js"></script> 
-		<script src="/dev/supercheetah/j/SlideShow.min.js"></script>
+		<script src="/dev/supercheetah/j/EasePack.min.js"></script>
 		<script src="/dev/supercheetah/j/hammer.min.js"></script>    
-		<script src="/dev/supercheetah/j/jquery.focuspoint.min.js"></script>    
-		<script src="/dev/supercheetah/j/jquery.dfp.js"></script>    
-		<script src="/dev/supercheetah/j/jquery.visible.min.js"></script>  
+		<script>
+		function buildGalleries() {
+			var slideShow1 = new SlideShow("slideShow1Div", "/dev/supercheetah/i/examples/masks.json");
+		}
+		function defer() {
+		    if (window.jQuery) {
+        		window.jQuery.getScript("/dev/supercheetah/j/jquery.focuspoint.min.js");
+				window.jQuery.getScript("/dev/supercheetah/j/jquery.dfp.min.js");
+				window.jQuery.getScript("/dev/supercheetah/j/SlideShow.min.js",buildGalleries);
+			    
+			} else {
+		        setTimeout(defer, 50);
+			}
+		}
+		defer();
+		</script>
 		<script src="/dev/supercheetah/j/Draggable.min.js"></script>    
-		<script src="/dev/supercheetah/j/blockadblock.min.js"></script>  
+		<script src="/dev/supercheetah/j/blockadblock.min.js"></script>    
 		<link rel="stylesheet" href="/dev/supercheetah/c/inlineSlideShow.min.css" type="text/css" media="screen" />
 
 

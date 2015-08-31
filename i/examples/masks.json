@@ -1,0 +1,400 @@
+{
+    "swipeType":"fade",
+    "numImagesToLoadAtStart":"5",
+    "captionBarOffset_h":"120",
+    "displayMethod": "cinematic",
+	"leftArrowUrl":"/dev/supercheetah/i/examples/masks/img/arrows/arrow_gray_left.png",
+	"rightArrowUrl":"/dev/supercheetah/i/examples/masks/img/arrows/arrow_gray_right.png",
+    "showCloseBtn":"false",
+	"moveArrowsOnResize":"false",
+	"keepCaptionUnderImage": "false",
+	"stackImageArrowsText": "900", 
+	"imageArr":
+	[
+		{
+			"imageUrl_2048": "/dev/supercheetah/i/examples/masks/img/masks_688/healing-masks1.jpg",
+            "imageUrl_1536": "/dev/supercheetah/i/examples/masks/img/masks_688/healing-masks1.jpg",
+			"imageUrl_640": "/dev/supercheetah/i/examples/masks/img/masks_480/healing-masks1.jpg",
+			"alt": "Picture of a soldier&#x2019; mask",
+			"caption": "caption TK",
+			"crop": "keep-centered-crop-btm"
+		},
+		{
+			"imageUrl_2048": "/dev/supercheetah/i/examples/masks/img/masks_688/healing-masks2.jpg",
+            "imageUrl_1536": "/dev/supercheetah/i/examples/masks/img/masks_688/healing-masks2.jpg",
+			"imageUrl_640": "/dev/supercheetah/i/examples/masks/img/masks_480/healing-masks2.jpg",
+			"alt": "Picture of a soldier&#x2019; mask",
+			"caption": "ALL MASKS PHOTOGRAPHED BY REBECCA HALE, NGM STAFF.",
+			"crop": "keep-centered-crop-btm"
+		},
+        {
+			"imageUrl_2048": "/dev/supercheetah/i/examples/masks/img/masks_688/healing-masks3.jpg",
+            "imageUrl_1536": "/dev/supercheetah/i/examples/masks/img/masks_688/healing-masks3.jpg",
+			"imageUrl_640": "/dev/supercheetah/i/examples/masks/img/masks_480/healing-masks3.jpg",
+			"alt": "Picture of a soldier&#x2019; mask",
+			"caption": "caption TK",
+			"crop": "keep-centered-crop-btm"
+		},
+        {
+			"imageUrl_2048": "/dev/supercheetah/i/examples/masks/img/masks_688/healing-masks4.jpg",
+            "imageUrl_1536": "/dev/supercheetah/i/examples/masks/img/masks_688/healing-masks4.jpg",
+			"imageUrl_640": "/dev/supercheetah/i/examples/masks/img/masks_480/healing-masks4.jpg",
+			"alt": "Picture of a soldier&#x2019; mask",
+			"caption": "caption TK",
+			"crop": "keep-centered-crop-btm"
+		},
+        {
+			"imageUrl_2048": "/dev/supercheetah/i/examples/masks/img/masks_688/healing-masks5.jpg",
+            "imageUrl_1536": "/dev/supercheetah/i/examples/masks/img/masks_688/healing-masks5.jpg",
+			"imageUrl_640": "/dev/supercheetah/i/examples/masks/img/masks_480/healing-masks5.jpg",
+			"alt": "Picture of a soldier&#x2019; mask",
+			"caption": "caption TK",
+			"crop": "keep-centered-crop-btm"
+		},
+        {
+			"imageUrl_2048": "/dev/supercheetah/i/examples/masks/img/masks_688/healing-masks6.jpg",
+            "imageUrl_1536": "/dev/supercheetah/i/examples/masks/img/masks_688/healing-masks6.jpg",
+			"imageUrl_640": "/dev/supercheetah/i/examples/masks/img/masks_480/healing-masks6.jpg",
+			"alt": "Picture of a soldier&#x2019; mask",
+			"caption": "caption TK",
+			"crop": "keep-centered-crop-btm"
+		},
+        {
+			"imageUrl_2048": "/dev/supercheetah/i/examples/masks/img/masks_688/healing-masks7.jpg",
+            "imageUrl_1536": "/dev/supercheetah/i/examples/masks/img/masks_688/healing-masks7.jpg",
+			"imageUrl_640": "/dev/supercheetah/i/examples/masks/img/masks_480/healing-masks7.jpg",
+			"alt": "Picture of a soldier&#x2019; mask",
+			"caption": "caption TK",
+			"crop": "keep-centered-crop-btm"
+		},
+        {
+			"imageUrl_2048": "/dev/supercheetah/i/examples/masks/img/masks_688/healing-masks8.jpg",
+            "imageUrl_1536": "/dev/supercheetah/i/examples/masks/img/masks_688/healing-masks8.jpg",
+			"imageUrl_640": "/dev/supercheetah/i/examples/masks/img/masks_480/healing-masks8.jpg",
+			"alt": "Picture of a soldier&#x2019; mask",
+			"caption": "caption TK",
+			"crop": "keep-centered-crop-btm"
+		},
+		{
+			"imageUrl_2048": "/dev/supercheetah/i/examples/masks/img/masks_688/healing-masks9.jpg",
+            "imageUrl_1536": "/dev/supercheetah/i/examples/masks/img/masks_688/healing-masks9.jpg",
+			"imageUrl_640": "/dev/supercheetah/i/examples/masks/img/masks_480/healing-masks9.jpg",
+			"alt": "Picture of a soldier&#x2019; mask",
+			"caption": "caption TK",
+			"crop": "keep-centered-crop-btm"
+		},
+        {
+			"imageUrl_2048": "/dev/supercheetah/i/examples/masks/img/masks_688/healing-masks10.jpg",
+            "imageUrl_1536": "/dev/supercheetah/i/examples/masks/img/masks_688/healing-masks10.jpg",
+			"imageUrl_640": "/dev/supercheetah/i/examples/masks/img/masks_480/healing-masks10.jpg",
+			"alt": "Picture of a soldier&#x2019; mask",
+			"caption": "caption TK",
+			"crop": "keep-centered-crop-btm"
+		},
+        {
+			"imageUrl_2048": "/dev/supercheetah/i/examples/masks/img/masks_688/healing-masks11.jpg",
+            "imageUrl_1536": "/dev/supercheetah/i/examples/masks/img/masks_688/healing-masks11.jpg",
+			"imageUrl_640": "/dev/supercheetah/i/examples/masks/img/masks_480/healing-masks11.jpg",
+			"alt": "Picture of a soldier&#x2019; mask",
+			"caption": "caption TK",
+			"crop": "keep-centered-crop-btm"
+		},
+		{
+			"imageUrl_2048": "/dev/supercheetah/i/examples/masks/img/masks_688/healing-masks12.jpg",
+            "imageUrl_1536": "/dev/supercheetah/i/examples/masks/img/masks_688/healing-masks12.jpg",
+			"imageUrl_640": "/dev/supercheetah/i/examples/masks/img/masks_480/healing-masks12.jpg",
+			"alt": "Picture of a soldier&#x2019; mask",
+			"caption": "caption TK",
+			"crop": "keep-centered-crop-btm"
+		},
+        {
+			"imageUrl_2048": "/dev/supercheetah/i/examples/masks/img/masks_688/healing-masks13.jpg",
+            "imageUrl_1536": "/dev/supercheetah/i/examples/masks/img/masks_688/healing-masks13.jpg",
+			"imageUrl_640": "/dev/supercheetah/i/examples/masks/img/masks_480/healing-masks13.jpg",
+			"alt": "Picture of a soldier&#x2019; mask",
+			"caption": "caption TK",
+			"crop": "keep-centered-crop-btm"
+		},
+        {
+			"imageUrl_2048": "/dev/supercheetah/i/examples/masks/img/masks_688/healing-masks14.jpg",
+            "imageUrl_1536": "/dev/supercheetah/i/examples/masks/img/masks_688/healing-masks14.jpg",
+			"imageUrl_640": "/dev/supercheetah/i/examples/masks/img/masks_480/healing-masks14.jpg",
+			"alt": "Picture of a soldier&#x2019; mask",
+			"caption": "caption TK",
+			"crop": "keep-centered-crop-btm"
+		},
+        {
+			"imageUrl_2048": "/dev/supercheetah/i/examples/masks/img/masks_688/healing-masks15.jpg",
+            "imageUrl_1536": "/dev/supercheetah/i/examples/masks/img/masks_688/healing-masks15.jpg",
+			"imageUrl_640": "/dev/supercheetah/i/examples/masks/img/masks_480/healing-masks15.jpg",
+			"alt": "Picture of a soldier&#x2019; mask",
+			"caption": "caption TK",
+			"crop": "keep-centered-crop-btm"
+		},
+        {
+			"imageUrl_2048": "/dev/supercheetah/i/examples/masks/img/masks_688/healing-masks16.jpg",
+            "imageUrl_1536": "/dev/supercheetah/i/examples/masks/img/masks_688/healing-masks16.jpg",
+			"imageUrl_640": "/dev/supercheetah/i/examples/masks/img/masks_480/healing-masks16.jpg",
+			"alt": "Picture of a soldier&#x2019; mask",
+			"caption": "caption TK",
+			"crop": "keep-centered-crop-btm"
+		},
+        {
+			"imageUrl_2048": "/dev/supercheetah/i/examples/masks/img/masks_688/healing-masks17.jpg",
+            "imageUrl_1536": "/dev/supercheetah/i/examples/masks/img/masks_688/healing-masks17.jpg",
+			"imageUrl_640": "/dev/supercheetah/i/examples/masks/img/masks_480/healing-masks17.jpg",
+			"alt": "Picture of a soldier&#x2019; mask",
+			"caption": "caption TK",
+			"crop": "keep-centered-crop-btm"
+		},
+        {
+			"imageUrl_2048": "/dev/supercheetah/i/examples/masks/img/masks_688/healing-masks18.jpg",
+            "imageUrl_1536": "/dev/supercheetah/i/examples/masks/img/masks_688/healing-masks18.jpg",
+			"imageUrl_640": "/dev/supercheetah/i/examples/masks/img/masks_480/healing-masks18.jpg",
+			"alt": "Picture of a soldier&#x2019; mask",
+			"caption": "caption TK",
+			"crop": "keep-centered-crop-btm"
+		},
+		{
+			"imageUrl_2048": "/dev/supercheetah/i/examples/masks/img/masks_688/healing-masks19.jpg",
+            "imageUrl_1536": "/dev/supercheetah/i/examples/masks/img/masks_688/healing-masks19.jpg",
+			"imageUrl_640": "/dev/supercheetah/i/examples/masks/img/masks_480/healing-masks19.jpg",
+			"alt": "Picture of a soldier&#x2019; mask",
+			"caption": "caption TK",
+			"crop": "keep-centered-crop-btm"
+		},
+        {
+			"imageUrl_2048": "/dev/supercheetah/i/examples/masks/img/masks_688/healing-masks20.jpg",
+            "imageUrl_1536": "/dev/supercheetah/i/examples/masks/img/masks_688/healing-masks20.jpg",
+			"imageUrl_640": "/dev/supercheetah/i/examples/masks/img/masks_480/healing-masks20.jpg",
+			"alt": "Picture of a soldier&#x2019; mask",
+			"caption": "caption TK",
+			"crop": "keep-centered-crop-btm"
+		},
+        {
+			"imageUrl_2048": "/dev/supercheetah/i/examples/masks/img/masks_688/healing-masks21.jpg",
+            "imageUrl_1536": "/dev/supercheetah/i/examples/masks/img/masks_688/healing-masks21.jpg",
+			"imageUrl_640": "/dev/supercheetah/i/examples/masks/img/masks_480/healing-masks21.jpg",
+			"alt": "Picture of a soldier&#x2019; mask",
+			"caption": "caption TK",
+			"crop": "keep-centered-crop-btm"
+		},
+		{
+			"imageUrl_2048": "/dev/supercheetah/i/examples/masks/img/masks_688/healing-masks22.jpg",
+            "imageUrl_1536": "/dev/supercheetah/i/examples/masks/img/masks_688/healing-masks22.jpg",
+			"imageUrl_640": "/dev/supercheetah/i/examples/masks/img/masks_480/healing-masks22.jpg",
+			"alt": "Picture of a soldier&#x2019; mask",
+			"caption": "caption TK",
+			"crop": "keep-centered-crop-btm"
+		},
+        {
+			"imageUrl_2048": "/dev/supercheetah/i/examples/masks/img/masks_688/healing-masks23.jpg",
+            "imageUrl_1536": "/dev/supercheetah/i/examples/masks/img/masks_688/healing-masks23.jpg",
+			"imageUrl_640": "/dev/supercheetah/i/examples/masks/img/masks_480/healing-masks23.jpg",
+			"alt": "Picture of a soldier&#x2019; mask",
+			"caption": "caption TK",
+			"crop": "keep-centered-crop-btm"
+		},
+        {
+			"imageUrl_2048": "/dev/supercheetah/i/examples/masks/img/masks_688/healing-masks24.jpg",
+            "imageUrl_1536": "/dev/supercheetah/i/examples/masks/img/masks_688/healing-masks24.jpg",
+			"imageUrl_640": "/dev/supercheetah/i/examples/masks/img/masks_480/healing-masks24.jpg",
+			"alt": "Picture of a soldier&#x2019; mask",
+			"caption": "caption TK",
+			"crop": "keep-centered-crop-btm"
+		},
+        {
+			"imageUrl_2048": "/dev/supercheetah/i/examples/masks/img/masks_688/healing-masks25.jpg",
+            "imageUrl_1536": "/dev/supercheetah/i/examples/masks/img/masks_688/healing-masks25.jpg",
+			"imageUrl_640": "/dev/supercheetah/i/examples/masks/img/masks_480/healing-masks25.jpg",
+			"alt": "Picture of a soldier&#x2019; mask",
+			"caption": "caption TK",
+			"crop": "keep-centered-crop-btm"
+		},
+        {
+			"imageUrl_2048": "/dev/supercheetah/i/examples/masks/img/masks_688/healing-masks26.jpg",
+            "imageUrl_1536": "/dev/supercheetah/i/examples/masks/img/masks_688/healing-masks26.jpg",
+			"imageUrl_640": "/dev/supercheetah/i/examples/masks/img/masks_480/healing-masks26.jpg",
+			"alt": "Picture of a soldier&#x2019; mask",
+			"caption": "caption TK",
+			"crop": "keep-centered-crop-btm"
+		},
+        {
+			"imageUrl_2048": "/dev/supercheetah/i/examples/masks/img/masks_688/healing-masks27.jpg",
+            "imageUrl_1536": "/dev/supercheetah/i/examples/masks/img/masks_688/healing-masks27.jpg",
+			"imageUrl_640": "/dev/supercheetah/i/examples/masks/img/masks_480/healing-masks27.jpg",
+			"alt": "Picture of a soldier&#x2019; mask",
+			"caption": "caption TK",
+			"crop": "keep-centered-crop-btm"
+		},
+        {
+			"imageUrl_2048": "/dev/supercheetah/i/examples/masks/img/masks_688/healing-masks28.jpg",
+            "imageUrl_1536": "/dev/supercheetah/i/examples/masks/img/masks_688/healing-masks28.jpg",
+			"imageUrl_640": "/dev/supercheetah/i/examples/masks/img/masks_480/healing-masks28.jpg",
+			"alt": "Picture of a soldier&#x2019; mask",
+			"caption": "caption TK",
+			"crop": "keep-centered-crop-btm"
+		},
+		{
+			"imageUrl_2048": "/dev/supercheetah/i/examples/masks/img/masks_688/healing-masks29.jpg",
+            "imageUrl_1536": "/dev/supercheetah/i/examples/masks/img/masks_688/healing-masks29.jpg",
+			"imageUrl_640": "/dev/supercheetah/i/examples/masks/img/masks_480/healing-masks29.jpg",
+			"alt": "Picture of a soldier&#x2019; mask",
+			"caption": "caption TK",
+			"crop": "keep-centered-crop-btm"
+		},
+        {
+			"imageUrl_2048": "/dev/supercheetah/i/examples/masks/img/masks_688/healing-masks30.jpg",
+            "imageUrl_1536": "/dev/supercheetah/i/examples/masks/img/masks_688/healing-masks30.jpg",
+			"imageUrl_640": "/dev/supercheetah/i/examples/masks/img/masks_480/healing-masks30.jpg",
+			"alt": "Picture of a soldier&#x2019; mask",
+			"caption": "caption TK",
+			"crop": "keep-centered-crop-btm"
+		},
+        {
+			"imageUrl_2048": "/dev/supercheetah/i/examples/masks/img/masks_688/healing-masks31.jpg",
+            "imageUrl_1536": "/dev/supercheetah/i/examples/masks/img/masks_688/healing-masks31.jpg",
+			"imageUrl_640": "/dev/supercheetah/i/examples/masks/img/masks_480/healing-masks31.jpg",
+			"alt": "Picture of a soldier&#x2019; mask",
+			"caption": "caption TK",
+			"crop": "keep-centered-crop-btm"
+		},
+		{
+			"imageUrl_2048": "/dev/supercheetah/i/examples/masks/img/masks_688/healing-masks32.jpg",
+            "imageUrl_1536": "/dev/supercheetah/i/examples/masks/img/masks_688/healing-masks32.jpg",
+			"imageUrl_640": "/dev/supercheetah/i/examples/masks/img/masks_480/healing-masks32.jpg",
+			"alt": "Picture of a soldier&#x2019; mask",
+			"caption": "caption TK",
+			"crop": "keep-centered-crop-btm"
+		},
+        {
+			"imageUrl_2048": "/dev/supercheetah/i/examples/masks/img/masks_688/healing-masks33.jpg",
+            "imageUrl_1536": "/dev/supercheetah/i/examples/masks/img/masks_688/healing-masks33.jpg",
+			"imageUrl_640": "/dev/supercheetah/i/examples/masks/img/masks_480/healing-masks33.jpg",
+			"alt": "Picture of a soldier&#x2019; mask",
+			"caption": "caption TK",
+			"crop": "keep-centered-crop-btm"
+		},
+        {
+			"imageUrl_2048": "/dev/supercheetah/i/examples/masks/img/masks_688/healing-masks34.jpg",
+            "imageUrl_1536": "/dev/supercheetah/i/examples/masks/img/masks_688/healing-masks34.jpg",
+			"imageUrl_640": "/dev/supercheetah/i/examples/masks/img/masks_480/healing-masks34.jpg",
+			"alt": "Picture of a soldier&#x2019; mask",
+			"caption": "caption TK",
+			"crop": "keep-centered-crop-btm"
+		},
+        {
+			"imageUrl_2048": "/dev/supercheetah/i/examples/masks/img/masks_688/healing-masks35.jpg",
+            "imageUrl_1536": "/dev/supercheetah/i/examples/masks/img/masks_688/healing-masks35.jpg",
+			"imageUrl_640": "/dev/supercheetah/i/examples/masks/img/masks_480/healing-masks35.jpg",
+			"alt": "Picture of a soldier&#x2019; mask",
+			"caption": "caption TK",
+			"crop": "keep-centered-crop-btm"
+		},
+        {
+			"imageUrl_2048": "/dev/supercheetah/i/examples/masks/img/masks_688/healing-masks36.jpg",
+            "imageUrl_1536": "/dev/supercheetah/i/examples/masks/img/masks_688/healing-masks36.jpg",
+			"imageUrl_640": "/dev/supercheetah/i/examples/masks/img/masks_480/healing-masks36.jpg",
+			"alt": "Picture of a soldier&#x2019; mask",
+			"caption": "caption TK",
+			"crop": "keep-centered-crop-btm"
+		},
+        {
+			"imageUrl_2048": "/dev/supercheetah/i/examples/masks/img/masks_688/healing-masks37.jpg",
+            "imageUrl_1536": "/dev/supercheetah/i/examples/masks/img/masks_688/healing-masks37.jpg",
+			"imageUrl_640": "/dev/supercheetah/i/examples/masks/img/masks_480/healing-masks37.jpg",
+			"alt": "Picture of a soldier&#x2019; mask",
+			"caption": "caption TK",
+			"crop": "keep-centered-crop-btm"
+		},
+        {
+			"imageUrl_2048": "/dev/supercheetah/i/examples/masks/img/masks_688/healing-masks38.jpg",
+            "imageUrl_1536": "/dev/supercheetah/i/examples/masks/img/masks_688/healing-masks38.jpg",
+			"imageUrl_640": "/dev/supercheetah/i/examples/masks/img/masks_480/healing-masks38.jpg",
+			"alt": "Picture of a soldier&#x2019; mask",
+			"caption": "caption TK",
+			"crop": "keep-centered-crop-btm"
+		},
+		{
+			"imageUrl_2048": "/dev/supercheetah/i/examples/masks/img/masks_688/healing-masks39.jpg",
+            "imageUrl_1536": "/dev/supercheetah/i/examples/masks/img/masks_688/healing-masks39.jpg",
+			"imageUrl_640": "/dev/supercheetah/i/examples/masks/img/masks_480/healing-masks39.jpg",
+			"alt": "Picture of a soldier&#x2019; mask",
+			"caption": "caption TK",
+			"crop": "keep-centered-crop-btm"
+		},
+        {
+			"imageUrl_2048": "/dev/supercheetah/i/examples/masks/img/masks_688/healing-masks40.jpg",
+            "imageUrl_1536": "/dev/supercheetah/i/examples/masks/img/masks_688/healing-masks40.jpg",
+			"imageUrl_640": "/dev/supercheetah/i/examples/masks/img/masks_480/healing-masks40.jpg",
+			"alt": "Picture of a soldier&#x2019; mask",
+			"caption": "caption TK",
+			"crop": "keep-centered-crop-btm"
+		},
+        {
+			"imageUrl_2048": "/dev/supercheetah/i/examples/masks/img/masks_688/healing-masks41.jpg",
+            "imageUrl_1536": "/dev/supercheetah/i/examples/masks/img/masks_688/healing-masks41.jpg",
+			"imageUrl_640": "/dev/supercheetah/i/examples/masks/img/masks_480/healing-masks41.jpg",
+			"alt": "Picture of a soldier&#x2019; mask",
+			"caption": "caption TK",
+			"crop": "keep-centered-crop-btm"
+		},
+		{
+			"imageUrl_2048": "/dev/supercheetah/i/examples/masks/img/masks_688/healing-masks42.jpg",
+            "imageUrl_1536": "/dev/supercheetah/i/examples/masks/img/masks_688/healing-masks42.jpg",
+			"imageUrl_640": "/dev/supercheetah/i/examples/masks/img/masks_480/healing-masks42.jpg",
+			"alt": "Picture of a soldier&#x2019; mask",
+			"caption": "caption TK",
+			"crop": "keep-centered-crop-btm"
+		},
+        {
+			"imageUrl_2048": "/dev/supercheetah/i/examples/masks/img/masks_688/healing-masks43.jpg",
+            "imageUrl_1536": "/dev/supercheetah/i/examples/masks/img/masks_688/healing-masks43.jpg",
+			"imageUrl_640": "/dev/supercheetah/i/examples/masks/img/masks_480/healing-masks43.jpg",
+			"alt": "Picture of a soldier&#x2019; mask",
+			"caption": "caption TK",
+			"crop": "keep-centered-crop-btm"
+		},
+        {
+			"imageUrl_2048": "/dev/supercheetah/i/examples/masks/img/masks_688/healing-masks44.jpg",
+            "imageUrl_1536": "/dev/supercheetah/i/examples/masks/img/masks_688/healing-masks44.jpg",
+			"imageUrl_640": "/dev/supercheetah/i/examples/masks/img/masks_480/healing-masks44.jpg",
+			"alt": "Picture of a soldier&#x2019; mask",
+			"caption": "caption TK",
+			"crop": "keep-centered-crop-btm"
+		},
+        {
+			"imageUrl_2048": "/dev/supercheetah/i/examples/masks/img/masks_688/healing-masks45.jpg",
+            "imageUrl_1536": "/dev/supercheetah/i/examples/masks/img/masks_688/healing-masks45.jpg",
+			"imageUrl_640": "/dev/supercheetah/i/examples/masks/img/masks_480/healing-masks45.jpg",
+			"alt": "Picture of a soldier&#x2019; mask",
+			"caption": "caption TK",
+			"crop": "keep-centered-crop-btm"
+		},
+        {
+			"imageUrl_2048": "/dev/supercheetah/i/examples/masks/img/masks_688/healing-masks46.jpg",
+            "imageUrl_1536": "/dev/supercheetah/i/examples/masks/img/masks_688/healing-masks46.jpg",
+			"imageUrl_640": "/dev/supercheetah/i/examples/masks/img/masks_480/healing-masks46.jpg",
+			"alt": "Picture of a soldier&#x2019; mask",
+			"caption": "caption TK",
+			"crop": "keep-centered-crop-btm"
+		},
+        {
+			"imageUrl_2048": "/dev/supercheetah/i/examples/masks/img/masks_688/healing-masks47.jpg",
+            "imageUrl_1536": "/dev/supercheetah/i/examples/masks/img/masks_688/healing-masks47.jpg",
+			"imageUrl_640": "/dev/supercheetah/i/examples/masks/img/masks_480/healing-masks47.jpg",
+			"alt": "Picture of a soldier&#x2019; mask",
+			"caption": "caption TK",
+			"crop": "keep-centered-crop-btm"
+		},
+        {
+			"imageUrl_2048": "/dev/supercheetah/i/examples/masks/img/masks_688/healing-masks48.jpg",
+            "imageUrl_1536": "/dev/supercheetah/i/examples/masks/img/masks_688/healing-masks48.jpg",
+			"imageUrl_640": "/dev/supercheetah/i/examples/masks/img/masks_480/healing-masks48.jpg",
+			"alt": "Picture of a soldier&#x2019; mask",
+			"caption": "caption TK",
+			"crop": "keep-centered-crop-btm"
+		}
+		
+	]
+}

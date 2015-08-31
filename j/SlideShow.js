@@ -100,55 +100,73 @@ SlideShow.prototype.windowResize = function(_this){
     
     //$("#" + this.myParentId).css("height", "755px");
 }
+
 SlideShow.prototype.setKeyPress = function(){
     var self = this;
     //document.onkeydown = function(evt){
     var el = this.myParent;
-    //var el = document.getElementById(this.slideShowHolderId);
-    /*$(window).scroll(function(){
-        // focus on scroll doesn't work for IE.
-        //console.log("IEEEEE: " + navigator.userAgent.indexOf(' MSIE '));
-        console.log("scroll: " + $(el).visible(true, false));
-        if($(el).visible(true, false) && !(navigator.userAgent.indexOf('MSIE') > -1 ||                                                                        navigator.userAgent.indexOf('Trident') > -1)){
-            $(el).focus();
-            console.log("EL - FOCUS");
-        }
-    });*/
-    // Only do this if not IE. IE has a very bad bug where the page won't scroll down.
-    /*if(!(navigator.userAgent.indexOf('MSIE') > -1 || navigator.userAgent.indexOf('Trident') > -1)){
-        $(window).scroll(function(){
-            // focus on scroll doesn't work for IE.
-            //console.log("IEEEEE: " + navigator.userAgent.indexOf(' MSIE '));
-            console.log("scroll: " + $(el).visible(true, false));
-            if($(el).visible(true, false) && !(navigator.userAgent.indexOf('MSIE') > -1 ||                                                                        navigator.userAgent.indexOf('Trident') > -1)){
-                $(el).focus();
-                //console.log("EL - FOCUS");
-            }
-        });
-    }*/
-    
+        console.log("setKeyPress");
     // Need this (focus on el) for the modal slideShows
-    el.onkeydown = function(evt){  
-         if($(el).visible(true, false) && !(navigator.userAgent.indexOf('MSIE') > -1 ||                                                                     navigator.userAgent.indexOf('Trident') > -1)){
+    //el.onkeydown = function(evt){  
+    window.onkeydown = function(evt){  
+        console.log("onkeydown");
+        //if(!navigator.userAgent.indexOf('MSIE') > -1){
                 $(el).focus();
                 console.log("EL - FOCUS");
-            }
+            //}
 		switch(evt.keyCode){
             case 37:  // left
-                self.setPrevSlide(self);
+                if(self.swipeType === "slide-strip"){
+                    //if(self.curIndx > 0){
+                        self.leftArrowClickSlideStrip();
+                    /*}
+                    else{
+                        if(self.slideArr[0].subImageShowing){
+                            self.slideArr[0].prevSubImage();
+                        }
+                        else
+                        if(!self.slideArr[0].overlayShowing){
+                            self.slideArr[0].slideRightSubImage();
+                            self.slideArr[0].tweenToFullBleed();
+                        }
+                    }*/
+                }
+                else
                 if(self.swipeType === "fade"){
+                    self.setPrevSlide(self);
                     self.prevSlideFade(self);
                 }
                 else{
+                    self.setPrevSlide(self);
                     self.prevSlide(self);
                 }
                 break;
             case 39:  // right
-                self.setNextSlide(self);
+                if(self.swipeType === "slide-strip"){
+                    if(self.curIndx == self.slideArr.length-1){
+                        self.lastSlideClickNext();
+                    }
+                    else
+                    if(self.slideArr[self.curIndx].overlayShowing){
+                        self.slideArr[self.curIndx].nextOverlay();
+                    }
+                    else
+                    if(self.slideArr[self.curIndx].subImageShowing){
+                        self.slideArr[self.curIndx].nextSubImage();
+                    }
+                    else    
+                    if(self.curIndx < self.slideArr.length-1){
+                        self.curIndx++;
+                        self.nextSlideStrip(true);
+                    }
+                }
+                else
                 if(self.swipeType === "fade"){
+                    self.setNextSlide(self);
                     self.nextSlideFade(self);
                 }
                 else{
+                    self.setNextSlide(self);
                     self.nextSlide(self);
                 }
                 break;

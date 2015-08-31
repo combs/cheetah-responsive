@@ -28,6 +28,9 @@ Now you can code it as usual.
 
 ### Adding Pull Quotes
 
+
+	<div class="width-wider quote">"It’s a project for a generation, it’s going to take till 2040 or 2050, and it’s hard."</div>
+
 ### Size Options for Media Elements
 
 * width-inset: a small inset.
@@ -107,3 +110,32 @@ We can include galleries using Joel Fiser's SlideShow.js (used in ISP projects).
 
 ### Additional Ads
 
+### Promo Stack
+
+			<div class="promo-content">
+				<h5>More From the Climate Change Special Issue</h5>
+
+				<img src="/2015/09/chameleons/img/chameleons-graphic-160.jpg" />
+				<a href="/">Gallery: Click here for really cool ish</a>
+				<p>This is descriptive text telling the visitor how cool and what ish is in the extra cool ish link and how it is going to change their lives immeasurably if they only click on the link.</p>
+
+				<hr/>
+
+				<img src="/2015/09/chameleons/img/chameleons-graphic-160.jpg" />
+				<a href="/">Gallery: Click here for really cool ish</a>
+				<p >This is descriptive text telling the visitor how cool and what ish is in the extra cool ish link and how it is going to change their lives immeasurably if they only click on the link.</p>
+
+				<hr/>
+
+				<h6>Still More Climate Change Ish: Can You Believe That Ish?</h6>
+
+				<a href="/">Gallery: Click here for really cool ish</a>
+				<p>This is descriptive text telling the visitor how cool and what ish is in the extra cool ish link and how it is going to change their lives immeasurably if they only click on the link.</p>
+
+				<a href="/">Gallery: Click here for really cool ish</a>
+				<p>This is descriptive text telling the visitor how cool and what ish is in the extra cool ish link and how it is going to change their lives immeasurably if they only click on the link.</p>
+
+				<a href="/">Gallery: Click here for really cool ish</a>
+				<p>This is descriptive text telling the visitor how cool and what ish is in the extra cool ish link and how it is going to change their lives immeasurably if they only click on the link.</p>
+			</div>
+			

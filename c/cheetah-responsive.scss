@@ -29,10 +29,13 @@ body {
 			
 		div#header_ads {
 			
-			@include respond-to-width(notlarge) {
+			@include respond-to-width(small) {
 				display: none;
 			}
-			
+			@include respond-to-width(medium) {
+				display: none;
+			}
+						
 		}
 		
 		/* This corrects a strange amount of padding added to the top of the page. 
@@ -368,6 +371,7 @@ body.ngm {
  							margin: 3rem auto;
  							padding: 0;
  							color: #c9c9c9;
+ 							max-width: 90%;
 
  						}
  						

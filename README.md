@@ -121,6 +121,40 @@ We can include galleries using Joel Fiser's SlideShow.js (used in ISP projects).
 
 ### Additional Ads
 
+### Promo Drawers
+
+I'm working on a better way to place this consistently across the articles.
+
+* Include jQuery at the very top:
+
+		<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+		
+* Also include this script:
+
+		<script src="/dev/supercheetah/j/supercheetah.min.js"></script>
+
+* Add this code:
+
+	        <div class="promo-content box width-inset">
+	        	<h1>Climate change is real.</h1>
+	        	<p>No kiddin'. </p>
+	        	
+		        <div class="drawer"><div class="header"><a href="#"></a><p> How do we know it's happening?</p>
+		        </div>
+		        			        	
+			    <div class="contents"><ul><li><a href="http://google.com">Google it bro</a></li><li><a href="http://google.com">No really google it</a></li></ul></div>
+			    
+		        </div>
+		        <div class="drawer"><div class="header"><a href="#"></a><p> What can we do about it?</p>
+		        </div>
+		        		        
+			    <div class="contents"><ul><li><a href="http://google.com">Pray for death</a></li><li><a href="http://google.com">Stop driving</a></li></ul></div>
+			    
+		        </div>
+
+			</div>
+
+
 ### Promo Stack
 
 			<div class="promo-content">

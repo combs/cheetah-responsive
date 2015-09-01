@@ -672,7 +672,17 @@ body.ngm {
  						
  						.article_credits_author, .article_credits_photographer {
  							
- 							color: rgba(255,255,255,0.75);
+							@include respond-to-width(medium) {
+								
+	 							color: rgba(255,255,255,0.75);
+								
+							}
+							
+ 							@include respond-to-width(large) {
+								
+	 							color: rgba(255,255,255,0.75);
+								
+							}
  							
  						}
  							

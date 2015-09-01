@@ -578,6 +578,7 @@ body.ngm {
 							
 							margin: 3rem auto;
 							text-align: left;
+							position: relative;
 							
 							iframe, video {
 								
@@ -639,6 +640,7 @@ body.ngm {
 					
 						clear: both;
 						border: 0 none;
+						position: relative;
 						
 						img {
 						/*	width: 100vh;
@@ -650,6 +652,60 @@ body.ngm {
 						@extend .internal-function-width-text;
 					 
 					}
+					
+					div.overlay {
+						
+						color: #fff;
+						position: absolute; // Note that parent container must have position: relative.
+						top: 35%;
+						text-align: center;
+						text-shadow: 0.1rem 0.1rem 0.2rem rgba(0,0,0,0.5);
+ 						width: 100%;
+ 						
+						@include respond-to-width(small) {
+ 				
+ 							position: static;
+ 							color: inherit;
+ 							text-shadow: none;
+ 							
+						}				
+ 						
+ 						.article_credits_author, .article_credits_photographer {
+ 							
+ 							color: rgba(255,255,255,0.75);
+ 							
+ 						}
+ 							
+					}						
+					
+					.width-cinematic > div.overlay {
+						
+						h2.title {
+						
+								font-weight: 700;
+								font-family: $font-serif-display-bold;
+						
+						}
+						
+						@include respond-to-width(large) {
+							
+							font-size: 2.0rem;
+							
+							h2.title {
+								
+								font-size: 6.0rem;
+								
+							}
+							
+							h3.title {
+								
+								font-size: 1.6rem;
+								
+							}
+							
+						}
+						
+					}							
 
 					div.nextpage_continue {
 

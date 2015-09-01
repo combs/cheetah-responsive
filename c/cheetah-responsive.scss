@@ -210,6 +210,26 @@ body.ngm {
 						    
 					}
 
+					h1 {
+						
+						line-height: 1.3;
+					
+						font-size: 2.0rem;
+					
+						@include respond-to-width(small) {
+				
+							font-size: 1.75rem;		
+						
+						}
+				
+					}
+					
+					h2 {
+						
+						line-height: 1.4;
+						
+					}
+					
 					h2.title {
 						
 						font-family: $font-serif-display;
@@ -405,12 +425,12 @@ body.ngm {
 								margin: 1.5rem;
 								
 							}
-							
+													
 						}
 						
 						div.drawer {
 
-			
+							
 							border-top: 1px #ccc solid;
 							font-family: $font-sans-serif;
 							font-weight: 500;
@@ -428,6 +448,7 @@ body.ngm {
 								
 									font-size: 1.2rem;
 									font-weight: 700;
+									line-height: 1.4;
 									padding: 0;
 									margin: 0.25rem 0.5rem;
 								
@@ -465,8 +486,23 @@ body.ngm {
 								
 								font-size: 1.0rem;
 								
+								ul {
+									
+									margin-bottom: 0;
+									
+									li {
+										
+										@include respond-to-width(small) {
+											
+											line-height: 2; // Hard to tap individual links.
+											
+										}
+									
+									}
+										
+								}
+								
 							}
-							
 																					
 						}
 
@@ -663,10 +699,11 @@ body.ngm {
  						width: 100%;
  						
 						@include respond-to-width(small) {
- 				
+
  							position: static;
  							color: inherit;
  							text-shadow: none;
+ 							
  							
 						}				
  						

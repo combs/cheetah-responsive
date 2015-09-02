@@ -319,7 +319,7 @@ body.ngm {
 					    line-height: 1.75;
 						/* padding: 1rem; */
 						padding: 0;
-						margin-top: 3rem;
+						margin-top: $margin-media;
 						
 						> p:first-of-type {
 							
@@ -392,7 +392,7 @@ body.ngm {
  							font-size: .875rem;
  							font-weight: 400;
  							line-height: 1.4;
- 							margin: 3rem;
+ 							margin: $margin-media;
  							padding: 1rem 1.25rem;
 
  						}
@@ -400,7 +400,7 @@ body.ngm {
  						hr {
 
  							width: $width-text-max * 1.2;
- 							margin: 3rem auto;
+ 							margin: $margin-media auto;
  							padding: 0;
  							color: #c9c9c9;
  							max-width: 90%;
@@ -440,22 +440,33 @@ body.ngm {
 													
 						}
 						
+						div.box-yellow {
+							
+							border-top: 1.5rem $color-nat-geo solid;
+
+							> h1, > h2, > h3, > h4, > p {
+								
+								margin: 1.0rem 0 0 0;
+								
+							}
+													
+						}
+						
 						div.drawer {
 
-							
 							border-top: 1px $color-lighter-grey solid;
 							font-family: $font-sans-serif;
 							font-weight: 500;
 							font-size: 1.2rem;
-							padding: 1rem;
+							padding: 1.5rem 1.0rem;
 							
 							div.header {
 								
 								font-family: $font-sans-serif;
 								font-size: 1.2rem;
 								font-weight: 500;
-								line-height: 1.5;
 								padding: 0;
+								text-decoration: underline;
 								
 								p {
 								
@@ -472,14 +483,15 @@ body.ngm {
 									bottom: 0.5em;
 									border: 0;
 									float: right;
-									text-decoration: none;
 									font-size: 0.01rem;
 									font-family: $font-sans-serif;
 									font-weight: 300;
-									transform: scale(1.5,1.0);
+    								line-height: 1.25;	
 									padding-left: 1rem;
 									padding-right: 0.5rem;
 									position: relative;
+									text-decoration: none;
+									transform: scale(1.5,1.0);
 															
 								}
 							
@@ -501,22 +513,27 @@ body.ngm {
 								
 								ul {
 									
+									list-style-type: none;
 									margin-bottom: 0;
+									margin-left: 0.5rem;
+									padding-left: 0;
 									
 									li {
 										
-										@include respond-to-width(small) {
+										line-height: 2; // Hard to tap individual links.
 											
-											line-height: 2; // Hard to tap individual links.
-											
-										}
-									
 									}
 										
 								}
 								
 							}
 																					
+						}
+
+						div.drawer.closed:hover {
+					
+							background-color: $color-lightest-grey;
+							
 						}
 
 						div.drawer.closed {
@@ -538,12 +555,58 @@ body.ngm {
 							}							
 
 						}
-					
-												
 
+						.box-yellow div.drawer:first-of-type {
+							
+							margin-top: 1rem;
+							
+						}	
+						
+						.box-yellow div.drawer:last-of-type {
+							
+							border-bottom: 1px $color-lighter-grey solid;
+							
+						}
+						
+						.box-yellow div.drawer {
+							
+							padding-left: 0;
+							padding-right: 0;
+							
+							div.header {
+								
+								p {
+									
+									margin-left: 0;
+									margin-right: 0;
+									
+								}
+								
+							}
+							
+							div.contents {
+								
+								ul {
+									
+									margin-left: 0;
+									margin-right: 0;
+									
+								}
+								
+							}	
+							
+						}
+						
+						div.promo-series {
+							
+							font-family: $font-sans-serif;
+							margin: $margin-media auto;
+							
+						}
+						
 						div.promo-content {
 							
-							margin: 3rem auto;
+							margin: $margin-media auto;
 							text-align: left;
 							font-family: $font-sans-serif;
 							color: #000;
@@ -551,10 +614,9 @@ body.ngm {
 							    
 							h5, h6 {
 							
-								margin: 3rem 0;
+								margin: $margin-media 0;
 								
 							}
-							
 
 							h5 {
 								
@@ -590,7 +652,6 @@ body.ngm {
 
 							> a:hover {
 
-								border-bottom: 1px solid #808080;
 								color: $color-nat-geo; 
 
 							}
@@ -625,7 +686,7 @@ body.ngm {
 
 						div.video, div.photo {
 							
-							margin: 3rem auto;
+							margin: $margin-media auto;
 							text-align: left;
 							position: relative;
 							

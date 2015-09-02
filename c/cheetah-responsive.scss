@@ -235,7 +235,7 @@ body.ngm {
 						font-family: $font-serif-display;
 						font-size: 4rem;
 						font-weight: 400;
-						line-height: 1.09em;
+						line-height: 1.2em;
 						margin: 0 auto;
 						max-width: 80%;
 						padding: 1.2rem;
@@ -322,11 +322,10 @@ body.ngm {
 						padding: 0;
 						margin-top: 3rem;
 						
-						
-						@include respond-to-width(notsmall) {
-
-						/*	padding: 2rem; */
+						> p:first-of-type {
 							
+						    margin-top: 2.5rem;
+
 						}
 						
 						em, i {
@@ -381,7 +380,7 @@ body.ngm {
  							line-height: 2.5em;
 							padding: 2rem 1rem;
 							font-size: 2rem;
-							line-height: 1.09em;
+							line-height: 1.2em;
 							margin: 0 auto;
 
  						}

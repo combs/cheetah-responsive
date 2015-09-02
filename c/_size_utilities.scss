@@ -133,6 +133,12 @@
 
 	width: 100% !important; /* TODO fix this by using specific selectors. */
 	max-width: 100% !important; /* TODO fix this by using specific selectors. */
+
+	> p {
+		
+		margin-left: 0.5rem;
+	
+	}
 	
 }
 
@@ -157,7 +163,7 @@
 
 .width-inset {
 	
-	max-width: 0.60*$width-text-max !important;
+	max-width: 0.80*$width-text-max !important;
 	width: 80% !important;
 	
 }

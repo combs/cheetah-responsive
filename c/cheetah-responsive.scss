@@ -290,6 +290,17 @@ body.ngm {
 					
 					h4.title {
 						
+						color: black;
+						text-transform: uppercase;
+						font-family: $font-sans-serif;
+						font-size: .8em;
+						font-weight: 300;
+						line-height: 1.2em;
+						margin: 3.5rem auto 1.5rem auto;
+						text-align: center;
+						width: $width-text-max;
+						max-width: 80%;
+
 					}
 					
 					div.article_credits_author, div.article_credits_photographer {

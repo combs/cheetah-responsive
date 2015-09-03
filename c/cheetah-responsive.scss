@@ -948,7 +948,7 @@ body.ngm {
 		
 		div#global_footer {
 			
-			max-width: 80vw;
+			@extend .internal-function-width-column;
 			
 		}
 			

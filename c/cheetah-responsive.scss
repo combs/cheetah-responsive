@@ -409,7 +409,7 @@ body.ngm {
  						
 						> p, > div, > embed, > iframe {
 						
-							@extend .internal-function-width-text;
+							@extend .internal-function-width-column;
 						
 						}
 						
@@ -759,7 +759,7 @@ body.ngm {
 							height: auto;
 						}
 						
-						@extend .internal-function-width-text;
+						@extend .internal-function-width-column;
 					 
 					}
 					

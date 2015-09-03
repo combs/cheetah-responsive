@@ -439,7 +439,52 @@ body.ngm {
 								margin: 0;
 								
 							}
-													
+								
+							/* Special handling for the yellow-header style. */
+
+							div.drawer:first-of-type {
+								
+								margin-top: 1rem;
+								
+							}	
+							
+							div.drawer:last-of-type {
+								
+								border-bottom: 1px $color-lighter-grey solid;
+								
+							}
+							
+							div.drawer {
+								
+								/* We don't have to provide space for the left/right box outline. */
+								
+								padding-left: 0;
+								padding-right: 0;
+								
+								div.header {
+									
+									p {
+										
+										margin-left: 0;
+										margin-right: 0;
+										
+									}
+									
+								}
+								
+								div.contents {
+									
+									ul {
+										
+										margin-left: 0;
+										margin-right: 0;
+										
+									}
+									
+								}	
+								
+							}		
+										
 						}
 						
 						/* Place a collapsible drawer within a box or promo container. */
@@ -563,51 +608,6 @@ body.ngm {
 							
 							}							
 
-						}
-
-						/* Special handling for the yellow-header style. */
-
-						.box-yellow div.drawer:first-of-type {
-							
-							margin-top: 1rem;
-							
-						}	
-						
-						.box-yellow div.drawer:last-of-type {
-							
-							border-bottom: 1px $color-lighter-grey solid;
-							
-						}
-						
-						.box-yellow div.drawer {
-							
-							/* We don't have to provide space for the left/right box outline. */
-							
-							padding-left: 0;
-							padding-right: 0;
-							
-							div.header {
-								
-								p {
-									
-									margin-left: 0;
-									margin-right: 0;
-									
-								}
-								
-							}
-							
-							div.contents {
-								
-								ul {
-									
-									margin-left: 0;
-									margin-right: 0;
-									
-								}
-								
-							}	
-							
 						}
 						
 						/* Style a container as a series promo--showing all parts of a series. */

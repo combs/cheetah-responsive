@@ -73,11 +73,15 @@ body.ngm {
 			
 			width: 100%;
 			
+			/* Social share buttons. */
+			
 			.addthis_toolbox {
 				
 				float: none !important;
 				
 			}
+			
+			/* The breadcrumbs above the article. */
 			
 			div.nav {
 
@@ -85,18 +89,20 @@ body.ngm {
 								
 			}
 			
+			/* Right side promos from Cheetah. */
+				
 			div.narrow_side, div.narrow_sidert {
 				
-				/* padding: 1rem; */
-			
-			}
-			
-			div.narrow_sidert {
-				
 				display: none;	
-				
+			
 			}
 			
+			/* Left side promos. 
+			
+			We are hiding this per latest designs. 
+			
+			I am retaining the styles in case this changes. -CC 2015-09-03 */
+			 
 			div.narrow_side {
 			
 				display: none;
@@ -163,7 +169,9 @@ body.ngm {
 				
 			}
 						
-			div.main_3narrow_wrap, div.main_2wide_nb {
+			/* This is the main class used by Cheetah for "three-column" (article) pages. */
+			
+			div.main_3narrow_wrap {
 				
 				float: none;
 				font-size: 1.2rem;
@@ -178,7 +186,7 @@ body.ngm {
 					
 					a {
 
-						border-bottom:1px solid #ffcc00;
+						border-bottom:1px solid $color-nat-geo;
 
 					}
 
@@ -209,6 +217,625 @@ body.ngm {
 						    
 					}
 
+					div.article_credits_author, div.article_credits_photographer {
+						
+						font-family: $font-serif-display-italic;
+						font-style: italic;
+						text-align: center;
+						font-size: 1.1rem;
+						line-height: 1.4;
+						
+					}
+					
+					div.content {
+						
+						font-family: $font-serif;
+					    font-size: 1.0rem;
+					    line-height: 1.75;
+						/* padding: 1rem; */
+						padding: 0;
+						margin-top: $margin-media;
+						
+						> p:first-of-type {
+							
+						    margin-top: 2.5rem;
+
+						}
+						
+						em, i {
+								
+							font-family: $font-serif-italic;
+						
+						}
+
+						.author {
+
+							font-family: $font-serif-display-italic;
+							text-align: left;
+							font-size: 1.1rem;
+							line-height: 1.4;
+							font-weight: 200;
+
+						}
+ 						
+ 						.bio {
+ 							
+ 							font-family: $font-serif-italic;
+ 							
+ 						}
+ 							
+ 						.editors-note {
+
+ 							border: 1px solid #c9c9c9;
+ 							color: #999;
+ 							font-family: $font-sans-serif;
+ 							font-size: .875rem;
+ 							font-weight: 400;
+ 							line-height: 1.4;
+ 							margin: $margin-media;
+ 							padding: 1rem 1.25rem;
+
+ 						}
+					
+						.intro {
+						
+							text-transform: uppercase;
+						    font-weight: 700;
+						    font-family: $font-sans-serif;
+						    font-size: 0.9em;
+
+						}
+
+						.published {
+
+							font-family: $font-sans-serif;
+							font-size: 12px; 
+							text-transform: uppercase; 
+							font-weight: 300; 
+							color: #999; 
+							text-align: left;
+							padding: 0.5rem;
+
+						}
+
+ 						.quote {
+
+ 							text-align: left;
+ 							font-weight: 600;
+ 							font-family: $font-sans-serif;
+ 							color: #808080;
+ 							line-height: 2.5em;
+							padding: 2rem 1rem;
+							font-size: 2rem;
+							line-height: 1.2em;
+							margin: 0 auto;
+
+ 						}
+
+ 						hr {
+
+ 							width: $width-text-max * 1.2;
+ 							margin: $margin-media auto;
+ 							padding: 0;
+ 							color: #c9c9c9;
+ 							max-width: 90%;
+
+ 						}
+ 						
+						> p, > div, > embed, > iframe {
+						
+							@extend .internal-function-width-column;
+							
+							/* This is used to set the width of the text column. */
+						
+						}
+						
+						/* A wrapper container for additional social buttons. */
+						
+						div.share-buttons {
+							
+						    float: none;
+						    text-align: left;
+						    display: block; 
+						    margin: 1rem auto;
+						    
+						    > div > a {
+						    
+						    	/* Remove underline from links. */
+						    	
+						    	border: 0;
+						    
+						    }
+							
+						}
+						
+						/* Place a box around a media object or promo container. */
+						
+						div.box {
+							
+							border: 1px $color-light-grey solid;
+
+							> h1, > h2, > h3, > h4 {
+								
+								margin: 1.5rem;
+								
+							}
+
+							> p {
+								
+								margin: 0;
+								
+							}	
+											
+						}
+						
+						/* Place a yellow header over a media object or promo container. */
+						
+						div.box-yellow {
+							
+							border-top: 1.5rem $color-nat-geo solid;
+
+							> h1, > h2, > h3, > h4 {
+								
+								margin: 1.0rem 0 0 0;
+								
+							}
+							
+							> p {
+								
+								margin: 0;
+								
+							}
+													
+						}
+						
+						/* Place a collapsible drawer within a box or promo container. */
+						
+						div.drawer {
+
+							border-top: 1px $color-lighter-grey solid;
+							font-family: $font-sans-serif;
+							font-weight: 500;
+							font-size: 1.2rem;
+							padding: 0.75rem 1.0rem;
+							
+							/* The header is the main title of the collapsible drawer. */
+							
+							div.header {
+								
+								font-family: $font-sans-serif;
+								font-size: 1.2rem;
+								font-weight: 500;
+								padding: 0;
+								text-decoration: none;
+								
+								p {
+								
+									font-size: 1.2rem;
+									font-weight: 700;
+									line-height: 1.4;
+									padding: 0;
+									margin: 0.25rem 0.5rem;
+								
+								}
+													
+								/* An anchor tag is used for the expand/collapse control. */
+								
+								a {
+									
+									bottom: 0.5em;
+									border: 0;
+									float: right;
+									
+									/* Hide its contents and use :after to show the control. */
+									
+									font-size: 0.01rem;
+									font-family: $font-sans-serif;
+									font-weight: 300;
+    								line-height: 1.25;	
+									padding-left: 1rem;
+									padding-right: 0.5rem;
+									position: relative;
+									text-decoration: none;
+									transform: scale(1.5,1.0);
+															
+								}
+							
+								a:after {
+									
+									bottom: 0.25rem;
+									content: "\2227"; // looks like: ^
+									color: #aaa;
+									font-size: 1.5rem;
+									position: relative;
+								
+								}
+
+							}
+								
+							/* Contains the links or other collapsible content. */
+													
+							div.contents {
+								
+								font-size: 1.0rem;
+								
+								/* Keep each link in a ul->li. */
+								
+								ul {
+									
+									list-style-type: none;
+									margin-bottom: 0;
+									margin-left: 0.5rem;
+									padding-left: 0;
+									
+									li {
+										
+										line-height: 2; // Make links easier to tap.
+											
+									}
+										
+								}
+								
+							}
+																					
+						}
+
+						/* Display a subtle interface clue that this is clickable. 
+						
+						TODO: Mobile? */
+						
+						div.drawer.closed:hover {
+					
+							background-color: $color-lightest-grey;
+							
+						}
+
+						/* Apply or remove .closed from a drawer to hide its contents. */
+		
+						div.drawer.closed {
+								
+							div.contents {
+									
+								display: none;
+
+							}
+								
+							div.header {
+							
+								a:after {
+									
+									content: "\2228"; // looks like: V
+								
+								}
+							
+							}							
+
+						}
+
+						/* Special handling for the yellow-header style. */
+
+						.box-yellow div.drawer:first-of-type {
+							
+							margin-top: 1rem;
+							
+						}	
+						
+						.box-yellow div.drawer:last-of-type {
+							
+							border-bottom: 1px $color-lighter-grey solid;
+							
+						}
+						
+						.box-yellow div.drawer {
+							
+							/* We don't have to provide space for the left/right box outline. */
+							
+							padding-left: 0;
+							padding-right: 0;
+							
+							div.header {
+								
+								p {
+									
+									margin-left: 0;
+									margin-right: 0;
+									
+								}
+								
+							}
+							
+							div.contents {
+								
+								ul {
+									
+									margin-left: 0;
+									margin-right: 0;
+									
+								}
+								
+							}	
+							
+						}
+						
+						/* Style a container as a series promo--showing all parts of a series. */
+						
+						div.promo-series {
+							
+							font-family: $font-sans-serif;
+							margin: $margin-media auto;
+							
+						}
+						
+						/* Style a container to show promos, optionally with thumbnails. */
+						
+						div.promo-content {
+							
+							margin: $margin-media auto;
+							text-align: left;
+							font-family: $font-sans-serif;
+							color: #000;
+							max-width: 90%;
+							    
+							.caption, .credit, p {
+								
+								display: block;
+								font-family: $font-sans-serif;
+								font-size: 0.9rem;
+								padding: 0 0.5rem 0.5rem 0;
+								
+							}
+
+							> a {
+
+								line-height: 1.5em;								
+								margin-bottom: .25em;
+								border-bottom: 1px solid #ffcc00;
+								font-weight: 600;
+
+							}
+
+							> a:hover {
+
+								color: $color-nat-geo; 
+
+							}
+							
+							h5, h6 {
+							
+								margin: $margin-media 0;
+								
+							}
+
+							h5 {
+								
+								width: $width-text-max;
+								max-width: 90%;
+								font-size: 1.75rem;
+								line-height: 1.15em;
+								font-weight: 600;
+								padding-bottom: 0.5rem;
+								
+							}
+
+							h6 {
+								
+								width: $width-text-max;
+								max-width: 90%;
+								font-size: 0.875rem;
+								line-height: 1.15em;
+								color: #808080;
+								text-transform: uppercase;
+								font-weight: 400;
+								
+							}
+
+							hr {
+
+								width: 100%;
+								margin: 1.25rem auto 2.5rem;
+
+							}
+							
+							img {
+							
+								width: 7.5rem;
+								height: auto;
+								float: left;
+								margin: 0 1.25rem 1.25rem 0;
+								clear: left;
+								
+							}													
+						}
+
+						/* Style these containers for photos or video players.
+						
+						*/ 
+
+						div.video, div.photo {
+							
+							margin: $margin-media auto;
+							text-align: left;
+							position: relative;
+							
+							iframe, video {
+								
+								width: 100%;
+								height: 100%;
+								padding-bottom: 0.5rem;
+								
+							}
+							
+							> div {
+								
+								padding-bottom: 0.5rem;
+								
+							}
+							
+							img {
+							
+								width: 100%;
+								height: auto;
+								padding-bottom: 0.5rem;
+								
+							}
+							
+							.caption, .credit {
+								
+								display: inline-block;
+								font-family: $font-sans-serif;
+								font-size: 0.9rem;
+								padding: 0 0.5rem 0.5rem 0;
+								text-align: left;
+								
+							}
+							
+							.caption {
+								 
+								color: #000; 
+								
+							}
+							
+							.credit {
+								 
+								 text-transform: uppercase;
+								 color: gray;
+								 font-size: 0.7rem; 
+								
+							}
+							
+							.caption > span.credit {
+								
+								margin-left: 0.5rem;
+							
+							}
+						
+						}
+
+					}
+					
+					/* This is Cheetah's built-in style for the lede image. 
+					
+					We do not necessarily need to use it when building a story, but I include it here
+					for maximum compatibility with older stories. */
+					
+					div.featurepic {
+					
+						clear: both;
+						border: 0 none;
+						position: relative;
+						
+						img {
+						/*	width: 100vh;
+							max-width: 100%; */
+							width: 100%;
+							height: auto;
+						}
+						
+						/* It does not live inside the main content div, so set the text column. */
+						
+						@extend .internal-function-width-column;
+					 
+					}
+					
+					/* Cheetah's next/previous page controls for paginated articles. */
+					
+					div.nextpage_continue {
+
+						display:none;
+
+					}
+					
+					/* Make any object into an overlay for media.
+					
+					Place this div inside the media container, at the end. 
+					
+					Example: 	<div class="photo width-cinematic">
+									<img src="cats.jpg">
+									<div class="overlay"><h1 class="title">Headline</h1></div>
+								</div>
+					
+					*/
+					
+					div.overlay {
+						
+						color: #fff;
+						position: absolute; // Note that parent container must have position: relative.
+						top: 35%;
+						text-align: center;
+						text-shadow: 0.1rem 0.1rem 0.2rem rgba(0,0,0,0.5);
+ 						width: 100%;
+ 						
+						@include respond-to-width(small) {
+
+							/* On mobile, display the overlay inline, below the media, instead of overlayed. */
+							
+ 							position: static;
+ 							color: inherit;
+ 							text-shadow: none;
+ 							
+						}				
+ 						
+ 						/* Current designs remove these bylines. 2015-09-03 CC */
+ 						
+ 						.article_credits_author, .article_credits_photographer {
+ 							
+							@include respond-to-width(medium) {
+								
+	 							color: rgba(255,255,255,0.75);
+								
+							}
+							
+ 							@include respond-to-width(large) {
+								
+	 							color: rgba(255,255,255,0.75);
+								
+							}
+ 							
+ 						}
+ 							
+					}						
+					
+					/* If the overlay is used over a particularly large image, make the typography larger and stronger. */
+					
+					.width-cinematic > div.overlay {
+						
+						h2.title {
+						
+								font-weight: 700;
+								font-family: $font-serif-display-bold;
+						
+						}
+						
+						@include respond-to-width(large) {
+							
+							font-size: 2.0rem;
+							
+							h2.title {
+								
+								font-size: 6.0rem;
+								
+							}
+							
+							h3.title {
+								
+								font-size: 1.6rem;
+								
+							}
+							
+						}
+						
+					}	
+										
+					/* Cheetah's subscription promos. */
+					
+					div.subscribe {
+						
+						display: none;
+						
+					}
+					
+					/* Basic headline styles. */
+					
 					h1 {
 						
 						line-height: 1.3;
@@ -302,548 +929,12 @@ body.ngm {
 
 					}
 					
-					div.article_credits_author, div.article_credits_photographer {
-						
-						font-family: $font-serif-display-italic;
-						font-style: italic;
-						text-align: center;
-						font-size: 1.1rem;
-						line-height: 1.4;
-						
-					}
-					
-					div.content {
-						
-						font-family: $font-serif;
-					    font-size: 1.0rem;
-					    line-height: 1.75;
-						/* padding: 1rem; */
-						padding: 0;
-						margin-top: $margin-media;
-						
-						> p:first-of-type {
-							
-						    margin-top: 2.5rem;
-
-						}
-						
-						em, i {
-								
-							font-family: $font-serif-italic;
-						
-						}
-
-						.author {
-
-							font-family: $font-serif-display-italic;
-							text-align: left;
-							font-size: 1.1rem;
-							line-height: 1.4;
-							font-weight: 200;
-
-						}
-
-						.published {
-
-							font-family: $font-sans-serif;
-							font-size: 12px; 
-							text-transform: uppercase; 
-							font-weight: 300; 
-							color: #999; 
-							text-align: left;
-							padding: 0.5rem;
-
-						}
-						
-						.intro {
-						
-							text-transform: uppercase;
-						    font-weight: 700;
-						    font-family: $font-sans-serif;
-						    font-size: 0.9em;
-
-						}
- 						
- 						.bio {
- 							
- 							font-family: $font-serif-italic;
- 							
- 						}
-
- 						.quote {
-
- 							text-align: left;
- 							font-weight: 600;
- 							font-family: $font-sans-serif;
- 							color: #808080;
- 							line-height: 2.5em;
-							padding: 2rem 1rem;
-							font-size: 2rem;
-							line-height: 1.2em;
-							margin: 0 auto;
-
- 						}
-
- 						.editors-note {
-
- 							border: 1px solid #c9c9c9;
- 							color: #999;
- 							font-family: $font-sans-serif;
- 							font-size: .875rem;
- 							font-weight: 400;
- 							line-height: 1.4;
- 							margin: $margin-media;
- 							padding: 1rem 1.25rem;
-
- 						}
-
- 						hr {
-
- 							width: $width-text-max * 1.2;
- 							margin: $margin-media auto;
- 							padding: 0;
- 							color: #c9c9c9;
- 							max-width: 90%;
-
- 						}
- 						
-						> p, > div, > embed, > iframe {
-						
-							@extend .internal-function-width-text;
-						
-						}
-						
-						div.share-buttons {
-							
-						    float: none;
-						    text-align: left;
-						    display: block; 
-						    margin: 1rem auto;
-						    
-						    > div > a {
-						    
-						    	border: 0;
-						    
-						    }
-							
-						}
-						
-						div.box {
-							
-							border: 1px $color-light-grey solid;
-
-							> h1, > h2, > h3, > h4, > p {
-								
-								margin: 1.5rem;
-								
-							}
-													
-						}
-						
-						div.box-yellow {
-							
-							border-top: 1.5rem $color-nat-geo solid;
-
-							> h1, > h2, > h3, > h4, > p {
-								
-								margin: 1.0rem 0 0 0;
-								
-							}
-													
-						}
-						
-						div.drawer {
-
-							border-top: 1px $color-lighter-grey solid;
-							font-family: $font-sans-serif;
-							font-weight: 500;
-							font-size: 1.2rem;
-							padding: 1.5rem 1.0rem;
-							
-							div.header {
-								
-								font-family: $font-sans-serif;
-								font-size: 1.2rem;
-								font-weight: 500;
-								padding: 0;
-								text-decoration: underline;
-								
-								p {
-								
-									font-size: 1.2rem;
-									font-weight: 700;
-									line-height: 1.4;
-									padding: 0;
-									margin: 0.25rem 0.5rem;
-								
-								}
-													
-								a {
-									
-									bottom: 0.5em;
-									border: 0;
-									float: right;
-									font-size: 0.01rem;
-									font-family: $font-sans-serif;
-									font-weight: 300;
-    								line-height: 1.25;	
-									padding-left: 1rem;
-									padding-right: 0.5rem;
-									position: relative;
-									text-decoration: none;
-									transform: scale(1.5,1.0);
-															
-								}
-							
-								a:after {
-									
-									bottom: 0.25rem;
-									content: "\2227";
-									color: #aaa;
-									font-size: 1.5rem;
-									position: relative;
-								
-								}
-
-							}
-														
-							div.contents {
-								
-								font-size: 1.0rem;
-								
-								ul {
-									
-									list-style-type: none;
-									margin-bottom: 0;
-									margin-left: 0.5rem;
-									padding-left: 0;
-									
-									li {
-										
-										line-height: 2; // Hard to tap individual links.
-											
-									}
-										
-								}
-								
-							}
-																					
-						}
-
-						div.drawer.closed:hover {
-					
-							background-color: $color-lightest-grey;
-							
-						}
-
-						div.drawer.closed {
-								
-							div.contents {
-									
-								display: none;
-
-							}
-								
-							div.header {
-							
-								a:after {
-									
-									content: "\2228";
-								
-								}
-							
-							}							
-
-						}
-
-						.box-yellow div.drawer:first-of-type {
-							
-							margin-top: 1rem;
-							
-						}	
-						
-						.box-yellow div.drawer:last-of-type {
-							
-							border-bottom: 1px $color-lighter-grey solid;
-							
-						}
-						
-						.box-yellow div.drawer {
-							
-							padding-left: 0;
-							padding-right: 0;
-							
-							div.header {
-								
-								p {
-									
-									margin-left: 0;
-									margin-right: 0;
-									
-								}
-								
-							}
-							
-							div.contents {
-								
-								ul {
-									
-									margin-left: 0;
-									margin-right: 0;
-									
-								}
-								
-							}	
-							
-						}
-						
-						div.promo-series {
-							
-							font-family: $font-sans-serif;
-							margin: $margin-media auto;
-							
-						}
-						
-						div.promo-content {
-							
-							margin: $margin-media auto;
-							text-align: left;
-							font-family: $font-sans-serif;
-							color: #000;
-							max-width: 90%;
-							    
-							h5, h6 {
-							
-								margin: $margin-media 0;
-								
-							}
-
-							h5 {
-								
-								width: $width-text-max;
-								max-width: 90%;
-								font-size: 1.75rem;
-								line-height: 1.15em;
-								font-weight: 600;
-								padding-bottom: 0.5rem;
-								
-							}
-
-							h6 {
-								
-								width: $width-text-max;
-								max-width: 90%;
-								font-size: 0.875rem;
-								line-height: 1.15em;
-								color: #808080;
-								text-transform: uppercase;
-								font-weight: 400;
-								
-							}
-
-							> a {
-
-								line-height: 1.5em;								
-								margin-bottom: .25em;
-								border-bottom: 1px solid #ffcc00;
-								font-weight: 600;
-
-							}
-
-							> a:hover {
-
-								color: $color-nat-geo; 
-
-							}
-							
-							img {
-							
-								width: 7.5rem;
-								height: auto;
-								float: left;
-								margin: 0 1.25rem 1.25rem 0;
-								clear: left;
-								
-							}
-							
-							.caption, .credit, p {
-								
-								display: block;
-								font-family: $font-sans-serif;
-								font-size: 0.9rem;
-								padding: 0 0.5rem 0.5rem 0;
-								
-							}
-
-							hr {
-
-								width: 100%;
-								margin: 1.25rem auto 2.5rem;
-
-							}
-													
-						}
-
-						div.video, div.photo {
-							
-							margin: $margin-media auto;
-							text-align: left;
-							position: relative;
-							
-							iframe, video {
-								
-								width: 100%;
-								height: 100%;
-								padding-bottom: 0.5rem;
-								
-							}
-							
-							> div {
-								
-								padding-bottom: 0.5rem;
-								
-							}
-							
-							img {
-							
-								width: 100%;
-								height: auto;
-								padding-bottom: 0.5rem;
-								
-							}
-							
-							.caption, .credit {
-								
-								display: inline-block;
-								font-family: $font-sans-serif;
-								font-size: 0.9rem;
-								padding: 0 0.5rem 0.5rem 0;
-								text-align: left;
-								
-							}
-							
-							.caption {
-								 
-								color: #000; 
-								
-							}
-							
-							.credit {
-								 
-								 text-transform: uppercase;
-								 color: gray;
-								 font-size: 0.7rem; 
-								
-							}
-							
-							.caption > span.credit {
-								
-								margin-left: 0.5rem;
-							
-							}
-						
-						}
-
-					}
-					
-					div.featurepic {
-					
-						clear: both;
-						border: 0 none;
-						position: relative;
-						
-						img {
-						/*	width: 100vh;
-							max-width: 100%; */
-							width: 100%;
-							height: auto;
-						}
-						
-						@extend .internal-function-width-text;
-					 
-					}
-					
-					div.overlay {
-						
-						color: #fff;
-						position: absolute; // Note that parent container must have position: relative.
-						top: 35%;
-						text-align: center;
-						text-shadow: 0.1rem 0.1rem 0.2rem rgba(0,0,0,0.5);
- 						width: 100%;
- 						
-						@include respond-to-width(small) {
-
- 							position: static;
- 							color: inherit;
- 							text-shadow: none;
- 							
- 							
-						}				
- 						
- 						.article_credits_author, .article_credits_photographer {
- 							
-							@include respond-to-width(medium) {
-								
-	 							color: rgba(255,255,255,0.75);
-								
-							}
-							
- 							@include respond-to-width(large) {
-								
-	 							color: rgba(255,255,255,0.75);
-								
-							}
- 							
- 						}
- 							
-					}						
-					
-					.width-cinematic > div.overlay {
-						
-						h2.title {
-						
-								font-weight: 700;
-								font-family: $font-serif-display-bold;
-						
-						}
-						
-						@include respond-to-width(large) {
-							
-							font-size: 2.0rem;
-							
-							h2.title {
-								
-								font-size: 6.0rem;
-								
-							}
-							
-							h3.title {
-								
-								font-size: 1.6rem;
-								
-							}
-							
-						}
-						
-					}							
-
-					div.nextpage_continue {
-
-						display:none;
-
-					}
-					
-					div.subscribe {
-						
-						display: none;
-						
-					}
-					
 				}
 				
 		
 			}
+		
+			/* The Cheetah built-in footer. */
 		
 			div#footer {
 
@@ -853,14 +944,14 @@ body.ngm {
 		
 		}
 			
+		/* The real National Geographic footer. */
+		
 		div#global_footer {
 			
-			max-width: 80vw;
+			@extend .internal-function-width-column;
 			
 		}
 			
 	}
 
 }
-
-	

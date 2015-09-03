@@ -94,10 +94,12 @@
 	
 	float: none !important; 	
 	
-	@include respond-to-width(notsmall) {
+	@include respond-to-width(large) {
 		
-		float: right !important; 
 		clear: right;
+		float: right !important; 
+		margin-left: $margin-media !important;
+		margin-right: $margin-media !important;
 		
 	}
 	
@@ -107,15 +109,17 @@
 	
 	float: none !important; 
 	
-	@include respond-to-width(notsmall) {
+	@include respond-to-width(large) {
 	
-		float: left !important; 
 		clear: left;	
-			
+		float: left !important; 
+		margin-left: $margin-media !important;
+		margin-right: $margin-media !important;
+		
 	}
 }
 
-.internal-function-width-text {
+.internal-function-width-column {
 	
     max-width: 90%;
     width: $width-text-max;
@@ -163,15 +167,22 @@
 
 .width-inset {
 	
-	max-width: 0.80*$width-text-max !important;
-	width: 80% !important;
+	width: 0.80*$width-text-max !important;
+	max-width: 80% !important;
 	
 }
 
 .width-locator {
 	
-	max-width: 15rem !important;
+	width: 15rem !important;
+	max-width: 75%;
 	
 } 
 
+.width-box {
+	
+	max-width: 75%;
+	width: 0.50*$width-text-max !important;
+	
+}
 

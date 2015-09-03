@@ -312,6 +312,59 @@ body.ngm {
 
  						}
 
+						/* We have these stub classes (real ones are in _size_utilities.scss) 
+						for necessary specificity. */
+
+						div.width-full {
+							
+							@extend .width-full;
+							
+						}
+						
+						div.width-cinematic {
+							
+							@extend .width-cinematic;
+							
+						}
+						
+												
+						div.width-wider {
+						
+							@extend .width-wider;
+							
+						}
+							
+						
+						div.width-inset {
+							
+							@extend .width-inset;
+							
+						}
+						
+						div.width-locator {
+							
+							@extend .width-locator;
+							
+						} 
+						
+						div.width-box {
+							
+							@extend .width-box;
+							
+						}
+						
+						div.float-left {
+							
+							@extend .float-left;
+							
+						}
+						
+						div.float-right {
+							
+							@extend .float-right;
+							
+						}
+						
  						hr {
 
  							width: $width-text-max * 1.2;

@@ -92,14 +92,14 @@
 
 .float-right {
 	
-	float: none !important; 	
+	float: none; 	
 	
 	@include respond-to-width(large) {
 		
 		clear: right;
-		float: right !important; 
-		margin-left: $margin-media !important;
-		margin-right: $margin-media !important;
+		float: right; 
+		margin-left: $margin-media;
+		margin-right: $margin-media;
 		
 	}
 	
@@ -107,14 +107,14 @@
 
 .float-left {
 	
-	float: none !important; 
+	float: none; 
 	
 	@include respond-to-width(large) {
 	
 		clear: left;	
-		float: left !important; 
-		margin-left: $margin-media !important;
-		margin-right: $margin-media !important;
+		float: left; 
+		margin-left: $margin-media;
+		margin-right: $margin-media;
 		
 	}
 }
@@ -135,8 +135,8 @@
 
 	/* These are browser width values. */
 
-	width: 100% !important; /* TODO fix this by using specific selectors. */
-	max-width: 100% !important; /* TODO fix this by using specific selectors. */
+	width: 100%; 
+	max-width: 100%;  
 
 	> p {
 		
@@ -148,8 +148,8 @@
 
 .width-full {
 	
-	width: 90% !important ; /* TODO fix this by using specific selectors. */
-	max-width: 90% !important; /* TODO fix this by using specific selectors. */
+	width: 90%;
+	max-width: 90%; 
 	
 }
 
@@ -159,7 +159,7 @@
 
 .width-wider {
 
-	width: 1.2*$width-text-max !important;
+	width: 1.2*$width-text-max;
 	max-width: 90%;
 	
 }
@@ -167,14 +167,14 @@
 
 .width-inset {
 	
-	width: 0.80*$width-text-max !important;
-	max-width: 80% !important;
+	width: 0.80*$width-text-max;
+	max-width: 80%;
 	
 }
 
 .width-locator {
 	
-	width: 15rem !important;
+	width: 15rem;
 	max-width: 75%;
 	
 } 
@@ -182,7 +182,7 @@
 .width-box {
 	
 	max-width: 75%;
-	width: 0.50*$width-text-max !important;
+	width: 0.50*$width-text-max;
 	
 }
 

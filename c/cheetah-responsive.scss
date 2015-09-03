@@ -83,7 +83,7 @@ body.ngm {
 			
 			/* The breadcrumbs above the article. */
 			
-			div.nav {
+			.nav {
 
 				display: none;
 								
@@ -91,7 +91,7 @@ body.ngm {
 			
 			/* Right side promos from Cheetah. */
 				
-			div.narrow_side, div.narrow_sidert {
+			.narrow_side, .narrow_sidert {
 				
 				display: none;	
 			
@@ -103,7 +103,7 @@ body.ngm {
 			
 			I am retaining the styles in case this changes. -CC 2015-09-03 */
 			 
-			div.narrow_side {
+			.narrow_side {
 			
 				display: none;
 			
@@ -124,19 +124,19 @@ body.ngm {
 					
 				}	
 				
-				> div.clear {
+				> .clear {
 					
 					padding: 0;
 					
 				}
 				
-				> div.spacer, > div.line {
+				> .spacer, > .line {
 					
 					display: none !important;
 				
 				}
 				
-				> div.navblocktxt, > div.navblock {
+				> .navblocktxt, > .navblock {
 					
 					float: none;
 					display: inline-block;
@@ -154,13 +154,13 @@ body.ngm {
     				
 				}
 				
-				> div.navblocktxt {
+				> .navblocktxt {
 					
 					display: none;
 					
 				}
 				 
-				> div.navblock {
+				> .navblock {
 					
 					margin: 0.5rem;
 					padding: 0 0 2rem 0;
@@ -171,7 +171,7 @@ body.ngm {
 						
 			/* This is the main class used by Cheetah for "three-column" (article) pages. */
 			
-			div.main_3narrow_wrap {
+			.main_3narrow_wrap {
 				
 				float: none;
 				font-size: 1.2rem;
@@ -179,7 +179,7 @@ body.ngm {
 				padding: 0;
 				width: 100%;
 				
-				div.main_3narrow {
+				.main_3narrow {
 
 					padding: 0;
 					margin: 0 auto;
@@ -196,7 +196,7 @@ body.ngm {
 
 					}
 
-					div.article_title {
+					.article_title {
 					
 						color: black;
 						text-transform: uppercase;
@@ -217,7 +217,7 @@ body.ngm {
 						    
 					}
 
-					div.article_credits_author, div.article_credits_photographer {
+					.article_credits_author, .article_credits_photographer {
 						
 						font-family: $font-serif-display-italic;
 						font-style: italic;
@@ -227,7 +227,7 @@ body.ngm {
 						
 					}
 					
-					div.content {
+					.content {
 						
 						font-family: $font-serif;
 					    font-size: 1.0rem;
@@ -315,51 +315,51 @@ body.ngm {
 						/* We have these stub classes (real ones are in _size_utilities.scss) 
 						for necessary specificity. */
 
-						div.width-full {
+						.width-full {
 							
 							@extend .width-full;
 							
 						}
 						
-						div.width-cinematic {
+						.width-cinematic {
 							
 							@extend .width-cinematic;
 							
 						}
 						
 												
-						div.width-wider {
+						.width-wider {
 						
 							@extend .width-wider;
 							
 						}
 							
 						
-						div.width-inset {
+						.width-inset {
 							
 							@extend .width-inset;
 							
 						}
 						
-						div.width-locator {
+						.width-locator {
 							
 							@extend .width-locator;
 							
 						} 
 						
-						div.width-box {
+						.width-box {
 							
 							@extend .width-box;
 							
 						}
 						
-						div.float-left {
+						.float-left {
 							
 							@extend .float-left;
 							
 						}
 						
-						div.float-right {
+						.float-right {
 							
 							@extend .float-right;
 							
@@ -385,7 +385,7 @@ body.ngm {
 						
 						/* A wrapper container for additional social buttons. */
 						
-						div.share-buttons {
+						.share-buttons {
 							
 						    float: none;
 						    text-align: left;
@@ -404,7 +404,7 @@ body.ngm {
 						
 						/* Place a box around a media object or promo container. */
 						
-						div.box {
+						.box {
 							
 							border: 1px $color-light-grey solid;
 
@@ -424,7 +424,7 @@ body.ngm {
 						
 						/* Place a yellow header over a media object or promo container. */
 						
-						div.box-yellow {
+						.box-yellow {
 							
 							border-top: 1.5rem $color-nat-geo solid;
 
@@ -442,26 +442,26 @@ body.ngm {
 								
 							/* Special handling for the yellow-header style. */
 
-							div.drawer:first-of-type {
+							.drawer:first-of-type {
 								
 								margin-top: 1rem;
 								
 							}	
 							
-							div.drawer:last-of-type {
+							.drawer:last-of-type {
 								
 								border-bottom: 1px $color-lighter-grey solid;
 								
 							}
 							
-							div.drawer {
+							.drawer {
 								
 								/* We don't have to provide space for the left/right box outline. */
 								
 								padding-left: 0;
 								padding-right: 0;
 								
-								div.header {
+								.header {
 									
 									p {
 										
@@ -472,7 +472,7 @@ body.ngm {
 									
 								}
 								
-								div.contents {
+								.contents {
 									
 									ul {
 										
@@ -489,7 +489,7 @@ body.ngm {
 						
 						/* Place a collapsible drawer within a box or promo container. */
 						
-						div.drawer {
+						.drawer {
 
 							border-top: 1px $color-lighter-grey solid;
 							font-family: $font-sans-serif;
@@ -499,7 +499,7 @@ body.ngm {
 							
 							/* The header is the main title of the collapsible drawer. */
 							
-							div.header {
+							.header {
 								
 								font-family: $font-sans-serif;
 								font-size: 1.2rem;
@@ -553,7 +553,7 @@ body.ngm {
 								
 							/* Contains the links or other collapsible content. */
 													
-							div.contents {
+							.contents {
 								
 								font-size: 1.0rem;
 								
@@ -582,7 +582,7 @@ body.ngm {
 						
 						TODO: Mobile? */
 						
-						div.drawer.closed:hover {
+						.drawer.closed:hover {
 					
 							background-color: $color-lightest-grey;
 							
@@ -590,15 +590,15 @@ body.ngm {
 
 						/* Apply or remove .closed from a drawer to hide its contents. */
 		
-						div.drawer.closed {
+						.drawer.closed {
 								
-							div.contents {
+							.contents {
 									
 								display: none;
 
 							}
 								
-							div.header {
+							.header {
 							
 								a:after {
 									
@@ -612,7 +612,7 @@ body.ngm {
 						
 						/* Style a container as a series promo--showing all parts of a series. */
 						
-						div.promo-series {
+						.promo-series {
 							
 							font-family: $font-sans-serif;
 							margin: $margin-media auto;
@@ -621,7 +621,7 @@ body.ngm {
 						
 						/* Style a container to show promos, optionally with thumbnails. */
 						
-						div.promo-content {
+						.promo-content {
 							
 							margin: $margin-media auto;
 							text-align: left;
@@ -704,7 +704,7 @@ body.ngm {
 						
 						*/ 
 
-						div.video, div.photo {
+						.video, .photo {
 							
 							margin: $margin-media auto;
 							text-align: left;
@@ -771,7 +771,7 @@ body.ngm {
 					We do not necessarily need to use it when building a story, but I include it here
 					for maximum compatibility with older stories. */
 					
-					div.featurepic {
+					.featurepic {
 					
 						clear: both;
 						border: 0 none;
@@ -792,7 +792,7 @@ body.ngm {
 					
 					/* Cheetah's next/previous page controls for paginated articles. */
 					
-					div.nextpage_continue {
+					.nextpage_continue {
 
 						display:none;
 
@@ -809,7 +809,7 @@ body.ngm {
 					
 					*/
 					
-					div.overlay {
+					.overlay {
 						
 						color: #fff;
 						position: absolute; // Note that parent container must have position: relative.
@@ -850,7 +850,7 @@ body.ngm {
 					
 					/* If the overlay is used over a particularly large image, make the typography larger and stronger. */
 					
-					.width-cinematic > div.overlay {
+					.width-cinematic > .overlay {
 						
 						h2.title {
 						
@@ -881,7 +881,7 @@ body.ngm {
 										
 					/* Cheetah's subscription promos. */
 					
-					div.subscribe {
+					.subscribe {
 						
 						display: none;
 						

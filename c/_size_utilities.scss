@@ -167,14 +167,15 @@
 
 .width-inset {
 	
-	max-width: 0.80*$width-text-max !important;
-	width: 80% !important;
+	width: 0.80*$width-text-max !important;
+	max-width: 80% !important;
 	
 }
 
 .width-locator {
 	
-	max-width: 15rem !important;
+	width: 15rem !important;
+	max-width: 75%;
 	
 } 
 

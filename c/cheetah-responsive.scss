@@ -186,8 +186,9 @@ body.ngm {
 					
 					a {
 
-						border-bottom:1px solid $color-nat-geo;
-
+						text-decoration: underline;
+						text-decoration-color: $color-nat-geo;
+						
 					}
 
 					a:hover {
@@ -421,7 +422,7 @@ body.ngm {
 						    
 						    	/* Remove underline from links. */
 						    	
-						    	border: 0;
+						    	text-decoration: none;
 						    
 						    }
 							
@@ -547,8 +548,8 @@ body.ngm {
 								a {
 									
 									bottom: 0.5em;
-									border: 0;
 									float: right;
+									text-decoration: none;
 									
 									/* Hide its contents and use :after to show the control. */
 									
@@ -674,11 +675,11 @@ body.ngm {
 
 							> a {
 
+								font-weight: 600;
 								line-height: 1.5em;								
 								margin-bottom: .25em;
-								border-bottom: 1px solid #ffcc00;
-								font-weight: 600;
-
+								text-decoration-color: $color-nat-geo;
+									
 							}
 
 							> a:hover {
@@ -937,7 +938,7 @@ body.ngm {
 						
 						a {
 							
-							border: 0;
+							text-decoration: none;
 							
 						}
 				

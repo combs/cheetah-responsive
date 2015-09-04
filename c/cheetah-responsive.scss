@@ -234,7 +234,7 @@ body.ngm {
 					    line-height: 1.75;
 						/* padding: 1rem; */
 						padding: 0;
-						margin-top: $margin-media;
+						margin-top: $margin-media;						
 						
 						> p:first-of-type {
 							
@@ -647,7 +647,8 @@ body.ngm {
 						.promo-series {
 							
 							font-family: $font-sans-serif;
-							margin: $margin-media auto;
+							margin-top: $margin-media;
+							margin-bottom: $margin-media;
 							
 						}
 						
@@ -931,6 +932,12 @@ body.ngm {
 				
 							font-size: 1.75rem;		
 						
+						}
+						
+						a {
+							
+							border: 0;
+							
 						}
 				
 					}

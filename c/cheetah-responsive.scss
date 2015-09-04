@@ -248,6 +248,30 @@ body.ngm {
 						
 						}
 
+						.ad-unit-210 {
+							
+							width: 210px;
+							height: 50px;
+							
+						}
+						
+						.ad-unit-300 {
+							
+							width: 300px;
+							height: 250px;
+							margin: $margin-media;
+							
+						}
+						
+						.ad-unit-728 {
+							
+							margin-top: $margin-media;
+							margin-bottom: $margin-media;
+							max-width: 728px;
+							width: initial;
+							
+						}	
+
 						.author {
 
 							font-family: $font-serif-display-italic;
@@ -608,6 +632,14 @@ body.ngm {
 							
 							}							
 
+						}
+						
+						/* Client-side include of a module. Hide it until it loads. */
+					
+						.include {
+							
+							display: none;
+							
 						}
 						
 						/* Style a container as a series promo--showing all parts of a series. */

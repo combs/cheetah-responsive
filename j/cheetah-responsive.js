@@ -81,8 +81,27 @@ function prepareDrawers() {
 
 }
 
+
+/* Allow for client-side includes. Usage:
+
+<div class="include" data-include="/2015/11/promo-series-climate-change.html">
+
+*/
+
+function prepareIncludes() {
+	
+	$(".include").each(function(){ 
+		
+		$(this).load(
+			$(this).data("include")
+			).removeClass("include");
+	});
+		
+}
+
 $(document).ready(function() {
 	
+	prepareIncludes();
 	prepareDrawers();
 	prepareAds();
 

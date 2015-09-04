@@ -26,7 +26,7 @@ function prepareAds() {
 		var theID=$(this).attr("id");
 		if (theID) {
 			googletag.cmd.push(function() {
-	    		googletag.defineSlot("/2994/ng.ngm/" + ( index>0 ? "ng" + index+1 + "_" : "") + "climate-change", [[728, 90], [320, 50]], theID ).addService(googletag.pubads());
+	    		googletag.defineSlot("/2994/ng.ngm/" + ( index>1 ? "ng" + (index) + "_" : "") + "climate-change", [[728, 90], [320, 50]], theID ).addService(googletag.pubads());
 			    googletag.pubads().enableSingleRequest();
 			    googletag.enableServices();
 			    googletag.display(theID);
@@ -39,7 +39,7 @@ function prepareAds() {
 		var theID=$(this).attr("id");
 		if (theID) {
 			  googletag.cmd.push(function() {
-	    		googletag.defineSlot("/2994/ng.ngm/" + ( index>0 ? "ng" + index+1 + "_" : "") + "climate-change", [210, 50], theID ).addService(googletag.pubads());
+	    		googletag.defineSlot("/2994/ng.ngm/" + ( index>1 ? "ng" + (index) + "_" : "") + "climate-change", [210, 50], theID ).addService(googletag.pubads());
 			    googletag.pubads().enableSingleRequest();
 			    googletag.enableServices();
 			    googletag.display(theID);
@@ -53,7 +53,7 @@ function prepareAds() {
 		if (theID) { 
 			  googletag.cmd.push(function() {
 			  	index++;
-	    		googletag.defineSlot("/2994/ng.ngm/" + ( index>0 ? "ng" + index+1 + "_" : "") + "climate-change", [300, 250], theID ).addService(googletag.pubads());
+	    		googletag.defineSlot("/2994/ng.ngm/" + ( index>1 ? "ng" + (index) + "_" : "") + "climate-change", [300, 250], theID ).addService(googletag.pubads());
 			    googletag.pubads().enableSingleRequest();
 			    googletag.enableServices();
 			    googletag.display(theID);

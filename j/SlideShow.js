@@ -497,7 +497,6 @@ function Slide(_slideShow, _slideObj, _appendToId, _indx){
 	var self = this;
 	window.addEventListener('resize', function(){self.sizeImage();});
 	$(window).on('orientationchange', function(){self.sizeImage();});
-	self.sizeImage();
 	
 	//window.addEventListener('resize', function(){self.captionBar.resize();});
 	//$(window).on('orientationchange', function(){self.captionBar.resize();});

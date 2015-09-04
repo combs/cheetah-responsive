@@ -234,7 +234,7 @@ body.ngm {
 					    line-height: 1.75;
 						/* padding: 1rem; */
 						padding: 0;
-						margin-top: $margin-media;
+						margin-top: $margin-media;						
 						
 						> p:first-of-type {
 							
@@ -247,6 +247,31 @@ body.ngm {
 							font-family: $font-serif-italic;
 						
 						}
+
+						.ad-unit-210 {
+							
+							width: 210px;
+							height: 50px;
+							
+						}
+						
+						.ad-unit-300 {
+							
+							height: 250px;
+							margin-top: $margin-media;
+							margin-bottom: $margin-media;
+							width: 300px;
+							
+						}
+						
+						.ad-unit-728 {
+							
+							margin-top: $margin-media;
+							margin-bottom: $margin-media;
+							max-width: 728px;
+							width: initial;
+							
+						}	
 
 						.author {
 
@@ -610,12 +635,21 @@ body.ngm {
 
 						}
 						
+						/* Client-side include of a module. Hide it until it loads. */
+					
+						.include {
+							
+							display: none;
+							
+						}
+						
 						/* Style a container as a series promo--showing all parts of a series. */
 						
 						.promo-series {
 							
 							font-family: $font-sans-serif;
-							margin: $margin-media auto;
+							margin-top: $margin-media;
+							margin-bottom: $margin-media;
 							
 						}
 						
@@ -700,6 +734,36 @@ body.ngm {
 							}													
 						}
 
+						/* Style these containers for interactive HTML5 graphics. Light hand on styles here.
+						
+						*/
+
+						.graphic {
+							
+							font-family: $font-sans-serif;
+							margin: $margin-media auto;
+							
+							.caption {
+								 
+								color: #000; 
+								
+							}
+							
+							.credit {
+								 
+								 text-transform: uppercase;
+								 color: gray;
+								 font-size: 0.7rem; 
+								
+							}
+							
+							.caption > span.credit {
+								
+								margin-left: 0.5rem;
+							
+							}
+						}
+						
 						/* Style these containers for photos or video players.
 						
 						*/ 
@@ -899,6 +963,12 @@ body.ngm {
 				
 							font-size: 1.75rem;		
 						
+						}
+						
+						a {
+							
+							border: 0;
+							
 						}
 				
 					}

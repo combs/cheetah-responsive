@@ -63,14 +63,18 @@ function prepareAds() {
 	
 }
 
+/* Enable interactive, collapsible drawers. */
+
 function prepareDrawers() {
 
-	$("div.drawer div.header").each(function() {
+	$("div.drawer div.header").not(".prepared").each(function() {
 		$(this).click(
 		function() {
 			$(this).parent().toggleClass("closed");
 			return false;
-		} ) ;  } ) ;
+			} ) ;  
+		$(this).addClass("prepared");
+		} ) ;
 	$("div.drawer").addClass("closed");
 	$("div.drawer").first().removeClass("closed");
 	

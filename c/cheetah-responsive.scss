@@ -257,9 +257,10 @@ body.ngm {
 						
 						.ad-unit-300 {
 							
-							width: 300px;
 							height: 250px;
-							margin: $margin-media;
+							margin-top: $margin-media;
+							margin-bottom: $margin-media;
+							width: 300px;
 							
 						}
 						
@@ -737,7 +738,7 @@ body.ngm {
 						
 						*/ 
 
-						.video, .photo {
+						.video, .photo, .graphic {
 							
 							margin: $margin-media auto;
 							text-align: left;

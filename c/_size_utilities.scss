@@ -181,8 +181,12 @@
 
 .width-box {
 	
-	max-width: 75%;
-	width: 0.45*$width-text-max;
+	@include respond-to-width(large) {
+	
+		max-width: 75%;
+		width: 0.40*$width-text-max;
+	
+	}
 	
 }
 

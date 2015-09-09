@@ -18,13 +18,32 @@
 
 Add this code to your Cheetah article's data XML:
 
-`<link rel="stylesheet" href="https://fonts.ngeo.com/hoefler/1-0-1/hco_fonts.css">
-<link rel="stylesheet" href="/dev/supercheetah/c/cheetah-responsive.min.css">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3.0, user-scalable=1">`
+	<link rel="stylesheet" href="https://fonts.ngeo.com/hoefler/1-0-1/hco_fonts.css">
+	<link rel="stylesheet" href="/dev/supercheetah/c/cheetah-responsive.min.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3.0, user-scalable=1">
+	<script src="/dev/supercheetah/j/picturefill.min.js"></script>
 
 Now you can code it as usual.
 
 ### Adding Extra Images
+
+Use this code to add each picture to your article:
+
+	<div class="photo width-text">
+
+		<img class="lazyload" 
+		srcset="img/image1_2048.jpg 2048w, img/image1_1024.jpg 1024w, img/image1_640.jpg 640w" 
+		src="img/image1_640.jpg" 
+		alt="Picture of TK TK TK">
+
+		<div class="caption">Caption TK 
+			<span class="credit">Photograph by TK</span>
+		</div>
+		
+	</div>
+
+You can change the dimensions of the image versions--just make sure it is updated throughout the code.
+
 
 ### Adding Pull Quotes
 

@@ -593,7 +593,9 @@ body.ngm {
 									
 									li {
 										
-										line-height: 2; // Make links easier to tap.
+										line-height: 1.4; 
+										padding-bottom: 0.5rem;
+										
 											
 									}
 										
@@ -762,6 +764,15 @@ body.ngm {
 								margin-left: 0.5rem;
 							
 							}
+							
+							img {
+							
+								width: 100%;
+								height: auto;
+								padding-bottom: 0.5rem;
+								
+							}
+							
 						}
 						
 						/* Style these containers for photos or video players.

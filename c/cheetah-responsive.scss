@@ -659,11 +659,7 @@ body.ngm {
 						
 						.promo-content {
 							
-							margin: $margin-media auto;
-							text-align: left;
 							font-family: $font-sans-serif;
-							color: #000;
-							max-width: 90%;
 							    
 							.caption, .credit, p {
 								
@@ -689,16 +685,8 @@ body.ngm {
 
 							}
 							
-							h5, h6 {
-							
-								margin: $margin-media 0;
-								
-							}
-
 							h5 {
 								
-								width: $width-text-max;
-								max-width: 90%;
 								font-size: 1.75rem;
 								line-height: 1.15em;
 								font-weight: 600;
@@ -708,8 +696,6 @@ body.ngm {
 
 							h6 {
 								
-								width: $width-text-max;
-								max-width: 90%;
 								font-size: 0.875rem;
 								line-height: 1.15em;
 								color: #808080;

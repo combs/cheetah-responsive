@@ -83,6 +83,7 @@ We can include galleries using Joel Fiser's SlideShow.js (used in ISP projects).
 		    if (window.jQuery) {
         		window.jQuery.getScript("/dev/supercheetah/j/jquery.focuspoint.min.js");
 				window.jQuery.getScript("/dev/supercheetah/j/jquery.dfp.min.js");
+				window.jQuery.getScript("/dev/supercheetah/j/cheetah-responsive.min.js");
 				window.jQuery.getScript("/dev/supercheetah/j/SlideShow.min.js",buildGalleries);
 			    
 			} else {

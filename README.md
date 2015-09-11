@@ -50,6 +50,11 @@ You can change the dimensions of the image versions--just make sure it is update
 
 	<div class="width-wider quote">"It’s a project for a generation, it’s going to take till 2040 or 2050, and it’s hard."</div>
 
+
+### Adding Contributors' Notes
+
+	<p class="bio">"I'm so happy to be a contributor," said a contributor. "And that this story is built in literally the most beautiful webpage I've ever seen."</p>
+
 ### Size Options for Media Elements
 
 * width-inset: a small inset.

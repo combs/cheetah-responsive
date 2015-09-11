@@ -141,6 +141,18 @@ We can include galleries using Joel Fiser's SlideShow.js (used in ISP projects).
 
 ### Additional Ads
 
+### Removing the Leaderboard
+
+In the package config XML, replace the ad block with:
+
+		<object type="ad">
+			<height>90</height>
+			<width>728</width>
+			<label>0</label>
+			<adfile>/ads/ngmLeader-remover.html</adfile>
+		</object>
+		
+		
 ### Promo Drawers
 
 

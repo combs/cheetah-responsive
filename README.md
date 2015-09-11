@@ -158,6 +158,16 @@ In the package config XML, replace the ad block with:
 		</object>
 		
 		
+### Promo Tiles
+
+	<a href="/link/">
+		<div class="promo-tile box">
+				<img src="/2015/11/promo-images/img/06-motorcycle-repair-2048.jpg"> <div>
+				<h5>Promote the Channel</h5>
+				<p>Here is the descriptive text for promoting the Explorer site for the Channel.</p>
+		</div>
+	</div></a>
+		
 ### Promo Drawers
 
 

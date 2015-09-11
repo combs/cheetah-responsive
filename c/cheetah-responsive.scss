@@ -204,12 +204,51 @@ body.ngm {
 						font-size: .8em;
 						font-weight: 300;
 						line-height: 1.2em;
-						margin: 3.5rem auto;
-						text-align: center;
-						width: $width-text-max;
-						max-width: 80%;
+						margin: 2.5rem auto;
+						text-align: left;
+						width: 90%;
+						max-width: 90%;
 						
-						span.published {
+						.breadcrumbs {
+							
+							width: 100%;
+							
+							a {
+								
+								color: #000;
+								font-weight: 300;
+								
+							}
+							
+							a:hover {
+								
+								color: #000;
+								
+							}
+							
+							a:after {
+								
+								content:"|";
+								border-bottom:none;
+								padding:0 1em;	
+								
+							}
+							
+							a:first-child {
+								
+								font-weight: 600;
+								
+							}
+							
+							a:last-child {
+								
+								content: "";
+								
+							}
+							
+						}
+						
+						.published {
 							
 							display: none;
 							

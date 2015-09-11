@@ -203,13 +203,52 @@ body.ngm {
 						font-family: $font-sans-serif;
 						font-size: .7em;
 						font-weight: 300;
-						line-height: 1.5em;
-						margin: 1rem auto;
-						text-align: center;
-						width: $width-text-max;
-						max-width: 80%;
+						line-height: 1.2em;
+						margin: 2.5rem auto;
+						text-align: left;
+						width: 90%;
+						max-width: 90%;
 						
-						span.published {
+						.breadcrumbs {
+							
+							width: 100%;
+							
+							a {
+								
+								color: #000;
+								font-weight: 300;
+								
+							}
+							
+							a:hover {
+								
+								color: #000;
+								
+							}
+							
+							a:after {
+								
+								content:"|";
+								border-bottom:none;
+								padding:0 1em;	
+								
+							}
+							
+							a:first-child {
+								
+								font-weight: 600;
+								
+							}
+							
+							a:last-child {
+								
+								content: "";
+								
+							}
+							
+						}
+							
+						.published {
 							
 							display: none;
 							
@@ -285,10 +324,32 @@ body.ngm {
  						
  						.bio {
  							
- 							font-family: $font-serif-italic;
+							color: $color-grey;
+ 							font-family: $font-sans-serif;
+ 							border-top: 1px $color-light-grey solid;
+ 							margin-top: $margin-media;
+ 							padding-top: $margin-media / 2;
  							
  						}
+ 						
+ 						// :first-of-type doesn't work for classes. This is a workaround.
+ 						
+ 						.bio ~ .bio {
  							
+ 							border-top: 0;
+ 							margin-top: 0;
+							padding-top: 0; 							
+ 							
+ 						}
+ 						
+ 						.bio:last-of-type {
+ 						
+ 							border-bottom: 1px $color-light-grey solid;
+ 							margin-bottom: $margin-media;
+ 							padding-bottom: $margin-media / 2;
+ 							
+ 						}
+ 						
  						.editors-note {
 
  							border: 1px solid #c9c9c9;
@@ -395,7 +456,7 @@ body.ngm {
  							width: $width-text-max * 1.2;
  							margin: $margin-media auto;
  							padding: 0;
- 							color: #c9c9c9;
+ 							color: $color-light-grey;
  							max-width: 90%;
 
  						}
@@ -432,6 +493,7 @@ body.ngm {
 						.box {
 							
 							border: 1px $color-light-grey solid;
+							overflow: hidden; // Keeps floating elements from overlapping box border.
 
 							> h1, > h2, > h3, > h4 {
 								
@@ -452,6 +514,7 @@ body.ngm {
 						.box-yellow {
 							
 							border-top: 1.5rem $color-nat-geo solid;
+							overflow: hidden; // Keeps floating elements from overlapping box border.
 
 							> h1, > h2, > h3, > h4 {
 								
@@ -655,15 +718,31 @@ body.ngm {
 							
 						}
 						
+						.promo-tile {
+							
+							:before {
+								
+							    color: #eee;
+							    content: "\1F522";
+							    float: right;
+							    font-family: "icongs";
+							    font-size: 2rem;
+							    line-height: 1;
+							    padding: 0 0 2rem 2rem;
+							    position: relative;
+							    right: 1rem;
+							    top: 1rem;
+							    
+							}
+
+						}
+						
+						
 						/* Style a container to show promos, optionally with thumbnails. */
 						
 						.promo-content {
 							
-							margin: $margin-media auto;
-							text-align: left;
 							font-family: $font-sans-serif;
-							color: #000;
-							max-width: 90%;
 							    
 							.caption, .credit, p {
 								
@@ -678,7 +757,7 @@ body.ngm {
 
 								line-height: 1.5em;								
 								margin-bottom: .25em;
-								border-bottom: 1px solid #ffcc00;
+								border-bottom: 1px solid $color-nat-geo;
 								font-weight: 600;
 
 							}
@@ -689,16 +768,8 @@ body.ngm {
 
 							}
 							
-							h5, h6 {
-							
-								margin: $margin-media 0;
-								
-							}
-
 							h5 {
 								
-								width: $width-text-max;
-								max-width: 90%;
 								font-size: 1.75rem;
 								line-height: 1.15em;
 								font-weight: 600;
@@ -708,8 +779,6 @@ body.ngm {
 
 							h6 {
 								
-								width: $width-text-max;
-								max-width: 90%;
 								font-size: 0.875rem;
 								line-height: 1.15em;
 								color: #808080;
@@ -720,6 +789,7 @@ body.ngm {
 
 							hr {
 
+								max-width: 100%;
 								width: 100%;
 								margin: 1.25rem auto 2.5rem;
 
@@ -733,7 +803,8 @@ body.ngm {
 								margin: 0 1.25rem 1.25rem 0;
 								clear: left;
 								
-							}													
+							}			
+																	
 						}
 
 						/* Style these containers for interactive HTML5 graphics. Light hand on styles here.

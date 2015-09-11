@@ -50,6 +50,11 @@ You can change the dimensions of the image versions--just make sure it is update
 
 	<div class="width-wider quote">"It’s a project for a generation, it’s going to take till 2040 or 2050, and it’s hard."</div>
 
+
+### Adding Contributors' Notes
+
+	<p class="bio">"I'm so happy to be a contributor," said a contributor. "And that this story is built in literally the most beautiful webpage I've ever seen."</p>
+
 ### Size Options for Media Elements
 
 * width-inset: a small inset.
@@ -83,6 +88,7 @@ We can include galleries using Joel Fiser's SlideShow.js (used in ISP projects).
 		    if (window.jQuery) {
         		window.jQuery.getScript("/dev/supercheetah/j/jquery.focuspoint.min.js");
 				window.jQuery.getScript("/dev/supercheetah/j/jquery.dfp.min.js");
+				window.jQuery.getScript("/dev/supercheetah/j/cheetah-responsive.min.js");
 				window.jQuery.getScript("/dev/supercheetah/j/SlideShow.min.js",buildGalleries);
 			    
 			} else {
@@ -140,9 +146,20 @@ We can include galleries using Joel Fiser's SlideShow.js (used in ISP projects).
 
 ### Additional Ads
 
+### Removing the Leaderboard
+
+In the package config XML, replace the ad block with:
+
+		<object type="ad">
+			<height>90</height>
+			<width>728</width>
+			<label>0</label>
+			<adfile>/ads/ngmLeader-remover.html</adfile>
+		</object>
+		
+		
 ### Promo Drawers
 
-I'm working on a better way to place this consistently across the articles.
 
 * Include jQuery at the very top:
 
@@ -152,26 +169,10 @@ I'm working on a better way to place this consistently across the articles.
 
 		<script src="/dev/supercheetah/j/supercheetah.min.js"></script>
 
-* Add this code:
+* Add this code where you want the box to appear:
 
-	        <div class="promo-content box width-inset">
-	        	<h1>Climate change is real.</h1>
-	        	<p>No kiddin'. </p>
-	        	
-		        <div class="drawer"><div class="header"><a href="#"></a><p> How do we know it's happening?</p>
-		        </div>
-		        			        	
-			    <div class="contents"><ul><li><a href="http://google.com">Google it bro</a></li><li><a href="http://google.com">No really google it</a></li></ul></div>
-			    
-		        </div>
-		        <div class="drawer"><div class="header"><a href="#"></a><p> What can we do about it?</p>
-		        </div>
-		        		        
-			    <div class="contents"><ul><li><a href="http://google.com">Pray for death</a></li><li><a href="http://google.com">Stop driving</a></li></ul></div>
-			    
-		        </div>
+		<div class="promo-series box-yellow width-box float-right include" data-include="/2015/11/promo-series-climate-change.html" />
 
-			</div>
 
 
 ### Promo Stack

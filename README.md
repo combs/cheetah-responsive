@@ -158,6 +158,16 @@ In the package config XML, replace the ad block with:
 		</object>
 		
 		
+### Promo Tiles
+
+	<a href="/link/">
+		<div class="promo-tile box">
+				<img src="/2015/11/promo-images/img/06-motorcycle-repair-2048.jpg"> <div>
+				<h5>Promote the Channel</h5>
+				<p>Here is the descriptive text for promoting the Explorer site for the Channel.</p>
+		</div>
+	</div></a>
+		
 ### Promo Drawers
 
 
@@ -204,3 +214,14 @@ In the package config XML, replace the ad block with:
 				<p>This is descriptive text telling the visitor how cool and what ish is in the extra cool ish link and how it is going to change their lives immeasurably if they only click on the link.</p>
 			</div>
 			
+			
+			
+### Cinematic Introductions
+
+Make a photo container per usual, and add class `overlay-title-here`. 
+
+			<div class="width-full photo overlay-title-here">
+				<img src="/2015/11/germany/img/01-windmills-990.jpg" alt="Picture of an abandoned nuclear power plant" style="">
+			</div> 
+			
+Anything with the class `.title` will be moved to a `.overlay` div inside it after page load.

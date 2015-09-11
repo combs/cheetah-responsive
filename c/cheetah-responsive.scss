@@ -199,50 +199,41 @@ body.ngm {
 					.article_title {
 					
 						color: black;
-						text-transform: uppercase;
 						font-family: $font-sans-serif;
-						font-size: .7em;
+						font-size: 0.9rem;
 						font-weight: 300;
 						line-height: 1.2em;
-						margin: 2.5rem auto;
 						text-align: left;
-						width: 90%;
-						max-width: 90%;
+						width: 100%;
 						
 						.breadcrumbs {
 							
+							display: block;
 							width: 100%;
+							margin: 1.5rem;
 							
 							a {
 								
 								color: #000;
 								font-weight: 300;
-								
-							}
-							
-							a:hover {
-								
-								color: #000;
-								
-							}
-							
-							a:after {
-								
-								content:"|";
-								border-bottom:none;
-								padding:0 1em;	
-								
+								padding: 0 1.2rem 0 1rem;
+								border-bottom: 0;
+								text-decoration: underline;
+								border-right: 1px $color-grey solid;
+								    
 							}
 							
 							a:first-child {
 								
+								padding-left: 0;
 								font-weight: 600;
 								
 							}
 							
 							a:last-child {
 								
-								content: "";
+								padding-right: 0;
+								border-right: 0;
 								
 							}
 							
@@ -271,9 +262,7 @@ body.ngm {
 						font-family: $font-serif;
 					    font-size: 1.0rem;
 					    line-height: 1.75;
-						/* padding: 1rem; */
-						padding: 0;
-						margin-top: $margin-media;						
+						padding: 0;					
 						
 						> p:first-of-type {
 							
@@ -287,20 +276,53 @@ body.ngm {
 						
 						}
 
+						.adunit {
+							
+							position: relative;
+							
+							> div {
+								
+								position: absolute;
+								
+							}
+							
+						}
+						
+						.adunit:empty, .adunit:blank {
+							
+							visibility: hidden;
+							
+						}
+
 						.ad-unit-210 {
 							
 							width: 210px;
 							height: 50px;
+							position: relative;
 							
 						}
 						
 						.ad-unit-300 {
 							
-							height: 250px;
 							margin-top: $margin-media;
 							margin-bottom: $margin-media;
+							min-height: 250px;
+							position: relative;
 							width: 300px;
+							background-color: $color-lightest-grey;
 							
+						}
+						 
+						.ad-unit-300:before {
+							
+							content: "Advertisement";
+						    font-family: $font-sans-serif;
+						    font-size: .8rem;
+						    color: $color-light-grey;
+						    position: absolute;
+						    top: -1.5rem;
+						    float: right;
+						    	
 						}
 						
 						.ad-unit-728 {
@@ -308,9 +330,23 @@ body.ngm {
 							margin-top: $margin-media;
 							margin-bottom: $margin-media;
 							max-width: 728px;
+							position: relative;
 							width: initial;
+							background-color: $color-lightest-grey;
 							
-						}	
+						}	 
+						
+						.ad-unit-728:before {
+							
+							content: "Advertisement";
+						    font-family: $font-sans-serif;
+						    font-size: .8rem;
+						    color: $color-light-grey;
+						    position: absolute;
+						    top: -1.5rem;
+						    float: left;
+						    	
+						}
 
 						.author {
 
@@ -459,6 +495,20 @@ body.ngm {
  							color: $color-light-grey;
  							max-width: 90%;
 
+ 						}
+
+ 						> a {
+ 							
+ 							@extend .internal-function-width-column;
+ 							border: 0;
+ 							display: block;
+
+ 						}
+ 						
+ 						> a:hover {
+ 							
+ 							color: inherit;
+ 							
  						}
  						
 						> p, > div, > embed, > iframe {
@@ -708,6 +758,17 @@ body.ngm {
 							
 						}
 						
+						#livefyre {
+							
+							margin: $margin-media auto;
+							
+							.fyre .fyre-comment-wrapper time.fyre-comment-date {
+								
+								float: none;
+								
+							}
+						}
+						
 						/* Style a container as a series promo--showing all parts of a series. */
 						
 						.promo-series {
@@ -720,23 +781,94 @@ body.ngm {
 						
 						.promo-tile {
 							
-							:before {
+							font-family: $font-sans-serif;
+							margin-top: $margin-media;
+							margin-bottom: $margin-media;
+							position: relative;
+							
+							img {
+							
+								@include respond-to-width(notsmall) {
+									
+									width: $width-text-max / 2;
+									margin-right: 1.5rem;
+									float: left;
 								
-							    color: #eee;
-							    content: "\1F522";
-							    float: right;
-							    font-family: "icongs";
-							    font-size: 2rem;
-							    line-height: 1;
-							    padding: 0 0 2rem 2rem;
-							    position: relative;
-							    right: 1rem;
-							    top: 1rem;
-							    
+								}
+								
+								@include respond-to-width(small) {
+								
+									width: 100%;
+								
+								}
+																
+							}
+							
+							h5 {
+								
+								font-size: 1.75rem;
+								line-height: 1.15em;
+								font-weight: 600;
+								margin: 1.5rem 1.5rem 0.5rem 1.5rem;
+								
+							}
+							
+							a {
+								
+							}
+							
+							a:hover {
+							
+								color: inherit;
+								
+							}
+							
+							p {
+								
+								@include respond-to-width(small) {
+									
+									margin-left: 1.5rem;
+									margin-right: 1.5rem;
+
+								}
+								
 							}
 
 						}
 						
+						.promo-tile:before {
+								
+						    color: $color-lighter-grey;
+						    content: "\1F522";
+						    float: right;
+						    font-family: "icongs";
+						    font-size: 2rem;
+						    line-height: 1;
+						    padding: 0 0 2rem 2rem;
+						    position: relative;
+						    right: 1rem;
+						    top: 1rem;
+							
+							@include respond-to-width(small) {
+							
+								position: absolute; 
+								
+							}
+							
+						}
+						
+						.promo-tile:hover:before {
+							
+							color: #fff;
+								
+						}
+						
+						.promo-tile:hover {
+							
+							background-color: $color-lighter-grey;
+							color: inherit;
+							
+						}
 						
 						/* Style a container to show promos, optionally with thumbnails. */
 						
@@ -850,6 +982,7 @@ body.ngm {
 						
 						*/ 
 
+						
 						.video, .photo {
 							
 							margin: $margin-media auto;
@@ -908,7 +1041,15 @@ body.ngm {
 							
 							}
 						
+				
 						}
+						
+						.video.overlay-container, .photo.overlay-container {
+							
+							margin-top: 0;
+							
+						}		
+
 
 					}
 					
@@ -959,10 +1100,19 @@ body.ngm {
 						
 						color: #fff;
 						position: absolute; // Note that parent container must have position: relative.
-						top: 35%;
+						top: 50%;
+						transform: translateY(-50%);
 						text-align: center;
 						text-shadow: 0.1rem 0.1rem 0.2rem rgba(0,0,0,0.5);
  						width: 100%;
+ 						
+ 						a {
+ 							
+ 							color: $color-light-grey;
+ 							border: 0;
+ 							text-decoration: underline;
+ 							
+ 						}
  						
 						@include respond-to-width(small) {
 
@@ -992,32 +1142,25 @@ body.ngm {
  							
  						}
  							
-					}						
+					}		
 					
-					/* If the overlay is used over a particularly large image, make the typography larger and stronger. */
+					/* If the overlay is used over a particularly large image, make the typography larger. */
 					
 					.width-cinematic > .overlay {
 						
-						h2.title {
-						
-								font-weight: 700;
-								font-family: $font-serif-display-bold;
-						
-						}
-						
 						@include respond-to-width(large) {
 							
-							font-size: 2.0rem;
+							font-size: 1.2em;
 							
 							h2.title {
 								
-								font-size: 6.0rem;
+								font-size: 5.0rem;
 								
 							}
 							
 							h3.title {
 								
-								font-size: 1.6rem;
+								font-size: 1.5rem;
 								
 							}
 							
@@ -1066,7 +1209,7 @@ body.ngm {
 						font-family: $font-serif-display;
 						font-size: 4rem;
 						font-weight: 400;
-						line-height: 1.2em;
+						line-height: 1.0em;
 						margin: 1rem auto;
 						max-width: 80%;
 						padding: 1.2rem;

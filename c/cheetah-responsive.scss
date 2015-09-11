@@ -758,6 +758,17 @@ body.ngm {
 							
 						}
 						
+						#livefyre {
+							
+							margin: $margin-media auto;
+							
+							.fyre .fyre-comment-wrapper time.fyre-comment-date {
+								
+								float: none;
+								
+							}
+						}
+						
 						/* Style a container as a series promo--showing all parts of a series. */
 						
 						.promo-series {

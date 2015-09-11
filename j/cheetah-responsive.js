@@ -28,6 +28,7 @@ function prepareAds() {
 			googletag.cmd.push(function() {
 	    		googletag.defineSlot("/2994/ng.ngm/" + ( index>1 ? "ng" + (index) + "_" : "") + "climate-change", [[728, 90], [320, 50]], theID ).addService(googletag.pubads());
 			    googletag.pubads().enableSingleRequest();
+			    googletag.pubads().collapseEmptyDivs();
 			    googletag.enableServices();
 			    googletag.display(theID);
 		  	});
@@ -41,6 +42,7 @@ function prepareAds() {
 			  googletag.cmd.push(function() {
 	    		googletag.defineSlot("/2994/ng.ngm/" + ( index>1 ? "ng" + (index) + "_" : "") + "climate-change", [210, 50], theID ).addService(googletag.pubads());
 			    googletag.pubads().enableSingleRequest();
+			    googletag.pubads().collapseEmptyDivs();
 			    googletag.enableServices();
 			    googletag.display(theID);
 			  });
@@ -55,6 +57,7 @@ function prepareAds() {
 			  	index++;
 	    		googletag.defineSlot("/2994/ng.ngm/" + ( index>1 ? "ng" + (index) + "_" : "") + "climate-change", [300, 250], theID ).addService(googletag.pubads());
 			    googletag.pubads().enableSingleRequest();
+			    googletag.pubads().collapseEmptyDivs();
 			    googletag.enableServices();
 			    googletag.display(theID);
 			  });

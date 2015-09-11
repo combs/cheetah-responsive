@@ -280,6 +280,8 @@ body.ngm {
 
 						.adunit {
 							
+							position: relative;
+							
 							> div {
 								
 								position: absolute;
@@ -287,31 +289,39 @@ body.ngm {
 							}
 							
 						}
+						
+						.adunit:empty, .adunit:blank {
+							
+							visibility: hidden;
+							
+						}
 
 						.ad-unit-210 {
 							
 							width: 210px;
 							height: 50px;
+							position: relative;
 							
 						}
 						
 						.ad-unit-300 {
 							
-							height: 250px;
 							margin-top: $margin-media;
 							margin-bottom: $margin-media;
+							min-height: 250px;
+							position: relative;
 							width: 300px;
 							background-color: $color-lightest-grey;
 							
 						}
-						
+						 
 						.ad-unit-300:before {
 							
 							content: "Advertisement";
 						    font-family: $font-sans-serif;
 						    font-size: .8rem;
 						    color: $color-light-grey;
-						    position: relative;
+						    position: absolute;
 						    top: -1.5rem;
 						    float: right;
 						    	
@@ -322,6 +332,7 @@ body.ngm {
 							margin-top: $margin-media;
 							margin-bottom: $margin-media;
 							max-width: 728px;
+							position: relative;
 							width: initial;
 							background-color: $color-lightest-grey;
 							
@@ -333,7 +344,7 @@ body.ngm {
 						    font-family: $font-sans-serif;
 						    font-size: .8rem;
 						    color: $color-light-grey;
-						    position: relative;
+						    position: absolute;
 						    top: -1.5rem;
 						    float: left;
 						    	

@@ -432,6 +432,7 @@ body.ngm {
 						.box {
 							
 							border: 1px $color-light-grey solid;
+							overflow: hidden; // Keeps floating elements from overlapping box border.
 
 							> h1, > h2, > h3, > h4 {
 								
@@ -452,6 +453,7 @@ body.ngm {
 						.box-yellow {
 							
 							border-top: 1.5rem $color-nat-geo solid;
+							overflow: hidden; // Keeps floating elements from overlapping box border.
 
 							> h1, > h2, > h3, > h4 {
 								
@@ -655,6 +657,26 @@ body.ngm {
 							
 						}
 						
+						.promo-tile {
+							
+							:before {
+								
+							    color: #eee;
+							    content: "\1F522";
+							    float: right;
+							    font-family: "icongs";
+							    font-size: 2rem;
+							    line-height: 1;
+							    padding: 0 0 2rem 2rem;
+							    position: relative;
+							    right: 1rem;
+							    top: 1rem;
+							    
+							}
+
+						}
+						
+						
 						/* Style a container to show promos, optionally with thumbnails. */
 						
 						.promo-content {
@@ -674,7 +696,7 @@ body.ngm {
 
 								line-height: 1.5em;								
 								margin-bottom: .25em;
-								border-bottom: 1px solid #ffcc00;
+								border-bottom: 1px solid $color-nat-geo;
 								font-weight: 600;
 
 							}
@@ -720,7 +742,8 @@ body.ngm {
 								margin: 0 1.25rem 1.25rem 0;
 								clear: left;
 								
-							}													
+							}			
+																	
 						}
 
 						/* Style these containers for interactive HTML5 graphics. Light hand on styles here.

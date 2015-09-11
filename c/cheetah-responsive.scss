@@ -199,50 +199,41 @@ body.ngm {
 					.article_title {
 					
 						color: black;
-						text-transform: uppercase;
 						font-family: $font-sans-serif;
-						font-size: .7em;
+						font-size: 0.9rem;
 						font-weight: 300;
 						line-height: 1.2em;
-						margin: 2.5rem auto;
 						text-align: left;
-						width: 90%;
-						max-width: 90%;
+						width: 100%;
 						
 						.breadcrumbs {
 							
+							display: block;
 							width: 100%;
+							margin: 1.5rem;
 							
 							a {
 								
 								color: #000;
 								font-weight: 300;
-								
-							}
-							
-							a:hover {
-								
-								color: #000;
-								
-							}
-							
-							a:after {
-								
-								content:"|";
-								border-bottom:none;
-								padding:0 1em;	
-								
+								padding: 0 1.2rem 0 1rem;
+								border-bottom: 0;
+								text-decoration: underline;
+								border-right: 1px $color-grey solid;
+								    
 							}
 							
 							a:first-child {
 								
+								padding-left: 0;
 								font-weight: 600;
 								
 							}
 							
-							a:last-child:after {
+							a:last-child {
 								
-								content: "";
+								padding-right: 0;
+								border-right: 0;
 								
 							}
 							
@@ -287,6 +278,16 @@ body.ngm {
 						
 						}
 
+						.adunit {
+							
+							> div {
+								
+								position: absolute;
+								
+							}
+							
+						}
+
 						.ad-unit-210 {
 							
 							width: 210px;
@@ -300,7 +301,20 @@ body.ngm {
 							margin-top: $margin-media;
 							margin-bottom: $margin-media;
 							width: 300px;
+							background-color: $color-lightest-grey;
 							
+						}
+						
+						.ad-unit-300:before {
+							
+							content: "Advertisement";
+						    font-family: $font-sans-serif;
+						    font-size: .8rem;
+						    color: $color-light-grey;
+						    position: relative;
+						    top: -1.5rem;
+						    float: right;
+						    	
 						}
 						
 						.ad-unit-728 {
@@ -309,8 +323,21 @@ body.ngm {
 							margin-bottom: $margin-media;
 							max-width: 728px;
 							width: initial;
+							background-color: $color-lightest-grey;
 							
-						}	
+						}	 
+						
+						.ad-unit-728:before {
+							
+							content: "Advertisement";
+						    font-family: $font-sans-serif;
+						    font-size: .8rem;
+						    color: $color-light-grey;
+						    position: relative;
+						    top: -1.5rem;
+						    float: left;
+						    	
+						}
 
 						.author {
 

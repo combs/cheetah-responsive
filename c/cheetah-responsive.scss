@@ -262,9 +262,7 @@ body.ngm {
 						font-family: $font-serif;
 					    font-size: 1.0rem;
 					    line-height: 1.75;
-						/* padding: 1rem; */
-						padding: 0;
-						margin-top: $margin-media;						
+						padding: 0;					
 						
 						> p:first-of-type {
 							
@@ -861,7 +859,6 @@ body.ngm {
 							
 						}
 						
-						
 						/* Style a container to show promos, optionally with thumbnails. */
 						
 						.promo-content {
@@ -974,6 +971,7 @@ body.ngm {
 						
 						*/ 
 
+						
 						.video, .photo {
 							
 							margin: $margin-media auto;
@@ -1032,7 +1030,15 @@ body.ngm {
 							
 							}
 						
+				
 						}
+						
+						.video.overlay-container, .photo.overlay-container {
+							
+							margin-top: 0;
+							
+						}		
+
 
 					}
 					
@@ -1083,10 +1089,17 @@ body.ngm {
 						
 						color: #fff;
 						position: absolute; // Note that parent container must have position: relative.
-						top: 35%;
+						top: 50%;
+						transform: translateY(-50%);
 						text-align: center;
 						text-shadow: 0.1rem 0.1rem 0.2rem rgba(0,0,0,0.5);
  						width: 100%;
+ 						
+ 						a {
+ 							
+ 							color: $color-light-grey;
+ 							
+ 						}
  						
 						@include respond-to-width(small) {
 
@@ -1116,16 +1129,14 @@ body.ngm {
  							
  						}
  							
-					}						
+					}		
 					
-					/* If the overlay is used over a particularly large image, make the typography larger and stronger. */
+					/* If the overlay is used over a particularly large image, make the typography larger. */
 					
 					.width-cinematic > .overlay {
 						
 						h2.title {
 						
-								font-weight: 700;
-								font-family: $font-serif-display-bold;
 						
 						}
 						

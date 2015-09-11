@@ -85,6 +85,26 @@ function prepareDrawers() {
 
 }
 
+function prepareOverlay() {
+
+	try {
+		
+		var overlayHere=$(".overlay-title-here");
+		
+		if (overlayHere) {
+		
+			overlayHere.append("<div class='overlay'>");
+			$(".title").appendTo( $(".overlay").first() );
+			overlayHere.removeClass("overlay-title-here");
+			overlayHere.addClass("overlay-container");
+			
+		}
+		
+	} catch (err) {
+		
+	}	
+	
+}
 
 /* Allow for client-side includes. Usage:
 
@@ -105,6 +125,7 @@ function prepareIncludes() {
 
 $(document).ready(function() {
 		  
+	prepareOverlay();
 	prepareIncludes();
 	prepareDrawers();
 	prepareAds();

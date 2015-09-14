@@ -103,17 +103,17 @@ SlideShow.prototype.windowResize = function(_this){
 
 SlideShow.prototype.setKeyPress = function(){
     var self = this;
-    //document.onkeydown = function(evt){
+
     var el = this.myParent;
-    //   console.log("setKeyPress");
-    // Need this (focus on el) for the modal slideShows
-    //el.onkeydown = function(evt){  
-    window.onkeydown = function(evt){  
-    //    console.log("onkeydown");
-        //if(!navigator.userAgent.indexOf('MSIE') > -1){
-                $(el).focus();
-          //      console.log("EL - FOCUS");
-            //}
+
+    $(document).keydown(function(evt){  
+    	
+    	if (! isElementInViewport(el)) {
+    		return;
+    	}
+    	
+    	$(el).focus(); 
+		
 		switch(evt.keyCode){
             case 37:  // left
                 if(self.swipeType === "slide-strip"){
@@ -140,6 +140,7 @@ SlideShow.prototype.setKeyPress = function(){
                     self.setPrevSlide(self);
                     self.prevSlide(self);
                 }
+            	self.arrowResize(self);
                 break;
             case 39:  // right
                 if(self.swipeType === "slide-strip"){
@@ -169,6 +170,7 @@ SlideShow.prototype.setKeyPress = function(){
                     self.setNextSlide(self);
                     self.nextSlide(self);
                 }
+            	self.arrowResize(self);
                 break;
             case 27:  // escape
                 $(".modal-holder").css("display", "none");
@@ -177,16 +179,17 @@ SlideShow.prototype.setKeyPress = function(){
                 break;   
             default: break;
         }
-    };
+    });
 }
 SlideShow.prototype.arrowResize = function(_this){
+    var self = this; 
     if(this.stackImageArrowsText != undefined){
 		// stackImageArrowsText is set from the JSON file
 		if($(window).width() <= this.stackImageArrowsText){
-			$('#' + this.arrowHolderId).css("margin-top", ($(this.slideArr[0].img).height() + 30) + "px");
+			$('#' + this.arrowHolderId).css("margin-top", ($(this.slideArr[self.curIndx].img).height() + 30) + "px");
 		}
 		else{
-			img_h = $(this.slideArr[0].img).height()/2;
+			img_h = $(this.slideArr[self.curIndx].img).height()/2;
 			arrow_h = $('#' + this.arrowHolderId).height()/2;
 			$('#' + this.arrowHolderId).css("margin-top", (img_h - arrow_h) + "px");
 		}
@@ -194,8 +197,8 @@ SlideShow.prototype.arrowResize = function(_this){
     // The offset has to be a constant value we get from the JSON file - because, if we use captionBar.height,
     // the height will only be the correct size for the first image / caption. If a different
     // caption taks up more or less space (height), the slideShow height will be off.
-    $('#' + this.captionBarHolderId).css("margin-top", ($(this.slideArr[0].img).height() + 30) + "px");
-    $('#' + this.myParentId).css("height", ($(this.slideArr[0].img).height() + parseInt(this.captionBarOffset_h)) + "px");
+    $('#' + this.captionBarHolderId).css("margin-top", ($(this.slideArr[self.curIndx].img).height() + 30) + "px");
+    $('#' + this.myParentId).css("height", ($(this.slideArr[self.curIndx].img).height() + parseInt(this.captionBarOffset_h)) + "px");
     //$('#' + this.myParentId).css("height", ($(this.slideArr[0].img).height() + 130) + "px");
     //$('#' + this.myParentId).css("height", 
                     //($(this.slideArr[0].img).height() + $('#' + this.captionBarHolderId).height() + "px"));
@@ -290,6 +293,7 @@ SlideShow.prototype.addArrows = function(_hasCoverSlide){
                 + '"/>');
 	var self = this;
 	$('#' + this.arrowLeftId).click(function(){
+		
         self.setPrevSlide(self);
         if(self.swipeType === "fade"){
             self.prevSlideFade(self);
@@ -297,6 +301,7 @@ SlideShow.prototype.addArrows = function(_hasCoverSlide){
         else{
             self.prevSlide(self);
         }
+        self.arrowResize(self);
     });
 	$('#' + this.arrowLeftId).load(function(){self.arrowResize(self);});
 	
@@ -320,6 +325,7 @@ SlideShow.prototype.addArrows = function(_hasCoverSlide){
         else{
             self.nextSlide(self);
         }
+        self.arrowResize(self);
     });
 	$('#' + this.arrowRightId).load(function(){self.arrowResize(self);});
 }
@@ -857,3 +863,15 @@ CaptionBar.prototype.resize = function(){
 function CoverSlide(_coverSlideObj, _attachToDiv){
 	
 }
+
+/**************** VISIBLE **************/
+
+function isElementInViewport (el) {
+	var rect = el.getBoundingClientRect();
+	
+	return (
+		rect.top + (rect.height / 2 )  >= 0 &&
+		rect.bottom - (rect.height / 2 )  <= (window.innerHeight || document.documentElement.clientHeight)
+	);
+}
+

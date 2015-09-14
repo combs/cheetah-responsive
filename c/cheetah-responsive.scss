@@ -61,7 +61,8 @@ body {
 }
 
 
-body.ngm {
+body { // Previously had body.ngm but the NGS video player 
+ // removes classes from body and replaces with "pdkLoaded"
 	
 	overflow-x: hidden;
 	
@@ -334,6 +335,12 @@ body.ngm {
 							width: initial;
 							background-color: $color-lightest-grey;
 							
+							> div {
+							
+								position: relative;
+									
+							}
+							
 						}	 
 						
 						.ad-unit-728:before {
@@ -393,8 +400,9 @@ body.ngm {
  							font-family: $font-sans-serif;
  							font-size: .875rem;
  							font-weight: 400;
- 							line-height: 1.4;
- 							margin: $margin-media;
+ 							line-height: 1.4; 
+ 							margin-top: $margin-media;
+ 							margin-bottom: $margin-media;
  							padding: 1rem 1.25rem;
 
  						}
@@ -945,6 +953,7 @@ body.ngm {
 
 						.graphic {
 							
+							clear: both;
 							font-family: $font-sans-serif;
 							margin: $margin-media auto;
 							

@@ -146,6 +146,14 @@ We can include galleries using Joel Fiser's SlideShow.js (used in ISP projects).
 
 ### Additional Ads
 
+	<!-- /2994/ng.ngm/climate-change -->
+	<div id='div-gpt-ad-1441209663586-0' class="adunit ad-unit-728">
+	</div>
+
+	
+	
+	
+
 ### Removing the Leaderboard
 
 In the package config XML, replace the ad block with:

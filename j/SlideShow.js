@@ -183,25 +183,23 @@ SlideShow.prototype.setKeyPress = function(){
 }
 SlideShow.prototype.arrowResize = function(_this){
     var self = this; 
-    if(this.stackImageArrowsText != undefined){
-		// stackImageArrowsText is set from the JSON file
-		if($(window).width() <= this.stackImageArrowsText){
-			$('#' + this.arrowHolderId).css("margin-top", ($(this.slideArr[self.curIndx].img).height() + 30) + "px");
+    try {
+	    if(this.stackImageArrowsText != undefined){
+			// stackImageArrowsText is set from the JSON file
+			if($(window).width() <= this.stackImageArrowsText){
+				$('#' + this.arrowHolderId).css("margin-top", ($(this.slideArr[self.curIndx].img).height() + 30) + "px");
+			}
+			else{
+				img_h = $(this.slideArr[self.curIndx].img).height()/2;
+				arrow_h = $('#' + this.arrowHolderId).height()/2;
+				$('#' + this.arrowHolderId).css("margin-top", (img_h - arrow_h) + "px");
+			}
 		}
-		else{
-			img_h = $(this.slideArr[self.curIndx].img).height()/2;
-			arrow_h = $('#' + this.arrowHolderId).height()/2;
-			$('#' + this.arrowHolderId).css("margin-top", (img_h - arrow_h) + "px");
-		}
-	}
-    // The offset has to be a constant value we get from the JSON file - because, if we use captionBar.height,
-    // the height will only be the correct size for the first image / caption. If a different
-    // caption taks up more or less space (height), the slideShow height will be off.
-    $('#' + this.captionBarHolderId).css("margin-top", ($(this.slideArr[self.curIndx].img).height() + 30) + "px");
-    $('#' + this.myParentId).css("height", ($(this.slideArr[self.curIndx].img).height() + parseInt(this.captionBarOffset_h)) + "px");
-    //$('#' + this.myParentId).css("height", ($(this.slideArr[0].img).height() + 130) + "px");
-    //$('#' + this.myParentId).css("height", 
-                    //($(this.slideArr[0].img).height() + $('#' + this.captionBarHolderId).height() + "px"));
+		 
+	    $('#' + this.captionBarHolderId).css("margin-top", ($(this.slideArr[self.curIndx].img).height() + 30) + "px");
+	    $('#' + this.myParentId).css("height", ($(this.slideArr[self.curIndx].img).height() + $('#' + this.captionBarHolderId).height() +  parseInt(this.captionBarOffset_h)) + "px");
+    } catch(err) {}
+    
 }
 SlideShow.prototype.getImageData = function(_imagesJsonUrl){
 	var self = this;
@@ -867,11 +865,19 @@ function CoverSlide(_coverSlideObj, _attachToDiv){
 /**************** VISIBLE **************/
 
 function isElementInViewport (el) {
-	var rect = el.getBoundingClientRect();
+
+	try{
+		var rect = el.getBoundingClientRect();
+		
+		return (
+			rect.top + (rect.height / 2 )  >= 0 &&
+			rect.bottom - (rect.height / 2 )  <= (window.innerHeight || document.documentElement.clientHeight)
+		);
+	} catch (err) {
 	
-	return (
-		rect.top + (rect.height / 2 )  >= 0 &&
-		rect.bottom - (rect.height / 2 )  <= (window.innerHeight || document.documentElement.clientHeight)
-	);
+		return false;
+	
+	}
+
 }
 

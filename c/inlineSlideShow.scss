@@ -94,6 +94,18 @@
 	/*background-color:#f3f3f3;*/
 	z-index:1100;
 }
+
+
+@media (max-width: 900px) {
+	
+	.inlineSlideShow  .captionBarHolder{
+
+		padding-top: 2rem;
+		
+	}
+	
+}
+
 @media (max-width: 770px) {
     .inlineSlideShow .captionText{
         font-size: 0.9rem;
@@ -212,22 +224,22 @@
     .inlineSlideShow  .arrowLeft{
         position:absolute;
         width:auto;
-        height:8%;
+        height: 3rem;
         left:40px;
         right:auto;
         color:black;
         z-index:2000;
-        padding: 2em;
+        padding: 0 2em;
     }
     .inlineSlideShow  .arrowRight{
         position:absolute;
         width:auto;
-        height:8%;
+        height: 3rem;
         right:40px;
         left:auto;
         color:black;
         z-index:2001;
-        padding: 2em;
+        padding: 0 2em;
     }
 }
 @media (min-width: 901px){
@@ -241,7 +253,7 @@
     .inlineSlideShow  .arrowLeft{
         position:absolute;
         width:auto;
-        height:10%;
+        height: 4rem;
         left:-80px;
         right:auto;
         cursor: pointer;
@@ -250,7 +262,7 @@
     .inlineSlideShow  .arrowRight{
         position:absolute;
         width:auto;
-        height:10%;
+        height: 4rem;
         right:-80px;
         left:auto;
         cursor: pointer;

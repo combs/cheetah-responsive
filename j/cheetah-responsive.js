@@ -154,11 +154,24 @@ $(document).ready(function() {
 	prepareIncludes();
 	prepareDrawers();
 	prepareAds();
+function prepareSlideShows() {
 	
 	$(window).scroll(prepareAds);
 
 });
+	if (! window.ourSlideShows) {
+		return;
+	}
+	
+	var theIDs=ourSlideShows.keys();
+	
+	for (var i=0; i<theIDs.length; i++) {
+		new SlideShow(theIDs[i],ourSlideShows[theIDs[i]]);
+	}
+	
+}
 
+	
 /* 
 
 http://jaketrent.com/post/addremove-classes-raw-javascript/

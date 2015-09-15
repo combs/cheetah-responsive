@@ -1138,7 +1138,7 @@ body { // Previously had body.ngm but the NGS video player
  						
  						a {
  							
- 							color: $color-light-grey;
+ 							color: #fff;
  							border: 0;
  							text-decoration: underline;
  							
@@ -1156,6 +1156,12 @@ body { // Previously had body.ngm but the NGS video player
  							h4.title {
  								
  								margin: 1.5em auto;
+ 								
+ 							}
+ 							
+ 							a {
+ 								
+ 								color: inherit;
  								
  							}
  							

@@ -207,6 +207,17 @@ body { // Previously had body.ngm but the NGS video player
 						text-align: left;
 						width: 100%;
 						
+						// Something deep within Cheetah wraps a random tag in an h1, but only after publishing.
+						
+						h1 {
+							
+							font-size: 0.9rem;
+							font-weight: 300;
+							font-family: $font-sans-serif;
+							color: black;
+							
+						}
+						
 						.breadcrumbs {
 							
 							display: block;

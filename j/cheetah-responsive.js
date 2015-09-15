@@ -21,38 +21,50 @@
 
 function prepareAds() {
  
-	
-	$(".ad-unit-728").each( function(index) { 
-		var theID=$(this).attr("id");
-		if (theID) {
+	$(".ad-unit-728").not(".prepared").each( function(index) { 
+		
+		var self=this; 
+		var theID=$(self).attr("id");
+		if (theID && isElementInViewport ($(self).get(0) )) {
+			
 			googletag.cmd.push(function() {
 	    		googletag.defineSlot("/2994/ng.ngm/" + ( index>1 ? "ng" + (index) + "_" : "") + "climate-change", [[728, 90], [320, 50]], theID ).addService(googletag.pubads());
 			    googletag.pubads().enableSingleRequest();
 			    googletag.pubads().collapseEmptyDivs();
 			    googletag.enableServices();
 			    googletag.display(theID);
+			    $(self).addClass("prepared");
 		  	});
+		  	
 		}
 		
 	}); 
 	
-	$(".ad-unit-210").each( function(index) { 
-		var theID=$(this).attr("id");
-		if (theID) {
+	$(".ad-unit-210").not(".prepared").each( function(index) {
+		
+		var self=this; 
+		var theID=$(self).attr("id");
+		if (theID && isElementInViewport ($(self).get(0) )) {
+			
 			  googletag.cmd.push(function() {
 	    		googletag.defineSlot("/2994/ng.ngm/" + ( index>1 ? "ng" + (index) + "_" : "") + "climate-change", [210, 50], theID ).addService(googletag.pubads());
 			    googletag.pubads().enableSingleRequest();
 			    googletag.pubads().collapseEmptyDivs();
 			    googletag.enableServices();
 			    googletag.display(theID);
+			    $(self).addClass("prepared");
 			  });
+			  
 		}
 		
 	});
 	 
-	$(".ad-unit-300").each( function(index) {
-		var theID=$(this).attr("id");
-		if (theID) { 
+	$(".ad-unit-300").not(".prepared").each( function(index) {
+		
+		var self=this;
+		var theID=$(self).attr("id");
+		if (theID && isElementInViewport ($(self).get(0) )) { 
+			
 			  googletag.cmd.push(function() {
 			  	index++;
 	    		googletag.defineSlot("/2994/ng.ngm/" + ( index>1 ? "ng" + (index) + "_" : "") + "climate-change", [300, 250], theID ).addService(googletag.pubads());
@@ -60,7 +72,9 @@ function prepareAds() {
 			    googletag.pubads().collapseEmptyDivs();
 			    googletag.enableServices();
 			    googletag.display(theID);
+			    $(self).addClass("prepared");
 			  });
+			  
 		}
 		
 	});
@@ -82,7 +96,6 @@ function prepareDrawers() {
 	$("div.drawer").addClass("closed");
 	$("div.drawer").first().removeClass("closed");
 	
-
 }
 
 function prepareOverlay() {
@@ -129,5 +142,25 @@ $(document).ready(function() {
 	prepareIncludes();
 	prepareDrawers();
 	prepareAds();
+	
+	$(window).scroll(prepareAds);
 
 });
+/* is element visible? in pure JS */
+
+function isElementInViewport (el) {
+
+	try{
+		var rect = el.getBoundingClientRect();
+		
+		return (
+			rect.top + (rect.height / 2 )  >= 0 &&
+			rect.bottom - (rect.height / 2 )  <= (window.innerHeight || document.documentElement.clientHeight)
+		);
+	} catch (err) {
+	
+		return false;
+	
+	}
+
+}

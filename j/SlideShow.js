@@ -103,17 +103,17 @@ SlideShow.prototype.windowResize = function(_this){
 
 SlideShow.prototype.setKeyPress = function(){
     var self = this;
-    //document.onkeydown = function(evt){
+
     var el = this.myParent;
-    //   console.log("setKeyPress");
-    // Need this (focus on el) for the modal slideShows
-    //el.onkeydown = function(evt){  
-    window.onkeydown = function(evt){  
-    //    console.log("onkeydown");
-        //if(!navigator.userAgent.indexOf('MSIE') > -1){
-                $(el).focus();
-          //      console.log("EL - FOCUS");
-            //}
+
+    $(document).keydown(function(evt){  
+    	
+    	if (! isElementInViewport(el)) {
+    		return;
+    	}
+    	
+    	$(el).focus(); 
+		
 		switch(evt.keyCode){
             case 37:  // left
                 if(self.swipeType === "slide-strip"){
@@ -140,6 +140,7 @@ SlideShow.prototype.setKeyPress = function(){
                     self.setPrevSlide(self);
                     self.prevSlide(self);
                 }
+            	self.arrowResize(self);
                 break;
             case 39:  // right
                 if(self.swipeType === "slide-strip"){
@@ -169,6 +170,7 @@ SlideShow.prototype.setKeyPress = function(){
                     self.setNextSlide(self);
                     self.nextSlide(self);
                 }
+            	self.arrowResize(self);
                 break;
             case 27:  // escape
                 $(".modal-holder").css("display", "none");
@@ -177,28 +179,27 @@ SlideShow.prototype.setKeyPress = function(){
                 break;   
             default: break;
         }
-    };
+    });
 }
 SlideShow.prototype.arrowResize = function(_this){
-    if(this.stackImageArrowsText != undefined){
-		// stackImageArrowsText is set from the JSON file
-		if($(window).width() <= this.stackImageArrowsText){
-			$('#' + this.arrowHolderId).css("margin-top", ($(this.slideArr[0].img).height() + 30) + "px");
+    var self = this; 
+    try {
+	    if(this.stackImageArrowsText != undefined){
+			// stackImageArrowsText is set from the JSON file
+			if($(window).width() <= this.stackImageArrowsText){
+				$('#' + this.arrowHolderId).css("margin-top", ($(this.slideArr[self.curIndx].img).height() + 30) + "px");
+			}
+			else{
+				img_h = $(this.slideArr[self.curIndx].img).height()/2;
+				arrow_h = $('#' + this.arrowHolderId).height()/2;
+				$('#' + this.arrowHolderId).css("margin-top", (img_h - arrow_h) + "px");
+			}
 		}
-		else{
-			img_h = $(this.slideArr[0].img).height()/2;
-			arrow_h = $('#' + this.arrowHolderId).height()/2;
-			$('#' + this.arrowHolderId).css("margin-top", (img_h - arrow_h) + "px");
-		}
-	}
-    // The offset has to be a constant value we get from the JSON file - because, if we use captionBar.height,
-    // the height will only be the correct size for the first image / caption. If a different
-    // caption taks up more or less space (height), the slideShow height will be off.
-    $('#' + this.captionBarHolderId).css("margin-top", ($(this.slideArr[0].img).height() + 30) + "px");
-    $('#' + this.myParentId).css("height", ($(this.slideArr[0].img).height() + parseInt(this.captionBarOffset_h)) + "px");
-    //$('#' + this.myParentId).css("height", ($(this.slideArr[0].img).height() + 130) + "px");
-    //$('#' + this.myParentId).css("height", 
-                    //($(this.slideArr[0].img).height() + $('#' + this.captionBarHolderId).height() + "px"));
+		 
+	    $('#' + this.captionBarHolderId).css("margin-top", ($(this.slideArr[self.curIndx].img).height() + 30) + "px");
+	    $('#' + this.myParentId).css("height", ($(this.slideArr[self.curIndx].img).height() + $('#' + this.captionBarHolderId).height() +  parseInt(this.captionBarOffset_h)) + "px");
+    } catch(err) {}
+    
 }
 SlideShow.prototype.getImageData = function(_imagesJsonUrl){
 	var self = this;
@@ -290,6 +291,7 @@ SlideShow.prototype.addArrows = function(_hasCoverSlide){
                 + '"/>');
 	var self = this;
 	$('#' + this.arrowLeftId).click(function(){
+		
         self.setPrevSlide(self);
         if(self.swipeType === "fade"){
             self.prevSlideFade(self);
@@ -297,6 +299,7 @@ SlideShow.prototype.addArrows = function(_hasCoverSlide){
         else{
             self.prevSlide(self);
         }
+        self.arrowResize(self);
     });
 	$('#' + this.arrowLeftId).load(function(){self.arrowResize(self);});
 	
@@ -320,6 +323,7 @@ SlideShow.prototype.addArrows = function(_hasCoverSlide){
         else{
             self.nextSlide(self);
         }
+        self.arrowResize(self);
     });
 	$('#' + this.arrowRightId).load(function(){self.arrowResize(self);});
 }
@@ -497,6 +501,7 @@ function Slide(_slideShow, _slideObj, _appendToId, _indx){
 	var self = this;
 	window.addEventListener('resize', function(){self.sizeImage();});
 	$(window).on('orientationchange', function(){self.sizeImage();});
+	
 	//window.addEventListener('resize', function(){self.captionBar.resize();});
 	//$(window).on('orientationchange', function(){self.captionBar.resize();});
 	//$(window).load(function(){self.captionBar.resize();});
@@ -509,7 +514,6 @@ Slide.prototype.setSwipeFade = function(_slideHolder){
     var $slideHolder = $("#" + this.slideId);
     var curDirection;
     //var curpos = $slideHolder.position().left;
-    //$("#" + this.slideId).draggable();
     this.swipeHandler = Hammer(_slideHolder, {});
     //this.swipeHandler.on("swipeleft swiperight dragright dragleft dragstart dragend", function(evt){
     this.swipeHandler.on("swipeleft swiperight", function(evt){
@@ -543,7 +547,6 @@ Slide.prototype.setSwipeSlide = function(_slideHolder){
     var wasSwiped = false;
     var curDirection;
     //var curpos = $slideHolder.position().left;
-    //$("#" + this.slideId).draggable();
     //this.swipeHandler = Hammer(_slideHolder, {
     this.swipeHandler = Hammer(this.imageHolder, {
                     dragLockToAxis: true,
@@ -856,3 +859,23 @@ CaptionBar.prototype.resize = function(){
 function CoverSlide(_coverSlideObj, _attachToDiv){
 	
 }
+
+/**************** VISIBLE **************/
+
+function isElementInViewport (el) {
+
+	try{
+		var rect = el.getBoundingClientRect();
+		
+		return (
+			rect.top + (rect.height / 2 )  >= 0 &&
+			rect.bottom - (rect.height / 2 )  <= (window.innerHeight || document.documentElement.clientHeight)
+		);
+	} catch (err) {
+	
+		return false;
+	
+	}
+
+}
+

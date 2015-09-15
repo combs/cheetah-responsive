@@ -157,6 +157,7 @@ function prepareIncludes() {
 function prepareSlideShows() {
 	
 	if (! window.ourSlideShows) {
+		setTimeout(prepareSlideShows,500);
 		return;
 	}
 	

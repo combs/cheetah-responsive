@@ -1,3 +1,6 @@
 
 *.css
 *.min.*
+j/app.js
+j/hammer.min.js
+dist/

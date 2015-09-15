@@ -1060,8 +1060,18 @@ body { // Previously had body.ngm but the NGS video player
 								margin-left: 0.5rem;
 							
 							}
+							
+							&.width-cinematic {
+								
+								> p {
+									
+									@extend .internal-function-width-column;
+									display: block;
+									
+								}
+								
+							}
 						
-				
 						}
 						
 						.video.overlay-container, .photo.overlay-container {

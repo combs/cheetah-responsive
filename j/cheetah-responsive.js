@@ -24,7 +24,7 @@ function prepareAds() {
 	$(".ad-unit-728").not(".prepared").each( function(index) { 
 		
 		var self=this; 
-		var theID=$(self).attr("id");
+		var theID=self.id;
 		if (theID && isElementInViewport ($(self).get(0) )) {
 			
 			googletag.cmd.push(function() {
@@ -43,7 +43,7 @@ function prepareAds() {
 	$(".ad-unit-210").not(".prepared").each( function(index) {
 		
 		var self=this; 
-		var theID=$(self).attr("id");
+		var theID=self.id;
 		if (theID && isElementInViewport ($(self).get(0) )) {
 			
 			  googletag.cmd.push(function() {
@@ -62,7 +62,7 @@ function prepareAds() {
 	$(".ad-unit-300").not(".prepared").each( function(index) {
 		
 		var self=this;
-		var theID=$(self).attr("id");
+		var theID=self.id;
 		if (theID && isElementInViewport ($(self).get(0) )) { 
 			
 			  googletag.cmd.push(function() {
@@ -156,12 +156,12 @@ function prepareIncludes() {
 
 function prepareSlideShows() {
 	
-	if (! window.ourSlideShows) {
+	if (typeof(ourSlideShows)=="undefined") {
 		setTimeout(prepareSlideShows,500);
 		return;
 	}
 	
-	var theIDs=ourSlideShows.keys();
+	var theIDs=Object.keys(ourSlideShows);
 	
 	for (var i=0; i<theIDs.length; i++) {
 		new SlideShow(theIDs[i],ourSlideShows[theIDs[i]]);

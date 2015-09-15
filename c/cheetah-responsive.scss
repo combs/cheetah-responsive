@@ -207,6 +207,17 @@ body { // Previously had body.ngm but the NGS video player
 						text-align: left;
 						width: 100%;
 						
+						// Something deep within Cheetah wraps a random tag in an h1, but only after publishing.
+						
+						h1 {
+							
+							font-size: 0.9rem;
+							font-weight: 300;
+							font-family: $font-sans-serif;
+							color: black;
+							
+						}
+						
 						.breadcrumbs {
 							
 							display: block;
@@ -1049,8 +1060,18 @@ body { // Previously had body.ngm but the NGS video player
 								margin-left: 0.5rem;
 							
 							}
+							
+							&.width-cinematic {
+								
+								> p {
+									
+									@extend .internal-function-width-column;
+									display: block;
+									
+								}
+								
+							}
 						
-				
 						}
 						
 						.video.overlay-container, .photo.overlay-container {
@@ -1112,12 +1133,12 @@ body { // Previously had body.ngm but the NGS video player
 						top: 50%;
 						transform: translateY(-50%);
 						text-align: center;
-						text-shadow: 0.1rem 0.1rem 0.2rem rgba(0,0,0,0.5);
+						text-shadow: 0.2rem 0.2rem 0.5rem rgba(0,0,0,0.8);
  						width: 100%;
  						
  						a {
  							
- 							color: $color-light-grey;
+ 							color: #fff;
  							border: 0;
  							text-decoration: underline;
  							
@@ -1135,6 +1156,12 @@ body { // Previously had body.ngm but the NGS video player
  							h4.title {
  								
  								margin: 1.5em auto;
+ 								
+ 							}
+ 							
+ 							a {
+ 								
+ 								color: inherit;
  								
  							}
  							
@@ -1222,16 +1249,22 @@ body { // Previously had body.ngm but the NGS video player
 					
 					h2.title {
 						
-						font-family: $font-serif-display;
+						font-family: $font-serif-deck-bold;
 						font-size: 4rem;
 						font-weight: 400;
 						line-height: 1.0em;
 						margin: 1rem auto;
 						max-width: 80%;
-						padding: 1.2rem;
+						padding: 0;
 						text-align: center;
 						text-transform: normal;
 						width: $width-text-max;
+						
+						@include respond-to-width(large) {
+
+							margin-bottom: 2rem;
+
+						}
 						
 						@include respond-to-width(small) {
 							
@@ -1286,7 +1319,7 @@ body { // Previously had body.ngm but the NGS video player
 						font-size: 1em;
 						font-weight: 300;
 						line-height: 1.2em;
-						margin: 3.5rem auto 1.5rem auto;
+						margin: 3.5rem auto 0 auto;
 						text-align: center;
 						width: $width-text-max;
 						max-width: 80%;
@@ -1319,3 +1352,7 @@ body { // Previously had body.ngm but the NGS video player
 	}
 
 }
+
+
+
+@import "inlineSlideShow";

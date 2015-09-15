@@ -1,4 +1,4 @@
 #!/bin/bash
 cd j
-cat lazysizes.js picturefill.js hammer.js TweenLite.js CSSPlugin.js EasePack.js SlideShow.js cheetah-responsive.js > ../dist/app.js
+cat cheetah-responsive.js lazysizes.js picturefill.js hammer.js TweenLite.js CSSPlugin.js EasePack.js SlideShow.js > ../dist/app.js
 

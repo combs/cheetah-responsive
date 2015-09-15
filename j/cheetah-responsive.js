@@ -100,23 +100,35 @@ function prepareDrawers() {
 
 function prepareOverlay() {
 
-	try {
+	var theOverlayHeres=document.getElementsByClassName("overlay-title-here");
+	
+	if (theOverlayHeres) {
 		
-		var overlayHere=$(".overlay-title-here");
+		var theOverlayHere=theOverlayHeres[0];
+		var theTitles=document.getElementsByClassName("title");
+		var theOverlay=document.createElement("div");
+		theOverlayHere.appendChild(theOverlay);
+		addClass(theOverlay,"overlay");
 		
-		if (overlayHere) {
-		
-			overlayHere.append("<div class='overlay'>");
-			$(".title").appendTo( $(".overlay").first() );
-			overlayHere.removeClass("overlay-title-here");
-			overlayHere.addClass("overlay-container");
+		if (theTitles && theTitles.length) {
 			
+			// NodeLists rearrange as you change the DOM so we start at the end and work backwards
+				
+			for (var i=theTitles.length - 1; i >= 0; i-- ) { 
+				
+				// more gymnastics
+			
+				theOverlay.insertBefore(theTitles[i],theOverlay.firstChild);
+				
+			}
+		
 		}
 		
-	} catch (err) {
+		addClass(theOverlayHere,"overlay-container");
+		removeClass(theOverlayHere,"overlay-title-here");
 		
-	}	
-	
+	}
+	 	
 }
 
 /* Allow for client-side includes. Usage:
@@ -146,6 +158,58 @@ $(document).ready(function() {
 	$(window).scroll(prepareAds);
 
 });
+
+/* 
+
+http://jaketrent.com/post/addremove-classes-raw-javascript/
+
+*/
+
+function hasClass(ele,cls) {
+
+	if (ele.className) {
+
+	  return !!ele.className.match(new RegExp('(\\s|^)'+cls+'(\\s|$)'));
+
+	} else {
+
+		return false;
+
+	}
+
+}
+
+function addClass(ele,cls) {
+	
+	if (ele.className) {
+		
+	  if (!hasClass(ele,cls)) ele.className += " "+cls;
+
+	} else {
+		
+		ele.className=cls;
+	
+	}
+	
+}
+
+function removeClass(ele,cls) {
+	
+	if (ele.className) {
+		
+		if (hasClass(ele,cls)) {
+		   var reg = new RegExp('(\\s|^)'+cls+'(\\s|$)');
+		   ele.className=ele.className.replace(reg,' ');
+	  	}
+	  	 
+  	} else {
+  	
+	  	return;
+  	
+	}
+	
+}
+
 /* is element visible? in pure JS */
 
 function isElementInViewport (el) {

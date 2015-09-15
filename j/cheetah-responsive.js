@@ -143,7 +143,7 @@ function prepareIncludes() {
 		
 		$(this).load(
 			$(this).data("include")
-			).removeClass("include");
+			).removeClass("include").data("include","");
 	});
 		
 }

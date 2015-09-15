@@ -98,11 +98,13 @@ function prepareDrawers() {
 	
 }
 
+
+
 function prepareOverlay() {
 
 	var theOverlayHeres=document.getElementsByClassName("overlay-title-here");
 	
-	if (theOverlayHeres) {
+	if (theOverlayHeres.length) {
 		
 		var theOverlayHere=theOverlayHeres[0];
 		var theTitles=document.getElementsByClassName("title");
@@ -127,7 +129,11 @@ function prepareOverlay() {
 		addClass(theOverlayHere,"overlay-container");
 		removeClass(theOverlayHere,"overlay-title-here");
 		
-	}
+	} else {
+		
+		setTimeout(prepareOverlay,25);
+	
+	}	
 	 	
 }
 
@@ -148,17 +154,8 @@ function prepareIncludes() {
 		
 }
 
-$(document).ready(function() {
-		  
-	prepareOverlay();
-	prepareIncludes();
-	prepareDrawers();
-	prepareAds();
 function prepareSlideShows() {
 	
-	$(window).scroll(prepareAds);
-
-});
 	if (! window.ourSlideShows) {
 		return;
 	}
@@ -223,6 +220,7 @@ function removeClass(ele,cls) {
 	
 }
 
+
 /* is element visible? in pure JS */
 
 function isElementInViewport (el) {
@@ -241,3 +239,40 @@ function isElementInViewport (el) {
 	}
 
 }
+
+
+/* Wait until jQuery is available. */
+
+function waitForJQuery() {
+
+	if (window.jQuery) {
+		
+		$(document).ready(function() {
+		  
+			prepareIncludes();
+			prepareDrawers();
+			prepareAds();
+			
+			$(window).scroll(prepareAds);
+			
+			window.jQuery.getScript("/dev/supercheetah-dev/j/SlideShow.min.js",prepareSlideShows);
+		
+		});
+		
+	} else {
+		
+		setTimeout(waitForJQuery,50);
+
+	}
+	
+}
+
+
+/* Functions that don't need jQuery: */
+
+prepareOverlay();
+
+/* Functions that do: */
+
+waitForJQuery();
+

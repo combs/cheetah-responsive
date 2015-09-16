@@ -157,14 +157,30 @@ function prepareIncludes() {
 function prepareSlideShows() {
 	
 	if (typeof(ourSlideShows)=="undefined") {
+		
 		setTimeout(prepareSlideShows,500);
 		return;
+
 	}
 	
 	var theIDs=Object.keys(ourSlideShows);
 	
 	for (var i=0; i<theIDs.length; i++) {
-		new SlideShow(theIDs[i],ourSlideShows[theIDs[i]]);
+		
+		if (document.getElementById(theIDs[i])) {
+		
+			new SlideShow(theIDs[i],ourSlideShows[theIDs[i]]);
+		
+		} else {
+		
+			if (console.log) {
+		
+				console.log("Warning: Missing SlideShow div " + theIDs[i]);
+		
+			}
+		
+		}
+		
 	}
 	
 }

@@ -8,9 +8,12 @@
 	 width: device-width;
 	 zoom: 1;
 
-}
+} 
 
-body {
+body { // Previously had body.ngm but the NGS video player 
+ // removes classes from body and replaces with "pdkLoaded"
+	
+	overflow-x: hidden;
 	
  	@include respond-to-width(small) { 
 
@@ -58,13 +61,6 @@ body {
 		
 	}
 	
-}
-
-
-body { // Previously had body.ngm but the NGS video player 
- // removes classes from body and replaces with "pdkLoaded"
-	
-	overflow-x: hidden;
 	
 	div#marginwrap {
 	

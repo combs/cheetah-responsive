@@ -82,7 +82,7 @@ function SlideShow(_myParentId, _imagesJsonUrl){
 	window.addEventListener('resize', function(){self.windowResize(self);});
 	//window.addEventListener('resize', this.windowResize);
 	$(window).on('orientationchange', function(){self.arrowResize(self);});
-	$(window).load(function(){self.arrowResize(self);});
+	$(document).ready(function(){self.arrowResize(self);});
 }
 SlideShow.prototype.windowResize = function(_this){
     //console.log("this.SMALL_SCREEN: " + this.SMALL_SCREEN);

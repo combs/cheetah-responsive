@@ -456,49 +456,49 @@ SlideShow.prototype.prevSlideFade = function(_this){
 /****************** Slide Object ***********************/
 													
 function Slide(_slideShow, _slideObj, _appendToId, _indx){
-	this.slideShow = _slideShow;
-	this.numSlides = _slideShow.imageArr.length;
-	this.displayMethod = _slideObj.displayMethod == undefined 
+	var self=this;
+	self.slideShow = _slideShow;
+	self.numSlides = _slideShow.imageArr.length;
+	self.displayMethod = _slideObj.displayMethod == undefined 
                             ? _slideShow.displayMethod.toLowerCase() 
                             : _slideObj.displayMethod.toLowerCase();
-	this.imagerUrl = this.chooseImage(_slideObj);
-	this.alt = _slideObj.alt;
-	this.caption = _slideObj.caption;
-	this.crop = _slideObj.crop.toLowerCase();
-	this.slideType = _slideObj.slideType;
-	this.slideId = "slide_" + Math.floor(Math.random() * 100000);    
-	$('#' + _appendToId).append('<div class="slideHolder" id="' + this.slideId + '"></div>');
-	this.slideHolder = document.getElementById(this.slideId);
+	self.imagerUrl = self.chooseImage(_slideObj);
+	self.alt = _slideObj.alt;
+	self.caption = _slideObj.caption;
+	self.crop = _slideObj.crop.toLowerCase();
+	self.slideType = _slideObj.slideType;
+	self.slideId = "slide_" + Math.floor(Math.random() * 100000);    
+	$('#' + _appendToId).append('<div class="slideHolder" id="' + self.slideId + '"></div>');
+	self.slideHolder = document.getElementById(self.slideId);
     
 	
-	this.imageId = "image_" + Math.floor(Math.random() * 100000);
-	$(this.slideHolder).append('<div class="imageHolder" id="' + this.imageId + '"></div>');
-	this.imageHolder = document.getElementById(this.imageId);
+	self.imageId = "image_" + Math.floor(Math.random() * 100000);
+	$(self.slideHolder).append('<div class="imageHolder" id="' + self.imageId + '"></div>');
+	self.imageHolder = document.getElementById(self.imageId);
 	
     if(_slideShow.swipeType === "fade"){
-        this.setSwipeFade(this.slideHolder);
+        self.setSwipeFade(self.slideHolder);
     }
     else{
-        this.setSwipeSlide(this.slideHolder);
+        self.setSwipeSlide(self.slideHolder);
     }
     
 	if(_indx != 0){ // 0 is the index of the coverSlide
-		$(this.slideHolder).css("visibility", "hidden");
+		$(self.slideHolder).css("visibility", "hidden");
 	}
 	
-	this.loadImage();
-	if(this.slideType != "coverSlide"){ // no captionBar for coverSlides
-		/*this.captionBar = new CaptionBar(this.slideShow, this.slideHolder, 
-                                        this.caption, _indx, this.numSlides, 
-                                        _slideShow.showCloseBtn, this.img, 
+	self.loadImage();
+	if(self.slideType != "coverSlide"){ // no captionBar for coverSlides
+		/*self.captionBar = new CaptionBar(self.slideShow, self.slideHolder, 
+                                        self.caption, _indx, self.numSlides, 
+                                        _slideShow.showCloseBtn, self.img, 
                                         _slideShow.keepCaptionUnderImage);*/
 		//window.addEventListener('resize', function(){self.captionBar.resize();});
 		//$(window).on('orientationchange', function(){self.captionBar.resize();});
 	}
 	else{
-		this.setCoverSlide(_slideObj);
-	}
-	var self = this;
+		self.setCoverSlide(_slideObj);
+	} 
 	window.addEventListener('resize', function(){self.sizeImage();});
 	$(window).on('orientationchange', function(){self.sizeImage();});
 	

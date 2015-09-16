@@ -511,10 +511,9 @@ Slide.prototype.setSwipeFade = function(_slideHolder){
     //var el = document.getElementById(this.slideId);
     var slideShow = this.slideShow;
     var cur_x = 0;
-    var $slideHolder = $("#" + this.slideId);
     var curDirection;
     //var curpos = $slideHolder.position().left;
-    this.swipeHandler = Hammer(_slideHolder, {});
+    this.swipeHandler = new Hammer(_slideHolder, {});
     //this.swipeHandler.on("swipeleft swiperight dragright dragleft dragstart dragend", function(evt){
     this.swipeHandler.on("swipeleft swiperight", function(evt){
         evt.preventDefault();
@@ -548,7 +547,7 @@ Slide.prototype.setSwipeSlide = function(_slideHolder){
     var curDirection;
     //var curpos = $slideHolder.position().left;
     //this.swipeHandler = Hammer(_slideHolder, {
-    this.swipeHandler = Hammer(this.imageHolder, {
+    this.swipeHandler = new Hammer(this.imageHolder, {
                     dragLockToAxis: true,
                     dragBlockHorizontal: true
         

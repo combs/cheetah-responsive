@@ -8,9 +8,12 @@
 	 width: device-width;
 	 zoom: 1;
 
-}
+} 
 
-body {
+body { // Previously had body.ngm but the NGS video player 
+ // removes classes from body and replaces with "pdkLoaded"
+	
+	overflow-x: hidden;
 	
  	@include respond-to-width(small) { 
 
@@ -58,12 +61,12 @@ body {
 		
 	}
 	
-}
-
-
-body.ngm {
-	
-	overflow-x: hidden;
+	div#dialog {
+		
+		font-size: 1.25rem;
+		text-align: inherit;
+		
+	}
 	
 	div#marginwrap {
 	
@@ -83,7 +86,7 @@ body.ngm {
 			
 			/* The breadcrumbs above the article. */
 			
-			div.nav {
+			.nav {
 
 				display: none;
 								
@@ -91,7 +94,7 @@ body.ngm {
 			
 			/* Right side promos from Cheetah. */
 				
-			div.narrow_side, div.narrow_sidert {
+			.narrow_side, .narrow_sidert {
 				
 				display: none;	
 			
@@ -103,7 +106,7 @@ body.ngm {
 			
 			I am retaining the styles in case this changes. -CC 2015-09-03 */
 			 
-			div.narrow_side {
+			.narrow_side {
 			
 				display: none;
 			
@@ -124,19 +127,19 @@ body.ngm {
 					
 				}	
 				
-				> div.clear {
+				> .clear {
 					
 					padding: 0;
 					
 				}
 				
-				> div.spacer, > div.line {
+				> .spacer, > .line {
 					
 					display: none !important;
 				
 				}
 				
-				> div.navblocktxt, > div.navblock {
+				> .navblocktxt, > .navblock {
 					
 					float: none;
 					display: inline-block;
@@ -154,13 +157,13 @@ body.ngm {
     				
 				}
 				
-				> div.navblocktxt {
+				> .navblocktxt {
 					
 					display: none;
 					
 				}
 				 
-				> div.navblock {
+				> .navblock {
 					
 					margin: 0.5rem;
 					padding: 0 0 2rem 0;
@@ -171,7 +174,7 @@ body.ngm {
 						
 			/* This is the main class used by Cheetah for "three-column" (article) pages. */
 			
-			div.main_3narrow_wrap {
+			.main_3narrow_wrap {
 				
 				float: none;
 				font-size: 1.2rem;
@@ -179,7 +182,7 @@ body.ngm {
 				padding: 0;
 				width: 100%;
 				
-				div.main_3narrow {
+				.main_3narrow {
 
 					padding: 0;
 					margin: 0 auto;
@@ -196,20 +199,61 @@ body.ngm {
 
 					}
 
-					div.article_title {
+					.article_title {
 					
 						color: black;
-						text-transform: uppercase;
 						font-family: $font-sans-serif;
-						font-size: .8em;
+						font-size: 0.9rem;
 						font-weight: 300;
 						line-height: 1.2em;
-						margin: 3.5rem auto;
-						text-align: center;
-						width: $width-text-max;
-						max-width: 80%;
+						text-align: left;
+						width: 100%;
 						
-						span.published {
+						// Something deep within Cheetah wraps a random tag in an h1, but only after publishing.
+						
+						h1 {
+							
+							font-size: 0.9rem;
+							font-weight: 300;
+							font-family: $font-sans-serif;
+							color: black;
+							
+						}
+						
+						.breadcrumbs {
+							
+							display: block;
+							width: 100%;
+							margin: 1.5rem;
+							
+							a {
+								
+								color: #000;
+								font-weight: 300;
+								padding: 0 1.2rem 0 1rem;
+								border-bottom: 0;
+								text-decoration: underline;
+								border-right: 1px $color-grey solid;
+								    
+							}
+							
+							a:first-child {
+								
+								padding-left: 0;
+								font-weight: 600;
+								
+							}
+							
+							a:last-child {
+								
+								padding-right: 0;
+								border-right: 0;
+								
+							}
+							
+						}
+							
+						.published {
 							
 							display: none;
 							
@@ -217,7 +261,7 @@ body.ngm {
 						    
 					}
 
-					div.article_credits_author, div.article_credits_photographer {
+					.article_credits_author, .article_credits_photographer {
 						
 						font-family: $font-serif-display-italic;
 						font-style: italic;
@@ -227,14 +271,12 @@ body.ngm {
 						
 					}
 					
-					div.content {
+					.content {
 						
 						font-family: $font-serif;
 					    font-size: 1.0rem;
 					    line-height: 1.75;
-						/* padding: 1rem; */
-						padding: 0;
-						margin-top: $margin-media;
+						padding: 0;					
 						
 						> p:first-of-type {
 							
@@ -246,6 +288,84 @@ body.ngm {
 								
 							font-family: $font-serif-italic;
 						
+						}
+
+						.adunit {
+							
+							position: relative;
+							
+							> div {
+								
+								position: absolute;
+								
+							}
+							
+						}
+						
+						.adunit:empty, .adunit:blank {
+							
+							visibility: hidden;
+							
+						}
+
+						.ad-unit-210 {
+							
+							width: 210px;
+							height: 50px;
+							position: relative;
+							
+						}
+						
+						.ad-unit-300 {
+							
+							margin-top: $margin-media;
+							margin-bottom: $margin-media;
+							min-height: 250px;
+							position: relative;
+							width: 300px;
+							background-color: $color-lightest-grey;
+							
+						}
+						 
+						.ad-unit-300:before {
+							
+							content: "Advertisement";
+						    font-family: $font-sans-serif;
+						    font-size: .8rem;
+						    color: $color-light-grey;
+						    position: absolute;
+						    top: -1.5rem;
+						    float: right;
+						    	
+						}
+						
+						.ad-unit-728 {
+							
+							margin-top: $margin-media;
+							margin-bottom: $margin-media;
+							max-width: 728px;
+							position: relative;
+							width: initial;
+							background-color: $color-lightest-grey;
+							
+							> div {
+							
+								position: relative;
+									
+							}
+							
+						}	 
+						
+						.ad-unit-728:before {
+							
+							content: "Advertisement";
+						    font-family: $font-sans-serif;
+						    font-size: .8rem;
+						    color: $color-light-grey;
+						    position: absolute;
+						    top: -1.5rem;
+						    float: left;
+						    	
 						}
 
 						.author {
@@ -260,10 +380,32 @@ body.ngm {
  						
  						.bio {
  							
- 							font-family: $font-serif-italic;
+							color: $color-grey;
+ 							font-family: $font-sans-serif;
+ 							border-top: 1px $color-light-grey solid;
+ 							margin-top: $margin-media;
+ 							padding-top: $margin-media / 2;
  							
  						}
+ 						
+ 						// :first-of-type doesn't work for classes. This is a workaround.
+ 						
+ 						.bio ~ .bio {
  							
+ 							border-top: 0;
+ 							margin-top: 0;
+							padding-top: 0; 							
+ 							
+ 						}
+ 						
+ 						.bio:last-of-type {
+ 						
+ 							border-bottom: 1px $color-light-grey solid;
+ 							margin-bottom: $margin-media;
+ 							padding-bottom: $margin-media / 2;
+ 							
+ 						}
+ 						
  						.editors-note {
 
  							border: 1px solid #c9c9c9;
@@ -271,8 +413,9 @@ body.ngm {
  							font-family: $font-sans-serif;
  							font-size: .875rem;
  							font-weight: 400;
- 							line-height: 1.4;
- 							margin: $margin-media;
+ 							line-height: 1.4; 
+ 							margin-top: $margin-media;
+ 							margin-bottom: $margin-media;
  							padding: 1rem 1.25rem;
 
  						}
@@ -312,14 +455,81 @@ body.ngm {
 
  						}
 
+						/* We have these stub classes (real ones are in _size_utilities.scss) 
+						for necessary specificity. */
+
+						.width-full {
+							
+							@extend .width-full;
+							
+						}
+						
+						.width-cinematic {
+							
+							@extend .width-cinematic;
+							
+						}
+						
+												
+						.width-wider {
+						
+							@extend .width-wider;
+							
+						}
+							
+						
+						.width-inset {
+							
+							@extend .width-inset;
+							
+						}
+						
+						.width-locator {
+							
+							@extend .width-locator;
+							
+						} 
+						
+						.width-box {
+							
+							@extend .width-box;
+							
+						}
+						
+						.float-left {
+							
+							@extend .float-left;
+							
+						}
+						
+						.float-right {
+							
+							@extend .float-right;
+							
+						}
+						
  						hr {
 
  							width: $width-text-max * 1.2;
  							margin: $margin-media auto;
  							padding: 0;
- 							color: #c9c9c9;
+ 							color: $color-light-grey;
  							max-width: 90%;
 
+ 						}
+
+ 						> a {
+ 							
+ 							@extend .internal-function-width-column;
+ 							border: 0;
+ 							display: block;
+
+ 						}
+ 						
+ 						> a:hover {
+ 							
+ 							color: inherit;
+ 							
  						}
  						
 						> p, > div, > embed, > iframe {
@@ -332,7 +542,7 @@ body.ngm {
 						
 						/* A wrapper container for additional social buttons. */
 						
-						div.share-buttons {
+						.share-buttons {
 							
 						    float: none;
 						    text-align: left;
@@ -351,9 +561,10 @@ body.ngm {
 						
 						/* Place a box around a media object or promo container. */
 						
-						div.box {
+						.box {
 							
 							border: 1px $color-light-grey solid;
+							overflow: hidden; // Keeps floating elements from overlapping box border.
 
 							> h1, > h2, > h3, > h4 {
 								
@@ -371,9 +582,10 @@ body.ngm {
 						
 						/* Place a yellow header over a media object or promo container. */
 						
-						div.box-yellow {
+						.box-yellow {
 							
 							border-top: 1.5rem $color-nat-geo solid;
+							overflow: hidden; // Keeps floating elements from overlapping box border.
 
 							> h1, > h2, > h3, > h4 {
 								
@@ -386,12 +598,57 @@ body.ngm {
 								margin: 0;
 								
 							}
-													
+								
+							/* Special handling for the yellow-header style. */
+
+							.drawer:first-of-type {
+								
+								margin-top: 1rem;
+								
+							}	
+							
+							.drawer:last-of-type {
+								
+								border-bottom: 1px $color-lighter-grey solid;
+								
+							}
+							
+							.drawer {
+								
+								/* We don't have to provide space for the left/right box outline. */
+								
+								padding-left: 0;
+								padding-right: 0;
+								
+								.header {
+									
+									p {
+										
+										margin-left: 0;
+										margin-right: 0;
+										
+									}
+									
+								}
+								
+								.contents {
+									
+									ul {
+										
+										margin-left: 0;
+										margin-right: 0;
+										
+									}
+									
+								}	
+								
+							}		
+										
 						}
 						
 						/* Place a collapsible drawer within a box or promo container. */
 						
-						div.drawer {
+						.drawer {
 
 							border-top: 1px $color-lighter-grey solid;
 							font-family: $font-sans-serif;
@@ -401,7 +658,7 @@ body.ngm {
 							
 							/* The header is the main title of the collapsible drawer. */
 							
-							div.header {
+							.header {
 								
 								font-family: $font-sans-serif;
 								font-size: 1.2rem;
@@ -455,7 +712,7 @@ body.ngm {
 								
 							/* Contains the links or other collapsible content. */
 													
-							div.contents {
+							.contents {
 								
 								font-size: 1.0rem;
 								
@@ -470,7 +727,9 @@ body.ngm {
 									
 									li {
 										
-										line-height: 2; // Make links easier to tap.
+										line-height: 1.4; 
+										padding-bottom: 0.5rem;
+										
 											
 									}
 										
@@ -484,7 +743,7 @@ body.ngm {
 						
 						TODO: Mobile? */
 						
-						div.drawer.closed:hover {
+						.drawer.closed:hover {
 					
 							background-color: $color-lightest-grey;
 							
@@ -492,15 +751,15 @@ body.ngm {
 
 						/* Apply or remove .closed from a drawer to hide its contents. */
 		
-						div.drawer.closed {
+						.drawer.closed {
 								
-							div.contents {
+							.contents {
 									
 								display: none;
 
 							}
 								
-							div.header {
+							.header {
 							
 								a:after {
 									
@@ -511,70 +770,132 @@ body.ngm {
 							}							
 
 						}
-
-						/* Special handling for the yellow-header style. */
-
-						.box-yellow div.drawer:first-of-type {
-							
-							margin-top: 1rem;
-							
-						}	
 						
-						.box-yellow div.drawer:last-of-type {
+						/* Client-side include of a module. Hide it until it loads. */
+					
+						.include {
 							
-							border-bottom: 1px $color-lighter-grey solid;
+							display: none;
 							
 						}
 						
-						.box-yellow div.drawer {
+						#livefyre {
 							
-							/* We don't have to provide space for the left/right box outline. */
+							margin: $margin-media auto;
 							
-							padding-left: 0;
-							padding-right: 0;
-							
-							div.header {
+							.fyre .fyre-comment-wrapper time.fyre-comment-date {
 								
-								p {
-									
-									margin-left: 0;
-									margin-right: 0;
-									
-								}
+								float: none;
 								
 							}
-							
-							div.contents {
-								
-								ul {
-									
-									margin-left: 0;
-									margin-right: 0;
-									
-								}
-								
-							}	
-							
 						}
 						
 						/* Style a container as a series promo--showing all parts of a series. */
 						
-						div.promo-series {
+						.promo-series {
 							
 							font-family: $font-sans-serif;
-							margin: $margin-media auto;
+							margin-top: $margin-media;
+							margin-bottom: $margin-media;
+							
+						}
+						
+						.promo-tile {
+							
+							font-family: $font-sans-serif;
+							margin-top: $margin-media;
+							margin-bottom: $margin-media;
+							position: relative;
+							
+							img {
+							
+								@include respond-to-width(notsmall) {
+									
+									width: $width-text-max / 2;
+									margin-right: 1.5rem;
+									float: left;
+								
+								}
+								
+								@include respond-to-width(small) {
+								
+									width: 100%;
+								
+								}
+																
+							}
+							
+							h5 {
+								
+								font-size: 1.75rem;
+								line-height: 1.15em;
+								font-weight: 600;
+								margin: 1.5rem 1.5rem 0.5rem 1.5rem;
+								
+							}
+							
+							a {
+								
+							}
+							
+							a:hover {
+							
+								color: inherit;
+								
+							}
+							
+							p {
+								
+								@include respond-to-width(small) {
+									
+									margin-left: 1.5rem;
+									margin-right: 1.5rem;
+
+								}
+								
+							}
+
+						}
+						
+						.promo-tile:before {
+								
+						    color: $color-lighter-grey;
+						    content: "\1F522";
+						    float: right;
+						    font-family: "icongs";
+						    font-size: 2rem;
+						    line-height: 1;
+						    padding: 0 0 2rem 2rem;
+						    position: relative;
+						    right: 1rem;
+						    top: 1rem;
+							
+							@include respond-to-width(small) {
+							
+								position: absolute; 
+								
+							}
+							
+						}
+						
+						.promo-tile:hover:before {
+							
+							color: #000;
+								
+						}
+						
+						.promo-tile:hover {
+							
+							background-color: $color-lighter-grey;
+							color: inherit;
 							
 						}
 						
 						/* Style a container to show promos, optionally with thumbnails. */
 						
-						div.promo-content {
+						.promo-content {
 							
-							margin: $margin-media auto;
-							text-align: left;
 							font-family: $font-sans-serif;
-							color: #000;
-							max-width: 90%;
 							    
 							.caption, .credit, p {
 								
@@ -589,7 +910,7 @@ body.ngm {
 
 								line-height: 1.5em;								
 								margin-bottom: .25em;
-								border-bottom: 1px solid #ffcc00;
+								border-bottom: 1px solid $color-nat-geo;
 								font-weight: 600;
 
 							}
@@ -600,16 +921,8 @@ body.ngm {
 
 							}
 							
-							h5, h6 {
-							
-								margin: $margin-media 0;
-								
-							}
-
 							h5 {
 								
-								width: $width-text-max;
-								max-width: 90%;
 								font-size: 1.75rem;
 								line-height: 1.15em;
 								font-weight: 600;
@@ -619,8 +932,6 @@ body.ngm {
 
 							h6 {
 								
-								width: $width-text-max;
-								max-width: 90%;
 								font-size: 0.875rem;
 								line-height: 1.15em;
 								color: #808080;
@@ -631,6 +942,7 @@ body.ngm {
 
 							hr {
 
+								max-width: 100%;
 								width: 100%;
 								margin: 1.25rem auto 2.5rem;
 
@@ -644,14 +956,56 @@ body.ngm {
 								margin: 0 1.25rem 1.25rem 0;
 								clear: left;
 								
-							}													
+							}			
+																	
 						}
 
+						/* Style these containers for interactive HTML5 graphics. Light hand on styles here.
+						
+						*/
+
+						.graphic {
+							
+							clear: both;
+							font-family: $font-sans-serif;
+							margin: $margin-media auto;
+							
+							.caption {
+								 
+								color: #000; 
+								
+							}
+							
+							.credit {
+								 
+								 text-transform: uppercase;
+								 color: gray;
+								 font-size: 0.7rem; 
+								
+							}
+							
+							.caption > span.credit {
+								
+								margin-left: 0.5rem;
+							
+							}
+							
+							img {
+							
+								width: 100%;
+								height: auto;
+								padding-bottom: 0.5rem;
+								
+							}
+							
+						}
+						
 						/* Style these containers for photos or video players.
 						
 						*/ 
 
-						div.video, div.photo {
+						
+						.video, .photo {
 							
 							margin: $margin-media auto;
 							text-align: left;
@@ -708,8 +1062,26 @@ body.ngm {
 								margin-left: 0.5rem;
 							
 							}
+							
+							&.width-cinematic {
+								
+								> p {
+									
+									@extend .internal-function-width-column;
+									display: block;
+									
+								}
+								
+							}
 						
 						}
+						
+						.video.overlay-container, .photo.overlay-container {
+							
+							margin-top: 0;
+							
+						}		
+
 
 					}
 					
@@ -718,7 +1090,7 @@ body.ngm {
 					We do not necessarily need to use it when building a story, but I include it here
 					for maximum compatibility with older stories. */
 					
-					div.featurepic {
+					.featurepic {
 					
 						clear: both;
 						border: 0 none;
@@ -739,7 +1111,7 @@ body.ngm {
 					
 					/* Cheetah's next/previous page controls for paginated articles. */
 					
-					div.nextpage_continue {
+					.nextpage_continue {
 
 						display:none;
 
@@ -756,14 +1128,23 @@ body.ngm {
 					
 					*/
 					
-					div.overlay {
+					.overlay {
 						
 						color: #fff;
 						position: absolute; // Note that parent container must have position: relative.
-						top: 35%;
+						top: 50%;
+						transform: translateY(-50%);
 						text-align: center;
-						text-shadow: 0.1rem 0.1rem 0.2rem rgba(0,0,0,0.5);
+						text-shadow: 0.2rem 0.2rem 0.5rem rgba(0,0,0,0.8);
  						width: 100%;
+ 						
+ 						a {
+ 							
+ 							color: #fff;
+ 							border: 0;
+ 							text-decoration: underline;
+ 							
+ 						}
  						
 						@include respond-to-width(small) {
 
@@ -772,6 +1153,19 @@ body.ngm {
  							position: static;
  							color: inherit;
  							text-shadow: none;
+ 							transform: none;
+ 							
+ 							h4.title {
+ 								
+ 								margin: 1.5em auto;
+ 								
+ 							}
+ 							
+ 							a {
+ 								
+ 								color: inherit;
+ 								
+ 							}
  							
 						}				
  						
@@ -793,32 +1187,25 @@ body.ngm {
  							
  						}
  							
-					}						
+					}		
 					
-					/* If the overlay is used over a particularly large image, make the typography larger and stronger. */
+					/* If the overlay is used over a particularly large image, make the typography larger. */
 					
-					.width-cinematic > div.overlay {
-						
-						h2.title {
-						
-								font-weight: 700;
-								font-family: $font-serif-display-bold;
-						
-						}
+					.width-cinematic > .overlay {
 						
 						@include respond-to-width(large) {
 							
-							font-size: 2.0rem;
+							font-size: 1.2em;
 							
 							h2.title {
 								
-								font-size: 6.0rem;
+								font-size: 5.0rem;
 								
 							}
 							
 							h3.title {
 								
-								font-size: 1.6rem;
+								font-size: 1.5rem;
 								
 							}
 							
@@ -828,7 +1215,7 @@ body.ngm {
 										
 					/* Cheetah's subscription promos. */
 					
-					div.subscribe {
+					.subscribe {
 						
 						display: none;
 						
@@ -847,6 +1234,12 @@ body.ngm {
 							font-size: 1.75rem;		
 						
 						}
+						
+						a {
+							
+							border: 0;
+							
+						}
 				
 					}
 					
@@ -858,16 +1251,22 @@ body.ngm {
 					
 					h2.title {
 						
-						font-family: $font-serif-display;
+						font-family: $font-serif-deck-bold;
 						font-size: 4rem;
 						font-weight: 400;
-						line-height: 1.2em;
-						margin: 0 auto;
+						line-height: 1.0em;
+						margin: 1rem auto;
 						max-width: 80%;
-						padding: 1.2rem;
+						padding: 0;
 						text-align: center;
 						text-transform: normal;
 						width: $width-text-max;
+						
+						@include respond-to-width(large) {
+
+							margin-bottom: 2rem;
+
+						}
 						
 						@include respond-to-width(small) {
 							
@@ -922,7 +1321,7 @@ body.ngm {
 						font-size: 1em;
 						font-weight: 300;
 						line-height: 1.2em;
-						margin: 3.5rem auto 1.5rem auto;
+						margin: 3.5rem auto 0 auto;
 						text-align: center;
 						width: $width-text-max;
 						max-width: 80%;
@@ -955,3 +1354,7 @@ body.ngm {
 	}
 
 }
+
+
+
+@import "inlineSlideShow";

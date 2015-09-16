@@ -82,7 +82,7 @@ function SlideShow(_myParentId, _imagesJsonUrl){
 	window.addEventListener('resize', function(){self.windowResize(self);});
 	//window.addEventListener('resize', this.windowResize);
 	$(window).on('orientationchange', function(){self.arrowResize(self);});
-	$(window).load(function(){self.arrowResize(self);});
+	$(document).ready(function(){self.arrowResize(self);});
 }
 SlideShow.prototype.windowResize = function(_this){
     //console.log("this.SMALL_SCREEN: " + this.SMALL_SCREEN);
@@ -103,17 +103,17 @@ SlideShow.prototype.windowResize = function(_this){
 
 SlideShow.prototype.setKeyPress = function(){
     var self = this;
-    //document.onkeydown = function(evt){
+
     var el = this.myParent;
-    //   console.log("setKeyPress");
-    // Need this (focus on el) for the modal slideShows
-    //el.onkeydown = function(evt){  
-    window.onkeydown = function(evt){  
-    //    console.log("onkeydown");
-        //if(!navigator.userAgent.indexOf('MSIE') > -1){
-                $(el).focus();
-          //      console.log("EL - FOCUS");
-            //}
+
+    $(document).keydown(function(evt){  
+    	
+    	if (! isElementInViewport(el)) {
+    		return;
+    	}
+    	
+    	$(el).focus(); 
+		
 		switch(evt.keyCode){
             case 37:  // left
                 if(self.swipeType === "slide-strip"){
@@ -140,6 +140,7 @@ SlideShow.prototype.setKeyPress = function(){
                     self.setPrevSlide(self);
                     self.prevSlide(self);
                 }
+            	self.arrowResize(self);
                 break;
             case 39:  // right
                 if(self.swipeType === "slide-strip"){
@@ -169,6 +170,7 @@ SlideShow.prototype.setKeyPress = function(){
                     self.setNextSlide(self);
                     self.nextSlide(self);
                 }
+            	self.arrowResize(self);
                 break;
             case 27:  // escape
                 $(".modal-holder").css("display", "none");
@@ -177,28 +179,27 @@ SlideShow.prototype.setKeyPress = function(){
                 break;   
             default: break;
         }
-    };
+    });
 }
 SlideShow.prototype.arrowResize = function(_this){
-    if(this.stackImageArrowsText != undefined){
-		// stackImageArrowsText is set from the JSON file
-		if($(window).width() <= this.stackImageArrowsText){
-			$('#' + this.arrowHolderId).css("margin-top", ($(this.slideArr[0].img).height() + 30) + "px");
+    var self = this; 
+    try {
+	    if(this.stackImageArrowsText != undefined){
+			// stackImageArrowsText is set from the JSON file
+			if($(window).width() <= this.stackImageArrowsText){
+				$('#' + this.arrowHolderId).css("margin-top", ($(this.slideArr[self.curIndx].img).height() + 30) + "px");
+			}
+			else{
+				img_h = $(this.slideArr[self.curIndx].img).height()/2;
+				arrow_h = $('#' + this.arrowHolderId).height()/2;
+				$('#' + this.arrowHolderId).css("margin-top", (img_h - arrow_h) + "px");
+			}
 		}
-		else{
-			img_h = $(this.slideArr[0].img).height()/2;
-			arrow_h = $('#' + this.arrowHolderId).height()/2;
-			$('#' + this.arrowHolderId).css("margin-top", (img_h - arrow_h) + "px");
-		}
-	}
-    // The offset has to be a constant value we get from the JSON file - because, if we use captionBar.height,
-    // the height will only be the correct size for the first image / caption. If a different
-    // caption taks up more or less space (height), the slideShow height will be off.
-    $('#' + this.captionBarHolderId).css("margin-top", ($(this.slideArr[0].img).height() + 30) + "px");
-    $('#' + this.myParentId).css("height", ($(this.slideArr[0].img).height() + parseInt(this.captionBarOffset_h)) + "px");
-    //$('#' + this.myParentId).css("height", ($(this.slideArr[0].img).height() + 130) + "px");
-    //$('#' + this.myParentId).css("height", 
-                    //($(this.slideArr[0].img).height() + $('#' + this.captionBarHolderId).height() + "px"));
+		 
+	    $('#' + this.captionBarHolderId).css("margin-top", ($(this.slideArr[self.curIndx].img).height() + 30) + "px");
+	    $('#' + this.myParentId).css("height", ($(this.slideArr[self.curIndx].img).height() + $('#' + this.captionBarHolderId).height() +  parseInt(this.captionBarOffset_h)) + "px");
+    } catch(err) {}
+    
 }
 SlideShow.prototype.getImageData = function(_imagesJsonUrl){
 	var self = this;
@@ -290,6 +291,7 @@ SlideShow.prototype.addArrows = function(_hasCoverSlide){
                 + '"/>');
 	var self = this;
 	$('#' + this.arrowLeftId).click(function(){
+		
         self.setPrevSlide(self);
         if(self.swipeType === "fade"){
             self.prevSlideFade(self);
@@ -297,6 +299,7 @@ SlideShow.prototype.addArrows = function(_hasCoverSlide){
         else{
             self.prevSlide(self);
         }
+        self.arrowResize(self);
     });
 	$('#' + this.arrowLeftId).load(function(){self.arrowResize(self);});
 	
@@ -320,6 +323,7 @@ SlideShow.prototype.addArrows = function(_hasCoverSlide){
         else{
             self.nextSlide(self);
         }
+        self.arrowResize(self);
     });
 	$('#' + this.arrowRightId).load(function(){self.arrowResize(self);});
 }
@@ -452,51 +456,52 @@ SlideShow.prototype.prevSlideFade = function(_this){
 /****************** Slide Object ***********************/
 													
 function Slide(_slideShow, _slideObj, _appendToId, _indx){
-	this.slideShow = _slideShow;
-	this.numSlides = _slideShow.imageArr.length;
-	this.displayMethod = _slideObj.displayMethod == undefined 
+	var self=this;
+	self.slideShow = _slideShow;
+	self.numSlides = _slideShow.imageArr.length;
+	self.displayMethod = _slideObj.displayMethod == undefined 
                             ? _slideShow.displayMethod.toLowerCase() 
                             : _slideObj.displayMethod.toLowerCase();
-	this.imagerUrl = this.chooseImage(_slideObj);
-	this.alt = _slideObj.alt;
-	this.caption = _slideObj.caption;
-	this.crop = _slideObj.crop.toLowerCase();
-	this.slideType = _slideObj.slideType;
-	this.slideId = "slide_" + Math.floor(Math.random() * 100000);    
-	$('#' + _appendToId).append('<div class="slideHolder" id="' + this.slideId + '"></div>');
-	this.slideHolder = document.getElementById(this.slideId);
+	self.imagerUrl = self.chooseImage(_slideObj);
+	self.alt = _slideObj.alt;
+	self.caption = _slideObj.caption;
+	self.crop = _slideObj.crop.toLowerCase();
+	self.slideType = _slideObj.slideType;
+	self.slideId = "slide_" + Math.floor(Math.random() * 100000);    
+	$('#' + _appendToId).append('<div class="slideHolder" id="' + self.slideId + '"></div>');
+	self.slideHolder = document.getElementById(self.slideId);
     
 	
-	this.imageId = "image_" + Math.floor(Math.random() * 100000);
-	$(this.slideHolder).append('<div class="imageHolder" id="' + this.imageId + '"></div>');
-	this.imageHolder = document.getElementById(this.imageId);
+	self.imageId = "image_" + Math.floor(Math.random() * 100000);
+	$(self.slideHolder).append('<div class="imageHolder" id="' + self.imageId + '"></div>');
+	self.imageHolder = document.getElementById(self.imageId);
 	
     if(_slideShow.swipeType === "fade"){
-        this.setSwipeFade(this.slideHolder);
+        self.setSwipeFade(self.slideHolder);
     }
     else{
-        this.setSwipeSlide(this.slideHolder);
+        self.setSwipeSlide(self.slideHolder);
     }
     
 	if(_indx != 0){ // 0 is the index of the coverSlide
-		$(this.slideHolder).css("visibility", "hidden");
+		$(self.slideHolder).css("visibility", "hidden");
 	}
 	
-	this.loadImage();
-	if(this.slideType != "coverSlide"){ // no captionBar for coverSlides
-		/*this.captionBar = new CaptionBar(this.slideShow, this.slideHolder, 
-                                        this.caption, _indx, this.numSlides, 
-                                        _slideShow.showCloseBtn, this.img, 
+	self.loadImage();
+	if(self.slideType != "coverSlide"){ // no captionBar for coverSlides
+		/*self.captionBar = new CaptionBar(self.slideShow, self.slideHolder, 
+                                        self.caption, _indx, self.numSlides, 
+                                        _slideShow.showCloseBtn, self.img, 
                                         _slideShow.keepCaptionUnderImage);*/
 		//window.addEventListener('resize', function(){self.captionBar.resize();});
 		//$(window).on('orientationchange', function(){self.captionBar.resize();});
 	}
 	else{
-		this.setCoverSlide(_slideObj);
-	}
-	var self = this;
+		self.setCoverSlide(_slideObj);
+	} 
 	window.addEventListener('resize', function(){self.sizeImage();});
 	$(window).on('orientationchange', function(){self.sizeImage();});
+	
 	//window.addEventListener('resize', function(){self.captionBar.resize();});
 	//$(window).on('orientationchange', function(){self.captionBar.resize();});
 	//$(window).load(function(){self.captionBar.resize();});
@@ -506,11 +511,9 @@ Slide.prototype.setSwipeFade = function(_slideHolder){
     //var el = document.getElementById(this.slideId);
     var slideShow = this.slideShow;
     var cur_x = 0;
-    var $slideHolder = $("#" + this.slideId);
     var curDirection;
     //var curpos = $slideHolder.position().left;
-    //$("#" + this.slideId).draggable();
-    this.swipeHandler = Hammer(_slideHolder, {});
+    this.swipeHandler = new Hammer(_slideHolder, {});
     //this.swipeHandler.on("swipeleft swiperight dragright dragleft dragstart dragend", function(evt){
     this.swipeHandler.on("swipeleft swiperight", function(evt){
         evt.preventDefault();
@@ -543,9 +546,8 @@ Slide.prototype.setSwipeSlide = function(_slideHolder){
     var wasSwiped = false;
     var curDirection;
     //var curpos = $slideHolder.position().left;
-    //$("#" + this.slideId).draggable();
     //this.swipeHandler = Hammer(_slideHolder, {
-    this.swipeHandler = Hammer(this.imageHolder, {
+    this.swipeHandler = new Hammer(this.imageHolder, {
                     dragLockToAxis: true,
                     dragBlockHorizontal: true
         
@@ -856,3 +858,23 @@ CaptionBar.prototype.resize = function(){
 function CoverSlide(_coverSlideObj, _attachToDiv){
 	
 }
+
+/**************** VISIBLE **************/
+
+function isElementInViewport (el) {
+
+	try{
+		var rect = el.getBoundingClientRect();
+		
+		return (
+			rect.top + (rect.height / 2 )  >= 0 &&
+			rect.bottom - (rect.height / 2 )  <= (window.innerHeight || document.documentElement.clientHeight)
+		);
+	} catch (err) {
+	
+		return false;
+	
+	}
+
+}
+
